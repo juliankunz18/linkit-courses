@@ -1,0 +1,21 @@
+maschine,name,linie,halle,typ,baujahr
+M-01,CNC-Fräszentrum 1,2,1,Zerspanung,2014
+M-02,CNC-Fräszentrum 2,2,1,Zerspanung,2017
+M-03,CNC-Drehmaschine,1,1,Zerspanung,2009
+M-04,Rundschleifmaschine,1,1,Schleifen,2012
+M-05,Roboter-Schweißzelle,3,2,Fügen,2016
+M-06,Montagelinie A,4,3,Montage,2011
+M-07,Prüfstand,4,3,Prüfung,2019
+M-08,Teilewaschanlage,1,1,Reinigung,2008
+M-09,CNC-Drehmaschine 2,1,1,Zerspanung,2020
+M-10,Härteofen,1,1,Wärmebehandlung,2010
+M-11,CNC-Fräszentrum 3,2,1,Zerspanung,2022
+M-12,Entgratstation,2,1,Zerspanung,2015
+M-13,Koordinatenmessmaschine,2,1,Prüfung,2018
+M-14,Roboter-Schweißzelle 2,3,2,Fügen,2021
+M-15,Laserschneidanlage,3,2,Schneiden,2019
+M-16,Abkantpresse,3,2,Umformen,2013
+M-17,Montagelinie B,4,3,Montage,2018
+M-18,Schraubstation,4,3,Montage,2016
+M-19,Verpackungsanlage,4,3,Verpackung,2015
+M-20,Teilewaschanlage 2,4,3,Reinigung,2020

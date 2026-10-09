@@ -1,4 +1,4 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><title>linkit courses · Testversion</title><meta name="robots" content="noindex, nofollow"><meta name="description" content="Testversion der Lernplattform von linkit e. V."><link rel="icon" href="data:,"><script>window.LC_PAGES = true;</script><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>linkit courses</title>
+<!doctype html><html lang="de"><head><meta charset="utf-8"><title>linkit courses · Testversion</title><meta name="robots" content="noindex, nofollow"><meta name="description" content="Testversion der Lernplattform von linkit e. V."><link rel="icon" href="data:,"><script>window.LC_PAGES = true;window.LC_COURSE = {"catalog": [{"pill": "ok", "status": "Pilot · Modul 0 bis 2", "title": "Data Science 1", "text": "Der Einstieg in Data Science: Tabellen mit pandas, SQL, Statistik und Modelle bis zu Experimenten und kausalen Fragen, alles an den Werksdaten der Nordwerk GmbH.", "meta": "15 Module geplant, 3 davon fertig · Notebooks laufen im Browser", "btn": "Zum Kurs", "href": "ds1.html"}, "vorkurs", "advanced"]};</script><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>linkit courses</title>
 <meta name="description" content="Prototyp der ganzjährigen Lernplattform von linkit e.V. mit dem kompletten Kurs AI Engineering">
 
 
@@ -709,6 +709,8 @@ legend code,.opt code{overflow-wrap:anywhere}
 .fbshare a.btn{text-decoration:none}
 .fbtxt{margin:0;padding:.7rem .8rem;background:var(--bg);border:1px solid var(--line);font:400 .8rem/1.5 "JetBrains Mono",ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;max-height:16rem;overflow:auto}
 footer.site a{color:inherit}
+.week-row.locked{cursor:default}
+.week-row.locked:hover{background:none}
 </style>
 
 <svg style="position:absolute;width:0;height:0;color:var(--accent)" aria-hidden="true" focusable="false"><defs><pattern id="plusPat" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M6.5 11H15.5M11 6.5V15.5" stroke="currentColor" stroke-width="1.4" fill="none"/></pattern></defs></svg>
@@ -722,8 +724,8 @@ footer.site a{color:inherit}
       <select id="demoState">
         <option value="">bitte wählen</option>
         <option value="neu">Neu angemeldet</option>
-        <option value="mitte">Mitten im Kurs (Modul 7)</option>
-        <option value="projekt">Projektphase erreicht</option>
+        <option value="mitte" data-ct="demoMitte">Mitten im Kurs (Modul 7)</option>
+        <option value="projekt" data-ct="demoProjekt">Projektphase erreicht</option>
       </select>
     </label>
   </div>
@@ -774,10 +776,10 @@ footer.site a{color:inherit}
     <div class="wrap">
       <div class="section-head"><h2>So läuft ein Kurs</h2><span class="muted">vom ersten Modul bis zum Zertifikat</span></div>
       <ol class="steps-4 steps-6">
-        <li><span class="n">1</span><h3>Module im eigenen Tempo</h3><p class="muted">Lerneinheiten mit Kurzchecks, Tutoriumsblatt, Notebook in Colab, Selbsttest. Empfohlen ist ein Modul pro Woche, schneller oder langsamer geht auch.</p></li>
+        <li><span class="n">1</span><h3>Module im eigenen Tempo</h3><p class="muted" data-ct="schritt1">Lerneinheiten mit Kurzchecks, Tutoriumsblatt, Notebook in Colab, Selbsttest. Empfohlen ist ein Modul pro Woche, schneller oder langsamer geht auch.</p></li>
         <li><span class="n">2</span><h3>Hilfe, wenn du hängst</h3><p class="muted">Hilfeseite zu jedem Modul, ein Kurs-Tutor, der das Skript kennt, und der Kurs-Chat.</p></li>
         <li><span class="n">3</span><h3>Partner finden</h3><p class="muted">Nach dem letzten Modul suchst du dir über die Partnerbörse jemanden, der gerade auch so weit ist.</p></li>
-        <li><span class="n">4</span><h3>Projekt zu zweit</h3><p class="muted">Ihr führt eure Projekt-Bausteine zusammen und baut einen Assistenten mit Demo.</p></li>
+        <li><span class="n">4</span><h3>Projekt zu zweit</h3><p class="muted" data-ct="schritt4">Ihr führt eure Projekt-Bausteine zusammen und baut einen Assistenten mit Demo.</p></li>
         <li><span class="n">5</span><h3>Abnahme</h3><p class="muted">Ein linkit Expert prüft Demo, Zahlen und Code im Online-Gespräch und bewertet nach einem festen Bogen.</p></li>
         <li><span class="n">6</span><h3>Zertifikat</h3><p class="muted">Mit Note, Projekt und dem Namen des Experts, unterschrieben vom Vorstand.</p></li>
       </ol>
@@ -799,7 +801,7 @@ footer.site a{color:inherit}
       <div style="display:grid;gap:1rem;align-content:start">
         <h2 style="font-size:var(--s-3)">Wer bewertet?</h2>
         <p class="lede">linkit Experts sind Absolvent:innen eines Kurses, die eine Bewertungsschulung gemacht haben. Sie nehmen nur Projekte aus dem Kurs ab, den sie selbst abgeschlossen haben.</p>
-        <div class="tier"><h3><span class="pill live">Bewertet wird</span></h3><ul><li>Problem und Nutzen</li><li>Technische Umsetzung</li><li>Evaluation und Ehrlichkeit</li><li>Sicherheit und Ressourcen</li><li>Präsentation und Demo</li></ul></div>
+        <div class="tier" data-ct="bewertet"><h3><span class="pill live">Bewertet wird</span></h3><ul><li>Problem und Nutzen</li><li>Technische Umsetzung</li><li>Evaluation und Ehrlichkeit</li><li>Sicherheit und Ressourcen</li><li>Präsentation und Demo</li></ul></div>
       </div>
     </div>
   </section>
@@ -811,7 +813,7 @@ footer.site a{color:inherit}
     <div class="plus-raster" aria-hidden="true"><svg><rect width="100%" height="100%" fill="url(#plusPat)"/></svg></div>
     <div class="wrap">
       <div class="eyebrow">Selbstlernkurs · ganzjährig</div>
-      <h1>AI Engineering: von LLMs zu Agenten</h1>
+      <h1 data-c="fullTitle">AI Engineering: von LLMs zu Agenten</h1>
       <div class="week-progress" id="kursHead"></div>
       <div class="cta-row"><button class="btn" type="button" data-resume id="resumeBtn">Weiterlernen</button></div>
     </div>
@@ -826,7 +828,7 @@ footer.site a{color:inherit}
 <div data-view="modul" hidden>
   <section class="week-head">
     <div class="wrap">
-      <nav class="crumbs" aria-label="Pfad"><button type="button" data-go="kurs">AI Engineering</button><span aria-hidden="true">/</span><span id="mCrumb">Modul</span></nav>
+      <nav class="crumbs" aria-label="Pfad"><button type="button" data-go="kurs" data-c="title">AI Engineering</button><span aria-hidden="true">/</span><span id="mCrumb">Modul</span></nav>
       <div class="mhead-row">
         <div style="display:grid;gap:.6rem;min-width:0">
           <h1 id="mTitle"></h1>
@@ -963,7 +965,7 @@ footer.site a{color:inherit}
             <fieldset><legend>Wie verständlich waren die Lerneinheiten?</legend><div class="fbscale" data-fb="verstaendlich"><label><input type="radio" name="fb_verstaendlich" value="1"><span>1</span></label><label><input type="radio" name="fb_verstaendlich" value="2"><span>2</span></label><label><input type="radio" name="fb_verstaendlich" value="3"><span>3</span></label><label><input type="radio" name="fb_verstaendlich" value="4"><span>4</span></label><label><input type="radio" name="fb_verstaendlich" value="5"><span>5</span></label></div><span class="fbends muted"><span>kaum</span><span>sehr gut</span></span></fieldset>
             <fieldset><legend>Wie war das Tempo der Stimme?</legend><div class="fbchips"><label><input type="radio" name="fb_stimme" value="zu langsam"> zu langsam</label><label><input type="radio" name="fb_stimme" value="passend"> passend</label><label><input type="radio" name="fb_stimme" value="zu schnell"> zu schnell</label></div></fieldset>
             <fieldset><legend>Wie schwer war das Tutoriumsblatt?</legend><div class="fbchips"><label><input type="radio" name="fb_tutorium" value="zu leicht"> zu leicht</label><label><input type="radio" name="fb_tutorium" value="passend"> passend</label><label><input type="radio" name="fb_tutorium" value="zu schwer"> zu schwer</label><label><input type="radio" name="fb_tutorium" value="nicht bearbeitet"> nicht bearbeitet</label></div></fieldset>
-            <fieldset><legend>Lief das Notebook in Colab?</legend><div class="fbchips"><label><input type="radio" name="fb_notebook" value="ohne Probleme"> ohne Probleme</label><label><input type="radio" name="fb_notebook" value="mit kleinen Problemen"> mit kleinen Problemen</label><label><input type="radio" name="fb_notebook" value="hing fest"> hing fest</label><label><input type="radio" name="fb_notebook" value="nicht bearbeitet"> nicht bearbeitet</label></div></fieldset>
+            <fieldset><legend data-ct="fbNotebook">Lief das Notebook in Colab?</legend><div class="fbchips"><label><input type="radio" name="fb_notebook" value="ohne Probleme"> ohne Probleme</label><label><input type="radio" name="fb_notebook" value="mit kleinen Problemen"> mit kleinen Problemen</label><label><input type="radio" name="fb_notebook" value="hing fest"> hing fest</label><label><input type="radio" name="fb_notebook" value="nicht bearbeitet"> nicht bearbeitet</label></div></fieldset>
             <label class="fbfield"><span>Zeitaufwand für das ganze Modul in Stunden</span><input type="text" name="fb_stunden" inputmode="decimal" placeholder="z. B. 4,5" maxlength="5"></label>
           </div>
           <label class="fbfield"><span>Fehler oder Stellen, an denen du hängen geblieben bist</span><textarea name="fb_fehler" rows="3" placeholder="z. B. Lerneinheit 4, Formel für den Gradienten: Vorzeichen falsch?"></textarea></label>
@@ -1033,12 +1035,34 @@ footer.site a{color:inherit}
   </div>
 </div>
 
+<!-- ================= MODUL IN ARBEIT ================= -->
+<div data-view="wip" hidden>
+  <section class="week-head">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Pfad"><button type="button" data-go="kurs" data-c="title">AI Engineering</button><span aria-hidden="true">/</span><span id="wipCrumb">Modul</span></nav>
+      <div class="mhead-row">
+        <div style="display:grid;gap:.6rem;min-width:0">
+          <h1 id="wipTitle"></h1>
+          <p class="leit" id="wipLeit"></p>
+        </div>
+        <span class="pill warn" style="align-self:start">Modul in Arbeit</span>
+      </div>
+    </div>
+  </section>
+  <section class="block">
+    <div class="wrap"><div style="display:grid;gap:1rem;max-width:760px">
+      <div class="callout"><h3>Dieses Modul ist noch in Arbeit</h3><p id="wipText"></p></div>
+      <div class="cta-row"><button class="btn" type="button" data-resume>Weiterlernen</button><button class="btn ghost" type="button" data-go="kurs">Zur Kursübersicht</button></div>
+    </div></div>
+  </section>
+</div>
+
 <!-- ================= ABSCHLUSSPROJEKT ================= -->
 <div data-view="projekt" hidden>
   <section class="course-head">
     <div class="plus-raster" aria-hidden="true"><svg><rect width="100%" height="100%" fill="url(#plusPat)"/></svg></div>
     <div class="wrap">
-      <div class="eyebrow">AI Engineering · Abschlussprojekt</div>
+      <div class="eyebrow"><span data-c="title">AI Engineering</span> · Abschlussprojekt</div>
       <h1>Zu zweit zum Zertifikat</h1>
       <p class="lede">Nach Modul 13 baut ihr zu zweit einen Assistenten aus euren Projekt-Bausteinen. Ein linkit Expert nimmt ihn im Online-Gespräch ab und bewertet ihn.</p>
       <div id="projLock"></div>
@@ -1139,8 +1163,8 @@ footer.site a{color:inherit}
           <div class="cert-top"><span class="eyebrow">linkit courses</span><svg viewBox="371 10118 2450 746" aria-hidden="true" focusable="false"><g fill="currentColor"><path d="M1179 10860L1266 10860L1266 10122L1179 10122Z"/><path d="M1318 10229L1406 10229L1406 10122L1318 10122ZM1318 10860L1406 10860L1406 10325L1318 10325Z"/><path d="M1536 10325L1536 10410L1538 10410C1575 10345 1633 10313 1712 10313C1747 10313 1776 10318 1800 10327C1823 10337 1842 10350 1857 10368C1871 10385 1881 10405 1887 10429C1893 10453 1896 10479 1896 10508L1896 10859L1808 10859L1808 10498C1808 10465 1798 10439 1779 10419C1760 10400 1733 10390 1700 10390C1673 10390 1649 10395 1630 10403C1610 10411 1594 10423 1581 10438C1568 10453 1558 10471 1551 10491C1545 10511 1542 10534 1542 10558L1542 10859L1454 10859L1454 10325Z"/><path d="M1945 10122L1945 10859L2032 10859L2032 10657L2115 10581L2298 10859L2410 10859L2182 10520L2394 10325L2276 10325L2032 10559L2032 10122Z"/><path d="M2429 10229L2517 10229L2517 10122L2429 10122ZM2429 10860L2517 10860L2517 10325L2429 10325Z"/><path d="M2817 10325L2817 10403L2711 10403L2711 10734C2711 10745 2712 10753 2714 10759C2715 10765 2719 10770 2723 10774C2728 10777 2735 10779 2744 10780C2752 10781 2763 10782 2777 10782L2817 10782L2817 10859L2750 10859C2728 10859 2708 10858 2692 10855C2676 10852 2663 10846 2653 10838C2643 10830 2635 10818 2630 10803C2626 10788 2623 10768 2623 10743L2623 10403L2555 10403L2555 10325L2623 10325L2623 10122L2711 10122L2711 10325L2817 10325Z"/><path d="M757 10859L731 10859L731 10477L1113 10477L1113 10504L757 10504Z"/><path d="M375 10504L375 10477L730 10477L731 10122L757 10122L757 10477L731 10504Z"/></g></svg></div>
           <h3>Zertifikat</h3>
           <p class="cert-name">[Vorname Nachname]</p>
-          <p>hat den Selbstlernkurs <b>AI Engineering: von LLMs zu Agenten</b> mit 14 Modulen abgeschlossen und das Abschlussprojekt zu zweit erfolgreich verteidigt.</p>
-          <dl class="kv cert-kv"><dt>Projekt</dt><dd>[Projekttitel], Track B Instandhaltungs-Assistent</dd><dt>Note</dt><dd id="certGrade">2,0</dd><dt>Abgenommen von</dt><dd>linkit Expert [Name] am [Datum]</dd><dt>Inhalte</dt><dd>Python, Embeddings, Transformer, RAG, Tool Use, Evaluation, Agenten, MCP, Sicherheit</dd></dl>
+          <p>hat den Selbstlernkurs <b data-c="fullTitle">AI Engineering: von LLMs zu Agenten</b> mit 14 Modulen abgeschlossen und das Abschlussprojekt zu zweit erfolgreich verteidigt.</p>
+          <dl class="kv cert-kv"><dt>Projekt</dt><dd data-ct="certProjekt">[Projekttitel], Track B Instandhaltungs-Assistent</dd><dt>Note</dt><dd id="certGrade">2,0</dd><dt>Abgenommen von</dt><dd>linkit Expert [Name] am [Datum]</dd><dt>Inhalte</dt><dd data-ct="certInhalte">Python, Embeddings, Transformer, RAG, Tool Use, Evaluation, Agenten, MCP, Sicherheit</dd></dl>
           <div class="cert-sign"><span>Vorstand linkit e.V.</span><span>Hochschulgruppe für Data Science und Industrie 4.0 am KIT</span></div>
         </div>
       </div>
@@ -1322,7 +1346,7 @@ footer.site a{color:inherit}
   <div class="keyform">
     <div class="keyhead"><h2 id="pilotDlgH">Pilot: was du wissen solltest</h2><button type="button" class="btn ghost small" id="pilotClose">Schließen</button></div>
     <p>Danke, dass du linkit courses testest. Diese Punkte sind bekannt, du musst sie nicht melden:</p>
-    <ul class="keynotes" style="color:var(--fg)">
+    <ul class="keynotes" style="color:var(--fg)" data-ct="pilotListe">
       <li>Einige Folienbilder in den Lerneinheiten zeigen noch Hinweise aus dem Präsenzkurs, etwa „Woche 8“, Teams oder den Showcase-Abend.</li>
       <li>Die Notebooks laufen in Google Colab. Nur Modul 1 und die NumPy-Teile von Modul 3 bis 5 gehen auch direkt hier im Browser.</li>
       <li>Die Lösungs-Notebooks bekommst du im Pilot vom Kursteam.</li>
@@ -1420,6 +1444,33 @@ let toastT;
 function toast(msg) { const t = $("#toast"); t.textContent = msg; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { t.hidden = true; }, 4200); }
 const CHECK = '<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.5 2.5L10 3.5" stroke="currentColor" stroke-width="2" fill="none"/></svg>';
 
+/* ================= Kurs-Konfiguration ================= */
+/* Ohne Angaben gilt der Kurs „AI Engineering“ wie bisher. Ein anderer Kurs bringt in den Daten ein Objekt
+   course mit (siehe /home/claude/ds1/build_ds1_data.py); die Pages-Version kann zusätzlich window.LC_COURSE setzen. */
+const COURSE = Object.assign({
+  id: "ai",
+  title: "AI Engineering",                          // Kurzname, etwa im Pfad über der Modulseite
+  fullTitle: "AI Engineering: von LLMs zu Agenten",
+  key: "linkit-courses-pilot-v1",                   // localStorage: Fortschritt
+  prefix: "",                                       // localStorage: Notebook-Änderungen und Feedback (lc-nb-src-…, lc-fb-…)
+  colab: "ai-engineering/W{nn}/{file}",             // Pfadmuster der Notebooks im Repository, je Modul über m.colab änderbar
+  project: true,                                    // Abschlussprojekt mit Partnerbörse, Abnahme und Zertifikat
+  kulissen: true,                                   // Seite „Hinter den Kulissen“
+  mid: 7,                                           // Modul für den simulierten Stand „Mitten im Kurs“
+  phases: null,                                     // Abschnitte der Kursübersicht, sonst PHASES
+  card: null,                                       // eigene Kurskarte im Katalog: status, text, meta
+  catalog: null,                                    // weitere Karten im Katalog: Objekte oder Namen aus CARDS
+  texts: null,                                      // Inhalte für Elemente mit data-ct (HTML; false blendet aus)
+  feedbackTitle: "Pilot-Feedback linkit courses",
+  fbLabels: null,                                   // abweichende Bezeichnungen im Feedback-Text
+  tutor: null,                                      // Sätze zum Kurs für den Live-Tutor
+  nbHeading: "Selbst rechnen in Colab",             // Überschrift im Schritt Notebook
+  nbIntro: null,                                    // Texte zum Notebook im Browser je Unterstützung (full, partial)
+  projectNote: ""                                   // Hinweis auf der Kursseite, wenn project false ist
+}, DATA.course || {}, window.LC_COURSE || {});
+function avail(n) { return !!MODS[n] && !MODS[n].wip; }                 // Platzhalter („in Arbeit“) zählen nirgends mit
+const AVAIL = MODS.filter(m => m.n <= LAST && !m.wip).map(m => m.n);   // Lernmodule, die es schon gibt
+
 /* ================= Modul-Logik ================= */
 function units(m) { return (m.lern && m.lern.segments) || []; }
 function timing(m, si) { return (m.lern && m.lern.timing && m.lern.timing[si]) || null; }
@@ -1431,7 +1482,7 @@ function mustKeys(m) { const t = tasks(m); const mk = t.filter(x => x.must).map(
 function hasQuiz(m) { return !!(m.quiz && m.quiz.length); }
 function passAt(m) { return Math.max(1, (m.quiz || []).length - 1); }
 
-const KEY = "linkit-courses-pilot-v1";
+const KEY = COURSE.key;
 function blankMod() { return { units: {}, todos: {}, quiz: { a: {}, passed: false }, rev: {}, prior: {}, tempo: null, tut: { done: false, pts: {} } }; }
 function blank() { return { mods: {}, project: { start: {}, submit: {}, submitted: false }, rubric: [3, 3, 2, 3, 3], demo: "" }; }
 function completeMod(n) {
@@ -1445,10 +1496,11 @@ function completeMod(n) {
 function preset(kind) {
   const s = blank();
   if (kind === "mitte") {
-    for (let n = 0; n <= 6; n++) s.mods[n] = completeMod(n);
-    const m7 = blankMod(); m7.units = { 0: { seen: true, check: units(MODS[7])[0] && units(MODS[7])[0].check ? units(MODS[7])[0].check.correct : null } }; m7.todos = { "TODO 1": true }; s.mods[7] = m7;
+    const mid = COURSE.mid;
+    AVAIL.filter(n => n < mid).forEach(n => { s.mods[n] = completeMod(n); });
+    const m7 = blankMod(); m7.units = { 0: { seen: true, check: units(MODS[mid])[0] && units(MODS[mid])[0].check ? units(MODS[mid])[0].check.correct : null } }; m7.todos = { "TODO 1": true }; s.mods[mid] = m7;
   }
-  if (kind === "projekt") for (let n = 0; n <= LAST; n++) s.mods[n] = completeMod(n);
+  if (kind === "projekt") AVAIL.forEach(n => { s.mods[n] = completeMod(n); });
   return s;
 }
 let S = null;
@@ -1459,6 +1511,7 @@ function st(n) { const s = S.mods[n] || (S.mods[n] = blankMod()); if (!s.units) 
 function unitsSeen(n) { const u = units(MODS[n]), s = st(n); return u.filter((_, i) => s.units[i] && s.units[i].seen).length; }
 
 function parts(n) {
+  if (!avail(n)) return [];
   const m = MODS[n], s = st(n), out = [];
   const u = units(m);
   if (u.length) { const c = unitsSeen(n); out.push(["Lerneinheiten", c / u.length, c + "/" + u.length + " Einheiten"]); }
@@ -1469,10 +1522,11 @@ function parts(n) {
   return out;
 }
 function progress(n) { const p = parts(n); return p.length ? p.reduce((a, x) => a + x[1], 0) / p.length : 0; }
-function done(n) { return parts(n).every(x => x[1] >= 1); }
-function modulesDone() { let c = 0; for (let n = 0; n <= LAST; n++) if (done(n)) c++; return c; }
-function projectOpen() { return modulesDone() === LAST + 1; }
-function currentModule() { for (let n = 0; n <= LAST; n++) if (!done(n)) return n; return 14; }
+function done(n) { return avail(n) && parts(n).every(x => x[1] >= 1); }
+function modulesDone() { return AVAIL.filter(n => done(n)).length; }
+function projectOpen() { return COURSE.project && modulesDone() === AVAIL.length; }
+function currentModule() { for (const n of AVAIL) if (!done(n)) return n; return COURSE.project ? 14 : AVAIL[AVAIL.length - 1]; }
+function progressLabel() { return modulesDone() + "/" + AVAIL.length + " Module"; }
 function fmt(x) { x = Math.max(0, Math.round(x || 0)); return Math.floor(x / 60) + ":" + pad(x % 60); }
 function unitDur(m, si) { const t = timing(m, si); if (t) return t.dur; const u = units(m)[si]; return u ? u.beats.reduce((a, b) => a + (b.say || "").split(/\s+/).length, 0) / 2.6 : 0; }
 function moduleMinutes(m) { let s = 0; units(m).forEach((_, i) => s += unitDur(m, i)); return Math.round(s / 60); }
@@ -1483,16 +1537,19 @@ function setHash(t) { try { history.replaceState(null, "", "#" + t); } catch (e)
 function showView(v) {
   curView = v;
   $$("[data-view]").forEach(el => { el.hidden = el.dataset.view !== v; });
-  const navKey = v === "modul" ? "kurs" : v;
+  const navKey = v === "modul" || v === "wip" ? "kurs" : v;
   $$(".mainnav button").forEach(b => b.dataset.go === navKey ? b.setAttribute("aria-current", "page") : b.removeAttribute("aria-current"));
   if (v !== "modul") pauseAudio();
 }
 function go(v, opts = {}) {
+  if (v === "modul" && !avail(opts.m != null ? opts.m : curMod)) v = "wip";
+  if ((v === "projekt" && !COURSE.project) || (v === "kulissen" && !COURSE.kulissen)) v = "kurs";
   showView(v);
   if (v === "kurs") renderKurs();
   if (v === "start") renderCatalog();
   if (v === "projekt") renderProjekt();
   if (v === "modul") { openModule(opts.m != null ? opts.m : curMod, opts.step || "ueberblick"); return; }
+  if (v === "wip") { const n = opts.m != null ? opts.m : curMod; renderWip(n); setHash("m" + n); window.scrollTo({ top: 0 }); return; }
   setHash(v);
   if (!opts.keepScroll) window.scrollTo({ top: 0 });
 }
@@ -1505,58 +1562,99 @@ function resume() {
   else if (u.length && seen === u.length) step = (m.tut && !(s.tut && s.tut.done)) ? "tutorium" : mustKeys(m).every(k => s.todos[k]) ? (hasQuiz(m) ? "selbsttest" : "abschluss") : "notebook";
   go("modul", { m: n, step });
 }
+/* Platzhalter für Module, die noch in Arbeit sind */
+function renderWip(n) {
+  const m = MODS[n];
+  $("#wipCrumb").textContent = "Modul " + n;
+  $("#wipTitle").textContent = "Modul " + n + " · " + m.title;
+  $("#wipLeit").textContent = m.leit || "";
+  const ready = AVAIL.length ? "Fertig sind gerade " + (AVAIL.length === 1 ? "Modul " + AVAIL[0] : "die Module " + AVAIL[0] + " bis " + AVAIL[AVAIL.length - 1]) + "." : "";
+  $("#wipText").textContent = "Modul " + n + " entsteht gerade. Sobald es fertig ist, findest du hier Lerneinheiten, Tutoriumsblatt, Notebook und Selbsttest. " + ready;
+}
 
 /* ================= Katalog ================= */
+const FEATURED = { status: "Verfügbar · ganzjährig", text: "Vom ersten Python-Skript zum eigenen, abgesicherten KI-Assistenten. Alle Sprachmodelle laufen über die KI-Toolbox des KIT.", meta: "14 Module · Abschlussprojekt zu zweit · etwa 4 Std. pro Modul" };
+const CARDS = {
+  vorkurs: { pill: "ok", status: "Verfügbar · Vorkurs", title: "Python in 3 Stunden", text: "Colab, Variablen, Listen, Schleifen und Funktionen, dazu dein Schlüssel für die KI-Toolbox. Modul 0 des AI-Kurses, auch einzeln nutzbar.", meta: "1 Notebook · etwa 3 Stunden", btn: "Vorkurs öffnen", module: 0 },
+  advanced: { pill: "warn", status: "In Planung · 2027", title: "Advanced AI Engineering", text: "Für alle mit Zertifikat aus dem ersten Kurs: Modelle von Grund auf, sauberes Software-Handwerk und Wirkung im Unternehmen.", meta: "Zulassung über das Zertifikat aus Kurs 1", btn: "Vormerken", toast: "Vorgemerkt. Auf der echten Plattform landet das in einer Interessentenliste." },
+  baukasten: { pill: "", status: "Kursbaukasten", title: "Dein Kurs als Nächstes?", text: "linkit-Mitglieder bauen Kurse im selben Format: Skript, Folien mit Notizen, Notebooks, Verständnisfragen. Vertonte Lerneinheiten, Selbsttests, Tutor und Partnerbörse kommen von der Plattform.", meta: "Data Science, Industrie 4.0 und mehr", btn: "So entsteht ein Kurs", go: "kulissen" }
+};
+function cardHTML(c) {
+  const act = c.href ? `<a class="btn ghost" href="${esc(c.href)}">${esc(c.btn)}</a>`
+    : `<button class="btn ghost" type="button"${c.module != null ? ` data-module="${c.module}"` : c.go ? ` data-go="${esc(c.go)}"` : ` data-toast="${esc(c.toast || "")}"`}>${esc(c.btn)}</button>`;
+  return `<article class="course"><div><span class="pill${c.pill ? " " + c.pill : ""}"><span class="dot"></span>${esc(c.status)}</span></div><h3>${esc(c.title)}</h3><p>${esc(c.text)}</p><p class="meta">${esc(c.meta)}</p><div class="spacer"></div>${act}</article>`;
+}
 function renderCatalog() {
-  const d = modulesDone();
+  const d = modulesDone(), N = AVAIL.length, f = Object.assign({}, FEATURED, COURSE.card || {});
   $("#catalog").innerHTML = `
-  <article class="course featured"><div><span class="pill ok"><span class="dot"></span>Verfügbar · ganzjährig</span></div><h3>AI Engineering: von LLMs zu Agenten</h3><p>Vom ersten Python-Skript zum eigenen, abgesicherten KI-Assistenten. Alle Sprachmodelle laufen über die KI-Toolbox des KIT.</p><p class="meta">14 Module · Abschlussprojekt zu zweit · etwa 4 Std. pro Modul</p><div class="spacer"></div><div class="progress-line"><div class="meter" style="flex:1"><span style="width:${d / (LAST + 1) * 100}%"></span></div><span class="tnum">${d}/${LAST + 1} Module</span></div><button class="btn" type="button" data-resume>Weiterlernen</button></article>
-  <article class="course"><div><span class="pill ok"><span class="dot"></span>Verfügbar · Vorkurs</span></div><h3>Python in 3 Stunden</h3><p>Colab, Variablen, Listen, Schleifen und Funktionen, dazu dein Schlüssel für die KI-Toolbox. Modul 0 des AI-Kurses, auch einzeln nutzbar.</p><p class="meta">1 Notebook · etwa 3 Stunden</p><div class="spacer"></div><button class="btn ghost" type="button" data-module="0">Vorkurs öffnen</button></article>
-  <article class="course"><div><span class="pill warn"><span class="dot"></span>In Planung · 2027</span></div><h3>Advanced AI Engineering</h3><p>Für alle mit Zertifikat aus dem ersten Kurs: Modelle von Grund auf, sauberes Software-Handwerk und Wirkung im Unternehmen.</p><p class="meta">Zulassung über das Zertifikat aus Kurs 1</p><div class="spacer"></div><button class="btn ghost" type="button" data-toast="Vorgemerkt. Auf der echten Plattform landet das in einer Interessentenliste.">Vormerken</button></article>
-  <article class="course"><div><span class="pill"><span class="dot"></span>Kursbaukasten</span></div><h3>Dein Kurs als Nächstes?</h3><p>linkit-Mitglieder bauen Kurse im selben Format: Skript, Folien mit Notizen, Notebooks, Verständnisfragen. Vertonte Lerneinheiten, Selbsttests, Tutor und Partnerbörse kommen von der Plattform.</p><p class="meta">Data Science, Industrie 4.0 und mehr</p><div class="spacer"></div><button class="btn ghost" type="button" data-go="kulissen">So entsteht ein Kurs</button></article>`;
+  <article class="course featured"><div><span class="pill ok"><span class="dot"></span>${esc(f.status)}</span></div><h3>${esc(COURSE.fullTitle)}</h3><p>${esc(f.text)}</p><p class="meta">${esc(f.meta)}</p><div class="spacer"></div><div class="progress-line"><div class="meter" style="flex:1"><span style="width:${d / N * 100}%"></span></div><span class="tnum">${d}/${N} Module</span></div><button class="btn" type="button" data-resume>Weiterlernen</button></article>`
+    + (COURSE.catalog || ["vorkurs", "advanced", "baukasten"]).map(c => "\n  " + cardHTML(typeof c === "string" ? CARDS[c] : c)).join("");
 }
 
 /* ================= Mein Kurs ================= */
 function statusPill(n) {
+  if (!avail(n)) return '<span class="pill warn">Modul in Arbeit</span>';
   if (done(n)) return '<span class="pill ok"><span class="dot"></span>Abgeschlossen</span>';
   const p = progress(n);
   return p > 0 ? `<span class="pill live"><span class="dot"></span>In Arbeit · ${pct(p)}</span>` : '<span class="pill">Offen</span>';
 }
+function weekRow(n, cur) {
+  const m = MODS[n];
+  if (!avail(n)) return `<div class="week-row locked" aria-disabled="true"><span class="wn">${pad(n)}</span><span><span class="wt">${esc(m.title)}</span><span class="wq">${esc(m.leit || "")}</span></span><span class="status">${statusPill(n)}</span></div>`;
+  return `<button type="button" class="week-row${n === cur ? " current" : ""}" data-module="${n}"><span class="wn">${pad(n)}</span><span><span class="wt">${esc(m.title)}</span><span class="wq">${esc(m.summary || m.leit || "")}</span>${m.projectBlock ? `<span class="ms">${esc(m.projectBlock.title || "Projekt-Baustein")}</span>` : ""}</span><span class="status">${statusPill(n)}</span></button>`;
+}
 function renderKurs() {
-  const d = modulesDone(), cur = currentModule(), open = projectOpen();
-  $("#kursHead").innerHTML = `<span class="seg"><b>${d} von ${LAST + 1} Modulen</b><span class="meter${d === LAST + 1 ? " ok" : ""}" style="width:140px"><span style="width:${d / (LAST + 1) * 100}%"></span></span></span><span>${open ? '<span class="pill ok"><span class="dot"></span>Projektphase offen</span>' : `Projektphase nach Modul ${LAST}`}</span>`;
-  $("#resumeBtn").textContent = cur <= LAST ? `Weiter mit Modul ${cur}: ${MODS[cur].title.split(":")[0]}` : "Weiter zum Abschlussprojekt";
+  const d = modulesDone(), cur = currentModule(), open = projectOpen(), N = AVAIL.length, wip = MODS.filter(m => m.wip).length;
+  $("#kursHead").innerHTML = `<span class="seg"><b>${d} von ${N} Modulen</b><span class="meter${d === N ? " ok" : ""}" style="width:140px"><span style="width:${d / N * 100}%"></span></span></span><span>${open ? '<span class="pill ok"><span class="dot"></span>Projektphase offen</span>' : COURSE.project ? `Projektphase nach Modul ${LAST}` : wip ? `${wip} weitere Module in Arbeit` : ""}</span>`;
+  $("#resumeBtn").textContent = cur <= LAST ? `${done(cur) ? "Zu Modul" : "Weiter mit Modul"} ${cur}: ${MODS[cur].title.split(":")[0]}` : "Weiter zum Abschlussprojekt";
   let h = "";
-  PHASES.forEach(ph => {
+  (COURSE.phases || PHASES).forEach(ph => {
     h += `<div class="phase"><div class="phase-title"><h2 style="font-size:var(--s-1)">${ph.t}</h2></div>`;
-    ph.w.forEach(n => {
-      const m = MODS[n];
-      h += `<button type="button" class="week-row${n === cur ? " current" : ""}" data-module="${n}"><span class="wn">${pad(n)}</span><span><span class="wt">${esc(m.title)}</span><span class="wq">${esc(m.summary || m.leit || "")}</span>${m.projectBlock ? `<span class="ms">${esc(m.projectBlock.title || "Projekt-Baustein")}</span>` : ""}</span><span class="status">${statusPill(n)}</span></button>`;
-    });
+    ph.w.forEach(n => { h += weekRow(n, cur); });
     h += "</div>";
   });
-  const pRow = (code, t, q, status, attr) => `<button type="button" class="proj-row" ${attr}><span class="wn">${code}</span><span><span class="wt">${t}</span><span class="wq">${q}</span></span><span class="status">${status}</span></button>`;
-  const lock = open ? "" : `<span class="pill">ab Modul ${LAST}</span>`;
-  h += `<div class="phase"><div class="phase-title"><h2 style="font-size:var(--s-1)">Abschlussprojekt zu zweit</h2></div>`;
-  h += pRow("P1", "Partner finden", "Über die Partnerbörse jemanden finden, der den Kurs gerade auch abschließt", lock || '<span class="pill live"><span class="dot"></span>Offen</span>', 'data-goto="p-partner"');
-  h += pRow("14", esc(MODS[14].title), esc(MODS[14].summary || ""), open ? statusPill(14) : lock, 'data-module="14"');
-  h += pRow("P2", "Abnahme durch linkit Expert", "45 Minuten online: Demo, Zahlen, Fragen an beide, Bewertung nach festem Bogen", S.project.submitted ? '<span class="pill live"><span class="dot"></span>Angemeldet</span>' : (lock || '<span class="pill">Offen</span>'), 'data-goto="p-abnahme"');
-  h += pRow("P3", "Zertifikat", "Mit Note, Projekt und Expert, unterschrieben vom Vorstand", lock || '<span class="pill">Offen</span>', 'data-goto="p-zertifikat"');
-  h += "</div>";
+  if (COURSE.project) {
+    const pRow = (code, t, q, status, attr) => `<button type="button" class="proj-row" ${attr}><span class="wn">${code}</span><span><span class="wt">${t}</span><span class="wq">${q}</span></span><span class="status">${status}</span></button>`;
+    const lock = open ? "" : `<span class="pill">ab Modul ${LAST}</span>`;
+    h += `<div class="phase"><div class="phase-title"><h2 style="font-size:var(--s-1)">Abschlussprojekt zu zweit</h2></div>`;
+    h += pRow("P1", "Partner finden", "Über die Partnerbörse jemanden finden, der den Kurs gerade auch abschließt", lock || '<span class="pill live"><span class="dot"></span>Offen</span>', 'data-goto="p-partner"');
+    h += pRow("14", esc(MODS[14].title), esc(MODS[14].summary || ""), open ? statusPill(14) : lock, 'data-module="14"');
+    h += pRow("P2", "Abnahme durch linkit Expert", "45 Minuten online: Demo, Zahlen, Fragen an beide, Bewertung nach festem Bogen", S.project.submitted ? '<span class="pill live"><span class="dot"></span>Angemeldet</span>' : (lock || '<span class="pill">Offen</span>'), 'data-goto="p-abnahme"');
+    h += pRow("P3", "Zertifikat", "Mit Note, Projekt und Expert, unterschrieben vom Vorstand", lock || '<span class="pill">Offen</span>', 'data-goto="p-zertifikat"');
+    h += "</div>";
+  }
   $("#weekList").innerHTML = h;
   renderKursSide();
 }
 function renderKursSide() {
   const host = $("#kursSide"); if (!host) return;
-  const d = modulesDone(), rest = LAST + 1 - d;
+  const d = modulesDone(), rest = AVAIL.length - d;
+  const chat = `<div class="box"><h3>Kurs-Chat</h3><p>Ein Chat für alle, die den Kurs gerade machen, das ganze Jahr. Das Kursteam liest dienstags und freitags mit.</p><button class="btn ghost small" type="button" data-toast="Auf der echten Plattform führt der Knopf in den Kurs-Chat.">Zum Kurs-Chat</button></div>`;
+  if (!COURSE.project) {
+    const wip = MODS.filter(m => m.wip).length;
+    host.innerHTML = `
+  <div class="box tint"><h3>Abschlussprojekt</h3><p>${esc(COURSE.projectNote)}</p></div>
+  <div class="box"><h3>Dein Tempo</h3><p>Empfohlen ist ein Modul pro Woche, etwa vier Stunden.</p><p class="muted" style="font-size:var(--s--1)">${wip ? `Fertig sind ${AVAIL.length} von ${MODS.length} Modulen. Die übrigen kommen nach und nach dazu.` : rest ? `Noch ${rest} ${rest === 1 ? "Modul" : "Module"} offen.` : "Alle Module geschafft."}</p></div>
+  ${chat}`;
+    return;
+  }
   const searching = pbDocs.filter(x => x.status !== "gefunden" && x.id !== uid).length;
   const live = pbMode === "live" || pbMode === "readonly";
   host.innerHTML = `
   <div class="box tint"><h3>Abschlussprojekt</h3>${projectOpen() ? '<p>Du hast alle Module abgeschlossen. Such dir jetzt einen Partner.</p>' : `<p>Noch ${rest} ${rest === 1 ? "Modul" : "Module"} bis zur Projektphase. Die Partnerbörse kannst du dir schon ansehen.</p>`}<p class="muted" style="font-size:var(--s--1)">${live ? `<b class="tnum">${searching}</b> ${searching === 1 ? "Person sucht" : "Personen suchen"} gerade einen Partner.` : "Partnerbörse: in der Testversion nicht verbunden."}</p><button class="btn small" type="button" data-goto="p-partner">Zur Partnerbörse</button></div>
   <div class="box"><h3>Dein Tempo</h3><p>Empfohlen ist ein Modul pro Woche, etwa vier Stunden.</p><p class="muted" style="font-size:var(--s--1)">${rest ? `Bei diesem Tempo bist du in etwa ${rest} ${rest === 1 ? "Woche" : "Wochen"} in der Projektphase. Pausen in der Klausurenzeit sind eingeplant.` : "Alle Module geschafft."}</p></div>
-  <div class="box"><h3>Kurs-Chat</h3><p>Ein Chat für alle, die den Kurs gerade machen, das ganze Jahr. Das Kursteam liest dienstags und freitags mit.</p><button class="btn ghost small" type="button" data-toast="Auf der echten Plattform führt der Knopf in den Kurs-Chat.">Zum Kurs-Chat</button></div>
-  <div class="box"><h3>Zertifikat</h3><dl class="kv"><dt>Module</dt><dd class="tnum">${d} von ${LAST + 1}</dd><dt>Projekt</dt><dd>${S.project.submitted ? "zur Abnahme angemeldet" : "offen"}</dd><dt>Bewertung</dt><dd>durch einen linkit Expert</dd></dl></div>`;
+  ${chat}
+  <div class="box"><h3>Zertifikat</h3><dl class="kv"><dt>Module</dt><dd class="tnum">${d} von ${AVAIL.length}</dd><dt>Projekt</dt><dd>${S.project.submitted ? "zur Abnahme angemeldet" : "offen"}</dd><dt>Bewertung</dt><dd>durch einen linkit Expert</dd></dl></div>`;
 }
+
+/* ================= Kursabhängige Texte ================= */
+(function applyCourse() {
+  $$("[data-c]").forEach(el => { const v = COURSE[el.dataset.c]; if (v != null) el.textContent = v; });
+  const T = COURSE.texts || {};
+  $$("[data-ct]").forEach(el => { const v = T[el.dataset.ct]; if (v === false) el.hidden = true; else if (v != null) el.innerHTML = v; });
+  if (!COURSE.project) $$('.mainnav [data-go="projekt"]').forEach(b => { b.hidden = true; });
+  if (!COURSE.kulissen) $$('.mainnav [data-go="kulissen"]').forEach(b => { b.hidden = true; });
+})();
 
 /* ================= Modulseite ================= */
 function stepsFor(m) {
@@ -1596,7 +1694,7 @@ function openModule(n, step) {
 }
 function renderSegs() {
   $("#weekSegs").innerHTML = parts(curMod).map(([l, v, t]) => `<span class="seg"><b>${l}</b><span class="meter${v >= 1 ? " ok" : ""}"><span style="width:${v * 100}%"></span></span><span class="muted tnum">${t}</span></span>`).join("") + (done(curMod) ? '<span class="pill ok"><span class="dot"></span>Modul abgeschlossen</span>' : "");
-  $("#whoProgress").textContent = modulesDone() + "/" + (LAST + 1) + " Module";
+  $("#whoProgress").textContent = progressLabel();
 }
 function stepDone(id) {
   const m = MODS[curMod], s = st(curMod);
@@ -1650,8 +1748,9 @@ function renderOverview() {
   $("#ovH").textContent = n === 14 ? "Eure Werkstatt auf einen Blick" : "Dein Modul auf einen Blick";
   $("#ovHook").textContent = (L && L.intro && L.intro.hook) || m.summary || "";
   $("#ovGoals").innerHTML = (m.goals || []).map(g => `<li>${rich(g)}</li>`).join("");
+  $("#ovGoals").parentElement.hidden = !(m.goals || []).length;   // Modul, dessen Lernziele noch entstehen
   const rows = [];
-  if (units(m).length) rows.push(["Lerneinheiten", units(m).length + " vertonte Einheiten mit Kurzchecks", "etwa " + moduleMinutes(m) + " Min."]);
+  if (units(m).length) rows.push(["Lerneinheiten", units(m).length + (L && L.timing ? " vertonte" : "") + " Einheiten mit Kurzchecks", "etwa " + moduleMinutes(m) + " Min."]);
   if (m.tut) rows.push(["Tutoriumsblatt", m.tut.tasks.length + " Aufgaben zur Theorie von Hand, Lösungen im Anhang", "etwa " + m.tut.minutes + " Min."]);
   if (n === 0) rows.push(["Selbstlern-Notebook", "Python-Grundlagen und Setup-Check", "etwa 3 Std."]);
   else if (tasks(m).length) rows.push(["Notebook", tasks(m).length + (n === 14 ? " Schritte" : " Aufgaben mit Selbsttests und gestuften Hilfen"), n === 14 ? "2 bis 4 Wochen" : "etwa 2 Std."]);
@@ -1813,7 +1912,7 @@ function renderScene(eff) {
     case "slide": {
       const N = (m.slides || []).length || 1, idx = Math.max(0, Math.min(N - 1, (sh.n || 1) - 1));
       sc.className = "scene bg-slide";
-      sc.innerHTML = `<div class="slideimg" role="img" aria-label="Folie ${idx + 1}" style="background-image:url('slides/w${pad(V.m)}.webp');background-size:100% ${N * 100}%;background-position:0 ${N > 1 ? idx / (N - 1) * 100 : 0}%"></div>`;
+      sc.innerHTML = `<div class="slideimg" role="img" aria-label="Folie ${idx + 1}" style="background-image:url('${m.slideImg || "slides/w" + pad(V.m) + ".webp"}');background-size:100% ${N * 100}%;background-position:0 ${N > 1 ? idx / (N - 1) * 100 : 0}%"></div>`;
       break;
     }
     case "title": sc.innerHTML = titleHTML(sh.title, sh.subtitle); break;
@@ -1977,9 +2076,10 @@ function hintHTML(label) {
 const REPO = "juliankunz18/linkit-courses";
 const COLAB_BASE = "https://colab.research.google.com/github/" + REPO + "/blob/main/ai-engineering/";
 const REPO_TREE = "https://github.com/" + REPO + "/tree/main/ai-engineering/";
-function colabURL(f) { const mm = String(f).match(/^W(\d\d)_/); return mm ? COLAB_BASE + "W" + mm[1] + "/" + encodeURIComponent(f) : "https://colab.research.google.com/"; }
+function colabPattern(m) { return m.colab || COURSE.colab; }   // etwa "ai-engineering/W{nn}/{file}"
+function colabURL(f, m) { const mm = String(f).match(/^W(\d\d)_/); return mm ? "https://colab.research.google.com/github/" + REPO + "/blob/main/" + colabPattern(m).replace("{nn}", mm[1]).replace("{file}", encodeURIComponent(f)) : "https://colab.research.google.com/"; }
 function renderNotebook() {
-  const m = MODS[curMod], n = curMod, s = st(n), isDone = done(n);
+  const m = MODS[curMod], n = curMod, s = st(n), isDone = done(n), repoDir = colabPattern(m).split("/")[0];
   const files = (m.notebooks || []).map(f => [f, nbKind(f)]).filter(x => x[1]);
   files.sort((a, b) => (/_Loesung/.test(a[0]) ? 1 : 0) - (/_Loesung/.test(b[0]) ? 1 : 0));
   const small = t => `<p class="muted" style="font-size:var(--s--1)">${t}</p>`;
@@ -1989,17 +2089,17 @@ function renderNotebook() {
     if (sol) body = isDone
       ? `<button class="btn ghost" type="button" disabled>Freigeschaltet</button>${small("Im Pilot bekommst du die Lösung vom Kursteam. Auf der Plattform öffnet dieser Knopf sie direkt.")}`
       : `<button class="btn ghost" type="button" disabled>Nach dem Abschluss</button>${small("Die Lösung erscheint, sobald du das Modul abgeschlossen hast. Bis dahin helfen dir die gestuften Hilfen.")}`;
-    else body = `<a class="btn" href="${colabURL(f)}" target="_blank" rel="noopener">In Colab öffnen</a>${txt ? small(txt) : ""}${proj ? small(`Die Daten stehen in den <a href="${REPO_TREE}W07" target="_blank" rel="noopener">Startpaketen A und B</a>. Beim ersten Start fragt das Notebook danach.`) : ""}`;
+    else body = `<a class="btn" href="${colabURL(f, m)}" target="_blank" rel="noopener">In Colab öffnen</a>${txt ? small(txt) : ""}${proj ? small(`Die Daten stehen in den <a href="${REPO_TREE}W07" target="_blank" rel="noopener">Startpaketen A und B</a>. Beim ersten Start fragt das Notebook danach.`) : ""}`;
     return `<div class="filecard"><span class="eyebrow">${kind}</span><span class="fname">${esc(f)}</span>${body}</div>`;
   }).join("");
   if (n === 0) h += `<div class="filecard"><span class="eyebrow">Toolbox-Test</span><span class="fname">KIT-Toolbox_Test_v3.ipynb</span><a class="btn ghost" href="${COLAB_BASE}KIT-Toolbox/KIT-Toolbox_Test_v3.ipynb" target="_blank" rel="noopener">In Colab öffnen</a>${small("Prüft nach der Einrichtung, ob Schlüssel, Modelle und Tool Calling funktionieren. Jede Zelle meldet ✅ oder ❌.")}</div>`;
-  h += `<div class="callout"><h3>So arbeitest du gut</h3><ul style="margin:0;padding-left:1.1rem;display:grid;gap:.3rem;font-size:var(--s--1)"><li>Zuerst <b>Datei → Kopie in Drive speichern</b>, sonst ist deine Arbeit nach einer Pause weg.</li><li><b>Erst probieren, dann Hilfe:</b> Nach etwa zehn Minuten ohne Fortschritt öffnest du die erste gestufte Hilfe. Die nächste erst, wenn die vorige nicht reicht.</li><li>„In Colab öffnen“ lädt das Notebook aus dem <a href="https://github.com/${REPO}/tree/main/ai-engineering" target="_blank" rel="noopener">Kurs-Repository auf GitHub</a>.</li></ul></div>`;
+  h += `<div class="callout"><h3>So arbeitest du gut</h3><ul style="margin:0;padding-left:1.1rem;display:grid;gap:.3rem;font-size:var(--s--1)"><li>Zuerst <b>Datei → Kopie in Drive speichern</b>, sonst ist deine Arbeit nach einer Pause weg.</li><li><b>Erst probieren, dann Hilfe:</b> Nach etwa zehn Minuten ohne Fortschritt öffnest du die erste gestufte Hilfe. Die nächste erst, wenn die vorige nicht reicht.</li><li>„In Colab öffnen“ lädt das Notebook aus dem <a href="https://github.com/${REPO}/tree/main/${repoDir}" target="_blank" rel="noopener">Kurs-Repository auf GitHub</a>.</li></ul></div>`;
   $("#nbFiles").innerHTML = h;
   $("#nbIntro").innerHTML = nbIntroHTML(m);
   if (NB.n !== n) { $("#nbRun").hidden = true; }
   else if (!$("#nbRun").hidden && $("#nbOpen")) $("#nbOpen").hidden = true;
   renderKeyBadge();
-  $("#nbH").textContent = n === 0 ? "Einrichtung in sieben Schritten" : n === 14 ? "Eure Werkstatt-Schritte" : "Selbst rechnen in Colab";
+  $("#nbH").textContent = n === 0 ? "Einrichtung in sieben Schritten" : n === 14 ? "Eure Werkstatt-Schritte" : COURSE.nbHeading;
   $("#todoH").textContent = n === 0 ? "Schritte abhaken" : "Aufgaben abhaken";
   const faqTags = new Set((m.faq || []).map(f => f.tag));
   $("#todoList").innerHTML = tasks(m).map(t => { const id = "td-" + esc(t.key).replace(/\s/g, "_"); return `<li class="todo"><input type="checkbox" id="${id}" data-todo="${esc(t.key)}"${s.todos[t.key] ? " checked" : ""}><label for="${id}"><span class="tn">${esc(t.label)}${t.must && mustKeys(m).length < tasks(m).length ? ' <span class="must">· Pflicht</span>' : ""}</span><span class="tt">${rich(t.title)}</span></label>${faqTags.has(t.label) ? `<button type="button" class="linkbtn help" data-help="${esc(t.label)}">Häufige Fehler</button>` : "<span></span>"}<div class="hintbox-wrap" data-hintwrap="${esc(t.label)}" style="grid-column:2 / -1">${hintHTML(t.label)}</div>${t.result ? `<details><summary>Ergebnis zum Abgleich</summary><p>${rich(t.result)}</p></details>` : ""}</li>`; }).join("");
@@ -2052,9 +2152,10 @@ function renderFinish() {
   const items = parts(n).map(([l, v, t]) => [v >= 1, (LBL[l] || LBL.Notebook)[0], t, (LBL[l] || LBL.Notebook)[1]]);
   $("#fnH").textContent = "Modul " + n + " abschließen";
   $("#finishList").innerHTML = items.map(([ok, t, v, step]) => `<li><span class="tick${ok ? " on" : ""}" aria-hidden="true">${ok ? CHECK : ""}</span><span><b>${t}</b> <span class="muted tnum">· ${v}</span><span class="sr-only">${ok ? " erledigt" : " offen"}</span></span>${ok ? "<span></span>" : `<button type="button" class="linkbtn" data-step-go="${step}">Öffnen</button>`}</li>`).join("");
-  const isDone = done(n);
+  const isDone = done(n), nextWip = n < 14 && !avail(n + 1);
+  const wipNote = nextWip ? "Modul " + (n + 1) + " ist noch in Arbeit und erscheint in der Kursübersicht, sobald es fertig ist." : "";
   $("#finishBanner").innerHTML = isDone
-    ? `<div class="callout ok"><h3>Modul ${n} geschafft.</h3><p>${n === LAST ? "Das war das letzte Lernmodul. Jetzt geht es zu zweit weiter: Such dir in der Partnerbörse einen Partner." : n === 14 ? "Eure Werkstatt ist fertig. Meldet euch zur Abnahme an." : (m.notebooks || []).some(f => /_Loesung/.test(f)) ? "Die Lösung zum Notebook ist jetzt freigeschaltet." : "Weiter geht es mit dem nächsten Modul."}</p></div>`
+    ? `<div class="callout ok"><h3>Modul ${n} geschafft.</h3><p>${n === LAST ? "Das war das letzte Lernmodul. Jetzt geht es zu zweit weiter: Such dir in der Partnerbörse einen Partner." : n === 14 ? "Eure Werkstatt ist fertig. Meldet euch zur Abnahme an." : (m.notebooks || []).some(f => /_Loesung/.test(f)) ? "Die Lösung zum Notebook ist jetzt freigeschaltet." + (wipNote ? " " + wipNote : "") : wipNote || "Weiter geht es mit dem nächsten Modul."}</p></div>`
     : `<div class="callout"><h3>Noch ${items.filter(x => !x[0]).length} von ${items.length} Punkten offen</h3><p>Keine Frist. Mach weiter, wenn es dir passt.</p></div>`;
   const u = units(m), checked = u.filter((x, i) => x.check && s.units[i] && s.units[i].check != null), right = checked.filter(x => s.units[u.indexOf(x)].check === x.check.correct).length;
   $("#finishSummary").innerHTML = (m.lern && m.lern.summary) ? `<div class="box tint"><span class="eyebrow">Zum Festigen</span><h3>In zwei, drei Tagen noch einmal ansehen</h3><p>Verteiltes Wiederholen hilft mehr als einmal lange Lernen. Die Zusammenfassung hat alle Kernaussagen und das Formelblatt dieses Moduls.${checked.length ? ` Deine Kurzchecks: ${right} von ${checked.length} richtig.` : ""}</p><div><button class="btn small" type="button" data-step-go="zusammenfassung">Zusammenfassung öffnen</button></div></div>` : "";
@@ -2070,7 +2171,8 @@ function renderFinish() {
   $("#fnBack").dataset.stepGo = pv || "ueberblick";
   const fnNext = $("#fnNext");
   delete fnNext.dataset.module; delete fnNext.dataset.goto; delete fnNext.dataset.go;
-  if (n < LAST) { fnNext.textContent = "Weiter mit Modul " + (n + 1); fnNext.dataset.module = String(n + 1); }
+  if (n < LAST && nextWip) { fnNext.textContent = "Zur Kursübersicht"; fnNext.dataset.go = "kurs"; }
+  else if (n < LAST) { fnNext.textContent = "Weiter mit Modul " + (n + 1); fnNext.dataset.module = String(n + 1); }
   else if (n === LAST) { fnNext.textContent = "Zur Partnerbörse"; fnNext.dataset.goto = "p-partner"; }
   else { fnNext.textContent = "Zur Abnahme anmelden"; fnNext.dataset.goto = "p-einreichen"; }
 }
@@ -2184,8 +2286,27 @@ async function testKey() {
 }
 
 /* ================= Notebook im Kurs ================= */
-const NB = { n: null, data: null, ready: false, loading: false, count: 0, running: false, stop: false };
-function nbStoreKey(n) { return "lc-nb-src-w" + pad(n); }
+const NB = { n: null, data: null, ready: false, loading: false, count: 0, running: false, stop: false, dataFor: null, files: {} };
+function nbStoreKey(n) { return "lc-nb-src-" + COURSE.prefix + "w" + pad(n); }
+/* Datendateien des Notebooks (m.nbrun.data: [{src, path}]) vor dem ersten Ausführen ins Pyodide-Dateisystem schreiben,
+   ebenso nach „Neu starten“, „Original wiederherstellen“ und einem Wechsel des Notebooks */
+async function nbData() {
+  const r = NB.n != null && MODS[NB.n] ? MODS[NB.n].nbrun : null, files = (r && r.data) || [];
+  if (!files.length || NB.dataFor === NB.n) return true;
+  try {
+    pyStatus("Daten werden bereitgestellt …");
+    for (const f of files) {
+      if (!NB.files[f.src]) { const res = await fetch(f.src); if (!res.ok) throw new Error(f.src + " (" + res.status + ")"); NB.files[f.src] = new Uint8Array(await res.arrayBuffer()); }
+      LCPy.writeFile(f.path, NB.files[f.src]);
+    }
+    NB.dataFor = NB.n;
+    pyStatus("Python bereit, die Daten liegen im Ordner " + files[0].path.split("/")[0] + ".", "ok");
+    return true;
+  } catch (e) {
+    pyStatus("Die Daten für dieses Notebook konnten nicht geladen werden: " + String(e && e.message || e).slice(0, 160) + ". Lade die Seite neu oder öffne das Notebook in Colab.", "bad");
+    return false;
+  }
+}
 function nbEdits(n) { try { return JSON.parse(localStorage.getItem(nbStoreKey(n)) || "{}"); } catch (e) { return {}; } }
 function nbSaveEdit(n, i, src) {
   const e = nbEdits(n), orig = NB.data && NB.data.cells[i] ? NB.data.cells[i].src : null;
@@ -2195,10 +2316,10 @@ function nbSaveEdit(n, i, src) {
 // Stand 09.10.2026: Die KI-Toolbox blockiert Zugriffe aus dem Browser (CORS). Mit Freigabe des SCC auf true setzen
 // und in build_nb.py die Module wieder freischalten.
 const TOOLBOX_IN_BROWSER = false;
-const SUPPORT_TXT = {
+const SUPPORT_TXT = Object.assign({
   full: ["Alternative: direkt hier im Kurs", "Dieses Notebook braucht keine KI-Toolbox. Alle Zellen laufen auch hier im Browser, ohne Colab und ohne Anmeldung. Deine Änderungen bleiben in diesem Browser gespeichert."],
   partial: ["Alternative: Teile direkt hier im Kurs", "Die Rechnungen mit NumPy laufen auch hier im Browser. Zellen mit PyTorch, Transformers oder Aufrufen der KI-Toolbox sind markiert und laufen nur in Colab. Für das ganze Notebook nimm Colab."]
-};
+}, COURSE.nbIntro || {});
 const COLAB_TXT = {
   toolbox: "Dieses Notebook ruft die KI-Toolbox auf. Aus dem Browser lässt die Toolbox das im Moment nicht zu, deshalb läuft es in Colab. Deinen Schlüssel hinterlegst du dort einmal als Secret KIT_TOOLBOX_KEY (siehe Modul 0).",
   packages: "Dieses Notebook startet eigene Server oder braucht große Pakete. Es läuft nur in Colab."
@@ -2242,7 +2363,7 @@ async function nbOpen() {
   $("#nbRun").hidden = false; $("#nbOpen") && ($("#nbOpen").hidden = true);
   if (NB.n !== n || !NB.data) {
     $("#nbCells").innerHTML = '<p class="muted">Notebook wird geladen …</p>';
-    try { const r = await fetch("nb/w" + pad(n) + ".json"); if (!r.ok) throw new Error(r.status); NB.data = await r.json(); NB.n = n; }
+    try { const r = await fetch(m.nbrun.src || "nb/w" + pad(n) + ".json"); if (!r.ok) throw new Error(r.status); NB.data = await r.json(); NB.n = n; NB.dataFor = null; }
     catch (e) { $("#nbCells").innerHTML = '<p class="muted">Das Notebook konnte nicht geladen werden. Öffne es in Colab.</p>'; return; }
     if (NB.ready) { try { await LCPy.reset(); } catch (er) { /* egal */ } pyStatus("Python bereit. Neues Notebook, Variablen sind zurückgesetzt.", "ok"); }
     NB.count = 0;
@@ -2291,6 +2412,7 @@ async function nbRunCell(i) {
   const cell = NB.data.cells[i]; if (!cell || cell.t !== "code") return true;
   const ta = $(`[data-nbsrc="${i}"]`), out = $("#nbo-" + i), cnt = $("#nbc-" + i), box = ta.closest(".nbcell");
   if (!(await pyEnsure())) return false;
+  if (!(await nbData())) return false;
   NB.running = true; box.classList.add("running"); cnt.textContent = "[*]"; out.innerHTML = "";
   $("#pyStop").disabled = false;
   let ok = false;
@@ -2320,6 +2442,7 @@ async function nbRunAll() {
 async function nbFilesRender() {
   const box = $("#pyFilesList");
   if (!NB.ready) { box.innerHTML = '<p class="muted">Starte zuerst Python.</p>'; return; }
+  await nbData();
   let list = [];
   try { list = await LCPy.listFiles("."); } catch (e) { list = []; }
   list = (list || []).filter(f => !f.dir && !/^\./.test(f.path) && !/__pycache__/.test(f.path));
@@ -2337,15 +2460,15 @@ document.addEventListener("click", async e => {
     case "keyDelete": KEYS.forEach(k => keySet(k, "")); $("#keyInput").value = ""; $("#keyInput2").value = ""; pushSecrets(); renderKeyBadge(); keyMsg("Schlüssel gelöscht.", "ok"); break;
     case "keyShow": { const i = $("#keyInput"); i.type = i.type === "password" ? "text" : "password"; b.textContent = i.type === "password" ? "Anzeigen" : "Verbergen"; break; }
     case "nbOpen": nbOpen(); break;
-    case "tutPdf": { const T = MODS[curMod].tut; if (!T) break; b.disabled = true; try { const r = await fetch(T.pdf); if (!r.ok) throw new Error(r.status); await lcSave("Tutoriumsblatt_" + pad(curMod) + ".pdf", await r.blob()); } catch (e) { toast("Das PDF konnte nicht geladen werden."); } finally { b.disabled = false; } break; }
+    case "tutPdf": { const T = MODS[curMod].tut; if (!T) break; b.disabled = true; try { const r = await fetch(T.pdf); if (!r.ok) throw new Error(r.status); await lcSave(T.pdf.split("/").pop(), await r.blob()); } catch (e) { toast("Das PDF konnte nicht geladen werden."); } finally { b.disabled = false; } break; }
     case "tutReveal": TUTVIEW.revealed.add(curMod); renderTutView(); break;
     case "nbClose": $("#nbRun").hidden = true; $("#nbOpen") && ($("#nbOpen").hidden = false); break;
-    case "pyStart": pyEnsure(); break;
+    case "pyStart": if (await pyEnsure()) await nbData(); break;
     case "pyRunAll": nbRunAll(); break;
     case "pyStop": NB.stop = true; if (window.LCPy && LCPy.interrupt) LCPy.interrupt(); break;
-    case "pyRestart": if (NB.ready) { await LCPy.reset(); NB.count = 0; $$("#nbCells .nbcount").forEach(c => { c.textContent = "[ ]"; }); pyStatus("Neu gestartet. Variablen sind gelöscht, Dateien bleiben.", "ok"); } break;
+    case "pyRestart": if (NB.ready) { await LCPy.reset(); NB.count = 0; NB.dataFor = null; $$("#nbCells .nbcount").forEach(c => { c.textContent = "[ ]"; }); pyStatus("Neu gestartet. Variablen sind gelöscht, Dateien bleiben.", "ok"); } break;
     case "pyFiles": { const p = $("#pyFilesPanel"); p.hidden = !p.hidden; b.setAttribute("aria-expanded", String(!p.hidden)); if (!p.hidden) nbFilesRender(); break; }
-    case "nbReset": try { localStorage.removeItem(nbStoreKey(NB.n)); } catch (er) { /* egal */ } nbRender(); toast("Originalfassung wiederhergestellt."); break;
+    case "nbReset": try { localStorage.removeItem(nbStoreKey(NB.n)); } catch (er) { /* egal */ } NB.dataFor = null; nbRender(); toast("Originalfassung wiederhergestellt."); break;
   }
 });
 document.addEventListener("input", e => {
@@ -2406,7 +2529,7 @@ function renderTutView() {
     box.innerHTML = `<div class="tut-gate"><h3>Erst selbst rechnen?</h3><p class="muted">Die Lösungen helfen am meisten, wenn du vorher jede Aufgabe ernsthaft versucht hast. Auch ein falscher Ansatz bringt dich weiter als sofort nachzulesen.</p><div class="cta-row"><button class="btn" type="button" id="tutReveal">Lösungen zeigen</button><button class="btn ghost" type="button" data-tutview="aufgaben">Zurück zu den Aufgaben</button></div></div>`;
     return;
   }
-  const src = `tut/img/w${pad(curMod)}-${m}.webp`;
+  const src = (T.img && T.img[m]) || `tut/img/w${pad(curMod)}-${m}.webp`;
   box.innerHTML = `<img src="${src}" alt="${m === "aufgaben" ? "Aufgabenteil" : "Lösungsteil"} des Tutoriumsblatts ${curMod}, Seite für Seite" loading="lazy">`;
 }
 function tutState(n) { const s = st(n); if (!s.tut) s.tut = { done: false, pts: {} }; if (!s.tut.pts) s.tut.pts = {}; return s.tut; }
@@ -2445,9 +2568,10 @@ renderKeyBadge();
 const FB_KEYS = ["verstaendlich", "stimme", "tutorium", "notebook", "stunden", "fehler", "sonst"];
 /* Testversion auf GitHub Pages: keine Datenbank, Feedback geht als Text per WhatsApp an Julian */
 const PAGES = !!window.LC_PAGES;
-const FB_LBL = { verstaendlich: "Verständlichkeit", stimme: "Tempo der Stimme", tutorium: "Tutoriumsblatt", notebook: "Notebook in Colab", stunden: "Zeitaufwand", fehler: "Fehler oder Hänger", sonst: "Beibehalten oder ändern" };
+const FB_LBL = Object.assign({ verstaendlich: "Verständlichkeit", stimme: "Tempo der Stimme", tutorium: "Tutoriumsblatt", notebook: "Notebook in Colab", stunden: "Zeitaufwand", fehler: "Fehler oder Hänger", sonst: "Beibehalten oder ändern" }, COURSE.fbLabels || {});
+function fbKey(n) { return "lc-fb-" + COURSE.prefix + "m" + n; }
 function fbText(e) {
-  const L = ["Pilot-Feedback linkit courses", "Modul " + e.modul + ": " + MODS[e.modul].title, ""];
+  const L = [COURSE.feedbackTitle, "Modul " + e.modul + ": " + MODS[e.modul].title, ""];
   FB_KEYS.forEach(k => {
     if (e[k] == null || e[k] === "") return;
     let v = e[k];
@@ -2475,7 +2599,7 @@ async function fbCopy() {
   } catch (e) { toast("Markiere den Text und kopiere ihn von Hand."); }
 }
 let fbFor = -1;
-function fbLocal(n) { try { return JSON.parse(localStorage.getItem("lc-fb-m" + n) || "null"); } catch (e) { return null; } }
+function fbLocal(n) { try { return JSON.parse(localStorage.getItem(fbKey(n)) || "null"); } catch (e) { return null; } }
 function fbNote(t) { const el = $("#fbNote"); if (el) el.textContent = t; }
 function renderFeedback(force) {
   const f = $("#fbForm"); if (!f || (fbFor === curMod && !force)) return;
@@ -2505,7 +2629,7 @@ async function sendFeedback() {
   });
   if (!any) { fbNote("Beantworte bitte mindestens eine Frage."); return; }
   if (PAGES) {
-    try { localStorage.setItem("lc-fb-m" + n, JSON.stringify(entry)); } catch (er) { /* egal */ }
+    try { localStorage.setItem(fbKey(n), JSON.stringify(entry)); } catch (er) { /* egal */ }
     fbShow(entry);
     fbNote("Fertig. Schick den Text jetzt in der linkit-WhatsApp-Gruppe an Julian: per Knopf unten oder kopieren und einfügen.");
     $("#fbSend").textContent = "Text neu erstellen";
@@ -2526,7 +2650,7 @@ async function sendFeedback() {
     const c = e && e.code;
     fbNote(c === "offline" ? "In dieser Ansicht kann nichts gesendet werden. Dein Feedback ist in diesem Browser gespeichert." : "Senden hat nicht geklappt" + (c ? " (" + c + ")" : "") + ". Bitte frag das Kursteam, ob du als Mitwirkende oder Mitwirkender eingeladen bist. Dein Feedback ist in diesem Browser gespeichert.");
   } finally {
-    try { localStorage.setItem("lc-fb-m" + n, JSON.stringify(entry)); } catch (er) { /* egal */ }
+    try { localStorage.setItem(fbKey(n), JSON.stringify(entry)); } catch (er) { /* egal */ }
     btn.disabled = false; btn.textContent = "Feedback aktualisieren";
   }
 }
@@ -2608,7 +2732,7 @@ function rulesText() {
   const faq = (m.faq || []).map(f => `- [${f.tag}] ${f.symptom} | Ursache: ${f.cause} | Hilfe: ${f.help}`).join("\n");
   const qa = (m.qa || []).map(f => `- ${f.q}: ${f.a}`).join("\n");
   const td = tasks(m).map(t => `- ${t.label} ${t.title}${t.result ? ": erwartetes Ergebnis " + t.result : ""}`).join("\n");
-  return `Du bist der Kurs-Tutor auf „linkit courses“, der ganzjährigen Lernplattform der Hochschulgruppe linkit e.V. am KIT. Kurs: „AI Engineering: von LLMs zu Agenten“, Modul ${curMod} „${m.title}“. Die Lernenden arbeiten allein und im eigenen Tempo in Google Colab; alle Sprachmodelle laufen über die KI-Toolbox des KIT (OpenAI-kompatibel). Das Abschlussprojekt machen sie zu zweit, ein linkit Expert nimmt es ab.
+  return `Du bist der Kurs-Tutor auf „linkit courses“, der ganzjährigen Lernplattform der Hochschulgruppe linkit e.V. am KIT. Kurs: „${COURSE.fullTitle}“, Modul ${curMod} „${m.title}“. ${COURSE.tutor || "Die Lernenden arbeiten allein und im eigenen Tempo in Google Colab; alle Sprachmodelle laufen über die KI-Toolbox des KIT (OpenAI-kompatibel). Das Abschlussprojekt machen sie zu zweit, ein linkit Expert nimmt es ab."}
 
 Regeln:
 1. Antworte auf Deutsch, duze, schreib klar und knapp, meist 3 bis 8 Sätze. Länger nur bei Herleitungen.
@@ -2798,6 +2922,7 @@ async function pbAction(kind, id) {
 
 /* ================= Ereignisse ================= */
 function gotoProject(anchor) {
+  if (!COURSE.project) { go("kurs"); return; }
   if (curView !== "projekt") { showView("projekt"); renderProjekt(); }
   setHash(anchor);
   const el = document.getElementById(anchor); if (el) setTimeout(() => el.scrollIntoView({ block: "start" }), 30);
@@ -2901,7 +3026,7 @@ function fromHash() {
   else if (["kurs", "kulissen", "start", "projekt"].includes(h)) go(h);
   else go("start");
 }
-$("#whoProgress").textContent = modulesDone() + "/" + (LAST + 1) + " Module";
+$("#whoProgress").textContent = progressLabel();
 window.addEventListener("hashchange", fromHash);
 fromHash();
 initDb();

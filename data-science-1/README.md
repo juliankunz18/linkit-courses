@@ -1,0 +1,35 @@
+# Data Science 1
+
+Notebooks und Daten zum Selbstlernkurs **Data Science 1** von linkit e.V. auf **linkit courses**, dem Einstieg in Data Science: Tabellen, Statistik und Modelle an den Werksdaten der erfundenen Nordwerk GmbH. Lerneinheiten, Tutoriumsblätter und Selbsttests liegen auf der Lernplattform, hier liegen die Notebooks zum Mitrechnen und die Daten.
+
+**Testseite (Pilot mit Modul 0 bis 2):** https://juliankunz18.github.io/linkit-courses/ds1.html. Dort laufen die Notebooks direkt im Browser, Colab ist die Alternative.
+
+| Modul | Thema | Stand | Notebook in Colab öffnen |
+|---|---|---|---|
+| 0 | Vorkurs: Python in 3 Stunden | fertig, gleich wie im Kurs AI Engineering | [W00_Python-in-3-Stunden_Selbstlernen](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/ai-engineering/W00/W00_Python-in-3-Stunden_Selbstlernen.ipynb) |
+| 1 | Python-Crashkurs: Werksdaten verarbeiten | fertig, gleich wie im Kurs AI Engineering | [W01_Python-Crashkurs_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/ai-engineering/W01/W01_Python-Crashkurs_Teilnehmende.ipynb) |
+| 2 | Tabellen mit pandas | Pilot | [W02_pandas_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W02/W02_pandas_Teilnehmende.ipynb) |
+| 3 | SQL und Datenqualität | in Arbeit | |
+| 4 | Explorative Analyse und Visualisierung | in Arbeit | |
+| 5 | Zufall simulieren: Wahrscheinlichkeit, Bootstrap, Permutation | in Arbeit | |
+| 6 | Schätzen und Testen | in Arbeit | |
+| 7 | Lineare Regression | in Arbeit | |
+| 8 | Klassifikation und Modellbewertung | in Arbeit | |
+| 9 | Bäume, Ensembles und Feature Engineering | in Arbeit | |
+| 10 | Unüberwachtes Lernen | in Arbeit | |
+| 11 | Zeitreihen und Forecasting | in Arbeit | |
+| 12 | Experimente und A/B-Tests | in Arbeit | |
+| 13 | Kausale Inferenz mit Beobachtungsdaten | in Arbeit | |
+| 14 | Projektwerkstatt zu zweit | in Arbeit | |
+
+## Daten
+
+Im Ordner [`daten/`](daten/) liegen die fünf CSV-Dateien der Nordwerk GmbH, jede Spalte ist in [`DATENBLATT.md`](daten/DATENBLATT.md) beschrieben. Die erste Datenzelle der Notebooks lädt fehlende Dateien von hier nach. Alle Daten sind erfunden.
+
+## So arbeitest du mit den Notebooks in Colab
+
+1. Link anklicken, das Notebook öffnet sich in Colab (Google-Konto nötig).
+2. **Datei → Kopie in Drive speichern.** Sonst ist deine Arbeit nach einer Pause weg.
+3. Zellen von oben nach unten ausführen. Nach jeder Aufgabe zeigt ein Selbsttest ✅ oder ❌.
+
+Das Abschlussprojekt zu zweit mit Abnahme durch einen linkit Expert kommt später dazu. Die Lösungs-Notebooks liegen nicht in diesem Repository.
