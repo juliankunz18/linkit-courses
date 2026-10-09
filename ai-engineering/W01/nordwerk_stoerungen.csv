@@ -1,0 +1,25 @@
+id,datum,schicht,maschine,kategorie,stillstand_min,behoben,beschreibung,maschinenname
+S-001,2026-10-05,Früh,M-03,mechanisch,45,True,"Spindel läuft unrund, Lager nachgestellt",CNC-Drehmaschine
+S-002,2026-10-05,Spät,M-01,elektrisch,20,True,Not-Aus durch defekten Türschalter ausgelöst,CNC-Fräszentrum 1
+S-003,2026-10-05,Nacht,M-06,Material,35,True,Fehlende Gehäuseteile an Station 3,Montagelinie A
+S-004,2026-10-06,Früh,M-05,elektrisch,240,True,"Schweißstromquelle ausgefallen, Tausch durch Instandhaltung",Roboter-Schweißzelle
+S-005,2026-10-06,Spät,M-03,Software,60,True,CNC-Programm nach Update nicht ladbar,CNC-Drehmaschine
+S-006,2026-10-06,Spät,M-02,mechanisch,25,True,Werkzeugwechsler klemmt,CNC-Fräszentrum 2
+S-007,2026-10-07,Früh,M-04,Bedienung,15,True,Falsches Schleifprogramm gewählt,Rundschleifmaschine
+S-008,2026-10-07,Nacht,M-03,mechanisch,35,True,Spänestau im Förderer,CNC-Drehmaschine
+S-009,2026-10-07,Nacht,M-07,Software,50,True,Prüfsoftware hängt beim Messlauf,Prüfstand
+S-010,2026-10-08,Früh,M-06,Material,40,True,Schraubenzuführung leer,Montagelinie A
+S-011,2026-10-08,Spät,M-01,mechanisch,70,True,Kühlmittelpumpe undicht,CNC-Fräszentrum 1
+S-012,2026-10-08,Spät,M-08,elektrisch,30,True,Heizregister der Waschanlage ohne Funktion,Teilewaschanlage
+S-013,2026-10-09,Früh,M-03,mechanisch,90,True,"Spindel erneut unrund, Lagerwechsel geplant",CNC-Drehmaschine
+S-014,2026-10-09,Nacht,M-05,Bedienung,30,True,Schweißdraht falsch eingefädelt,Roboter-Schweißzelle
+S-015,2026-10-12,Früh,M-02,elektrisch,55,True,Achsantrieb Y meldet Überstrom,CNC-Fräszentrum 2
+S-016,2026-10-12,Spät,M-06,Bedienung,10,True,Lichtvorhang beim Teilewechsel unterbrochen,Montagelinie A
+S-017,2026-10-13,Früh,M-03,elektrisch,40,True,Sensor am Spannfutter liefert kein Signal,CNC-Drehmaschine
+S-018,2026-10-13,Nacht,M-04,mechanisch,65,True,"Schleifscheibe gebrochen, Austausch",Rundschleifmaschine
+S-019,2026-10-14,Früh,M-07,Software,20,True,Messprotokoll wird nicht gespeichert,Prüfstand
+S-020,2026-10-14,Spät,M-01,Material,25,True,Rohteile mit Übermaß angeliefert,CNC-Fräszentrum 1
+S-021,2026-10-15,Früh,M-03,mechanisch,55,False,"Spindelgeräusch, Lagerwechsel fürs Wochenende eingeplant",CNC-Drehmaschine
+S-022,2026-10-15,Spät,M-08,mechanisch,45,True,Förderband der Waschanlage gerissen,Teilewaschanlage
+S-023,2026-10-16,Nacht,M-02,Software,35,True,Werkzeugdaten nach Neustart verloren,CNC-Fräszentrum 2
+S-024,2026-10-16,Spät,M-06,elektrisch,75,False,Schrauber 2 liefert falsches Drehmoment,Montagelinie A

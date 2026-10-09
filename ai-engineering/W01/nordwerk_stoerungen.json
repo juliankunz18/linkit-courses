@@ -1,0 +1,242 @@
+[
+ {
+  "id": "S-001",
+  "datum": "2026-10-05",
+  "schicht": "Früh",
+  "maschine": "M-03",
+  "kategorie": "mechanisch",
+  "stillstand_min": 45,
+  "behoben": true,
+  "beschreibung": "Spindel läuft unrund, Lager nachgestellt"
+ },
+ {
+  "id": "S-002",
+  "datum": "2026-10-05",
+  "schicht": "Spät",
+  "maschine": "M-01",
+  "kategorie": "elektrisch",
+  "stillstand_min": 20,
+  "behoben": true,
+  "beschreibung": "Not-Aus durch defekten Türschalter ausgelöst"
+ },
+ {
+  "id": "S-003",
+  "datum": "2026-10-05",
+  "schicht": "Nacht",
+  "maschine": "M-06",
+  "kategorie": "Material",
+  "stillstand_min": 35,
+  "behoben": true,
+  "beschreibung": "Fehlende Gehäuseteile an Station 3"
+ },
+ {
+  "id": "S-004",
+  "datum": "2026-10-06",
+  "schicht": "Früh",
+  "maschine": "M-05",
+  "kategorie": "elektrisch",
+  "stillstand_min": 240,
+  "behoben": true,
+  "beschreibung": "Schweißstromquelle ausgefallen, Tausch durch Instandhaltung"
+ },
+ {
+  "id": "S-005",
+  "datum": "2026-10-06",
+  "schicht": "Spät",
+  "maschine": "M-03",
+  "kategorie": "Software",
+  "stillstand_min": 60,
+  "behoben": true,
+  "beschreibung": "CNC-Programm nach Update nicht ladbar"
+ },
+ {
+  "id": "S-006",
+  "datum": "2026-10-06",
+  "schicht": "Spät",
+  "maschine": "M-02",
+  "kategorie": "mechanisch",
+  "stillstand_min": 25,
+  "behoben": true,
+  "beschreibung": "Werkzeugwechsler klemmt"
+ },
+ {
+  "id": "S-007",
+  "datum": "2026-10-07",
+  "schicht": "Früh",
+  "maschine": "M-04",
+  "kategorie": "Bedienung",
+  "stillstand_min": 15,
+  "behoben": true,
+  "beschreibung": "Falsches Schleifprogramm gewählt"
+ },
+ {
+  "id": "S-008",
+  "datum": "2026-10-07",
+  "schicht": "Nacht",
+  "maschine": "M-03",
+  "kategorie": "mechanisch",
+  "stillstand_min": 35,
+  "behoben": true,
+  "beschreibung": "Spänestau im Förderer"
+ },
+ {
+  "id": "S-009",
+  "datum": "2026-10-07",
+  "schicht": "Nacht",
+  "maschine": "M-07",
+  "kategorie": "Software",
+  "stillstand_min": 50,
+  "behoben": true,
+  "beschreibung": "Prüfsoftware hängt beim Messlauf"
+ },
+ {
+  "id": "S-010",
+  "datum": "2026-10-08",
+  "schicht": "Früh",
+  "maschine": "M-06",
+  "kategorie": "Material",
+  "stillstand_min": 40,
+  "behoben": true,
+  "beschreibung": "Schraubenzuführung leer"
+ },
+ {
+  "id": "S-011",
+  "datum": "2026-10-08",
+  "schicht": "Spät",
+  "maschine": "M-01",
+  "kategorie": "mechanisch",
+  "stillstand_min": 70,
+  "behoben": true,
+  "beschreibung": "Kühlmittelpumpe undicht"
+ },
+ {
+  "id": "S-012",
+  "datum": "2026-10-08",
+  "schicht": "Spät",
+  "maschine": "M-08",
+  "kategorie": "elektrisch",
+  "stillstand_min": 30,
+  "behoben": true,
+  "beschreibung": "Heizregister der Waschanlage ohne Funktion"
+ },
+ {
+  "id": "S-013",
+  "datum": "2026-10-09",
+  "schicht": "Früh",
+  "maschine": "M-03",
+  "kategorie": "mechanisch",
+  "stillstand_min": 90,
+  "behoben": true,
+  "beschreibung": "Spindel erneut unrund, Lagerwechsel geplant"
+ },
+ {
+  "id": "S-014",
+  "datum": "2026-10-09",
+  "schicht": "Nacht",
+  "maschine": "M-05",
+  "kategorie": "Bedienung",
+  "stillstand_min": 30,
+  "behoben": true,
+  "beschreibung": "Schweißdraht falsch eingefädelt"
+ },
+ {
+  "id": "S-015",
+  "datum": "2026-10-12",
+  "schicht": "Früh",
+  "maschine": "M-02",
+  "kategorie": "elektrisch",
+  "stillstand_min": 55,
+  "behoben": true,
+  "beschreibung": "Achsantrieb Y meldet Überstrom"
+ },
+ {
+  "id": "S-016",
+  "datum": "2026-10-12",
+  "schicht": "Spät",
+  "maschine": "M-06",
+  "kategorie": "Bedienung",
+  "stillstand_min": 10,
+  "behoben": true,
+  "beschreibung": "Lichtvorhang beim Teilewechsel unterbrochen"
+ },
+ {
+  "id": "S-017",
+  "datum": "2026-10-13",
+  "schicht": "Früh",
+  "maschine": "M-03",
+  "kategorie": "elektrisch",
+  "stillstand_min": 40,
+  "behoben": true,
+  "beschreibung": "Sensor am Spannfutter liefert kein Signal"
+ },
+ {
+  "id": "S-018",
+  "datum": "2026-10-13",
+  "schicht": "Nacht",
+  "maschine": "M-04",
+  "kategorie": "mechanisch",
+  "stillstand_min": 65,
+  "behoben": true,
+  "beschreibung": "Schleifscheibe gebrochen, Austausch"
+ },
+ {
+  "id": "S-019",
+  "datum": "2026-10-14",
+  "schicht": "Früh",
+  "maschine": "M-07",
+  "kategorie": "Software",
+  "stillstand_min": 20,
+  "behoben": true,
+  "beschreibung": "Messprotokoll wird nicht gespeichert"
+ },
+ {
+  "id": "S-020",
+  "datum": "2026-10-14",
+  "schicht": "Spät",
+  "maschine": "M-01",
+  "kategorie": "Material",
+  "stillstand_min": 25,
+  "behoben": true,
+  "beschreibung": "Rohteile mit Übermaß angeliefert"
+ },
+ {
+  "id": "S-021",
+  "datum": "2026-10-15",
+  "schicht": "Früh",
+  "maschine": "M-03",
+  "kategorie": "mechanisch",
+  "stillstand_min": 55,
+  "behoben": false,
+  "beschreibung": "Spindelgeräusch, Lagerwechsel fürs Wochenende eingeplant"
+ },
+ {
+  "id": "S-022",
+  "datum": "2026-10-15",
+  "schicht": "Spät",
+  "maschine": "M-08",
+  "kategorie": "mechanisch",
+  "stillstand_min": 45,
+  "behoben": true,
+  "beschreibung": "Förderband der Waschanlage gerissen"
+ },
+ {
+  "id": "S-023",
+  "datum": "2026-10-16",
+  "schicht": "Nacht",
+  "maschine": "M-02",
+  "kategorie": "Software",
+  "stillstand_min": 35,
+  "behoben": true,
+  "beschreibung": "Werkzeugdaten nach Neustart verloren"
+ },
+ {
+  "id": "S-024",
+  "datum": "2026-10-16",
+  "schicht": "Spät",
+  "maschine": "M-06",
+  "kategorie": "elektrisch",
+  "stillstand_min": 75,
+  "behoben": false,
+  "beschreibung": "Schrauber 2 liefert falsches Drehmoment"
+ }
+]
