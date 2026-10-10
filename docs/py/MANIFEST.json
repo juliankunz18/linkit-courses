@@ -12,6 +12,7 @@
   "numpy": "2.2.5",
   "packaging": "26.2",
   "pandas": "2.3.3",
+  "patsy": "1.0.1",
   "pillow": "11.3.0",
   "pydantic": "2.12.5",
   "pydantic-core": "2.41.5",
@@ -21,6 +22,7 @@
   "rank-bm25": "0.2.2",
   "scipy": "1.14.1",
   "six": "1.17.0",
+  "statsmodels": "0.14.4",
   "typing-extensions": "4.15.0",
   "typing-inspection": "0.4.2"
  },

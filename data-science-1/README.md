@@ -2,7 +2,7 @@
 
 Notebooks und Daten zum Selbstlernkurs **Data Science 1** von linkit e.V. auf **linkit courses**, dem Einstieg in Data Science: Tabellen, Datenbanken, Statistik und Modelle an den Werksdaten der erfundenen Nordwerk GmbH. Lerneinheiten, Tutoriumsblätter und Selbsttests liegen auf der Lernplattform, hier liegen die Notebooks zum Mitrechnen und die Daten.
 
-**Testseite (Pilot mit Modul 0 bis 6):** https://juliankunz18.github.io/linkit-courses/ds1.html. Dort laufen die Notebooks direkt im Browser, Colab ist die Alternative.
+**Testseite (Pilot mit Modul 0 bis 7):** https://juliankunz18.github.io/linkit-courses/ds1.html. Dort laufen die Notebooks direkt im Browser, Colab ist die Alternative.
 
 | Modul | Thema | Stand | Notebook in Colab öffnen |
 |---|---|---|---|
@@ -13,7 +13,7 @@ Notebooks und Daten zum Selbstlernkurs **Data Science 1** von linkit e.V. auf **
 | 4 | Explorative Analyse und Visualisierung | verfügbar | [W04_Explorative-Analyse_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W04/W04_Explorative-Analyse_Teilnehmende.ipynb) |
 | 5 | Zufall simulieren: Wahrscheinlichkeit, Bootstrap, Permutation | verfügbar | [W05_Zufall-simulieren_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W05/W05_Zufall-simulieren_Teilnehmende.ipynb) |
 | 6 | Schätzen und Testen | verfügbar | [W06_Schaetzen-Testen_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W06/W06_Schaetzen-Testen_Teilnehmende.ipynb) |
-| 7 | Lineare Regression | in Arbeit | |
+| 7 | Lineare Regression | verfügbar | [W07_Lineare-Regression_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W07/W07_Lineare-Regression_Teilnehmende.ipynb) |
 | 8 | Klassifikation und Modellbewertung | in Arbeit | |
 | 9 | Bäume, Ensembles und Feature Engineering | in Arbeit | |
 | 10 | Unüberwachtes Lernen | in Arbeit | |
