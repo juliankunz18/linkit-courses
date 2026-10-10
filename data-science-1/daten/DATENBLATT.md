@@ -38,7 +38,7 @@
 | `ausschuss_stueck` | Ganzzahl | davon fehlerhaft, also Ausschuss |
 | `personal` | Ganzzahl | Anzahl Beschäftigte in der Schicht |
 | `auslastung` | Anteil (0 bis 1) | geplante Stückzahl geteilt durch die Kapazität der Linie |
-| `hallentemp_c` | Grad Celsius | mittlere Hallentemperatur während der Schicht |
+| `hallentemp_c` | Grad Celsius | mittlere Temperatur am Logger der Linie während der Schicht (Linien in derselben Halle messen an verschiedenen Stellen) |
 
 Der Schlüssel einer Zeile ist die Kombination aus `datum`, `linie` und `schicht`.
 

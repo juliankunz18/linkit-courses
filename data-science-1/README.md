@@ -1,15 +1,15 @@
 # Data Science 1
 
-Notebooks und Daten zum Selbstlernkurs **Data Science 1** von linkit e.V. auf **linkit courses**, dem Einstieg in Data Science: Tabellen, Statistik und Modelle an den Werksdaten der erfundenen Nordwerk GmbH. Lerneinheiten, Tutoriumsblätter und Selbsttests liegen auf der Lernplattform, hier liegen die Notebooks zum Mitrechnen und die Daten.
+Notebooks und Daten zum Selbstlernkurs **Data Science 1** von linkit e.V. auf **linkit courses**, dem Einstieg in Data Science: Tabellen, Datenbanken, Statistik und Modelle an den Werksdaten der erfundenen Nordwerk GmbH. Lerneinheiten, Tutoriumsblätter und Selbsttests liegen auf der Lernplattform, hier liegen die Notebooks zum Mitrechnen und die Daten.
 
-**Testseite (Pilot mit Modul 0 bis 2):** https://juliankunz18.github.io/linkit-courses/ds1.html. Dort laufen die Notebooks direkt im Browser, Colab ist die Alternative.
+**Testseite (Pilot mit Modul 0 bis 3):** https://juliankunz18.github.io/linkit-courses/ds1.html. Dort laufen die Notebooks direkt im Browser, Colab ist die Alternative.
 
 | Modul | Thema | Stand | Notebook in Colab öffnen |
 |---|---|---|---|
-| 0 | Vorkurs: Python in 3 Stunden | fertig, gleich wie im Kurs AI Engineering | [W00_Python-in-3-Stunden_Selbstlernen](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/ai-engineering/W00/W00_Python-in-3-Stunden_Selbstlernen.ipynb) |
-| 1 | Python-Crashkurs: Werksdaten verarbeiten | fertig, gleich wie im Kurs AI Engineering | [W01_Python-Crashkurs_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/ai-engineering/W01/W01_Python-Crashkurs_Teilnehmende.ipynb) |
-| 2 | Tabellen mit pandas | Pilot | [W02_pandas_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W02/W02_pandas_Teilnehmende.ipynb) |
-| 3 | SQL und Datenqualität | in Arbeit | |
+| 0 | Vorkurs: Python in 3 Stunden | verfügbar, gleich wie im Kurs AI Engineering | [W00_Python-in-3-Stunden_Selbstlernen](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/ai-engineering/W00/W00_Python-in-3-Stunden_Selbstlernen.ipynb) |
+| 1 | Python-Crashkurs: Werksdaten verarbeiten | verfügbar, gleich wie im Kurs AI Engineering | [W01_Python-Crashkurs_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/ai-engineering/W01/W01_Python-Crashkurs_Teilnehmende.ipynb) |
+| 2 | Tabellen mit pandas | verfügbar | [W02_pandas_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W02/W02_pandas_Teilnehmende.ipynb) |
+| 3 | SQL und Datenqualität | verfügbar | [W03_SQL-Datenqualitaet_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W03/W03_SQL-Datenqualitaet_Teilnehmende.ipynb) |
 | 4 | Explorative Analyse und Visualisierung | in Arbeit | |
 | 5 | Zufall simulieren: Wahrscheinlichkeit, Bootstrap, Permutation | in Arbeit | |
 | 6 | Schätzen und Testen | in Arbeit | |
@@ -24,7 +24,7 @@ Notebooks und Daten zum Selbstlernkurs **Data Science 1** von linkit e.V. auf **
 
 ## Daten
 
-Im Ordner [`daten/`](daten/) liegen die fünf CSV-Dateien der Nordwerk GmbH, jede Spalte ist in [`DATENBLATT.md`](daten/DATENBLATT.md) beschrieben. Die erste Datenzelle der Notebooks lädt fehlende Dateien von hier nach. Alle Daten sind erfunden.
+Im Ordner [`daten/`](daten/) liegen die Dateien, die die Notebooks laden: `produktion.csv`, `stoerungen.csv`, `maschinen.csv`, `linien.csv`, `wochenbericht_breit.csv`, `nordwerk_roh.db`. Jede Tabelle ist in [`DATENBLATT.md`](daten/DATENBLATT.md) und [`DATENBLATT_ROH.md`](daten/DATENBLATT_ROH.md) beschrieben. Die Datenzelle am Anfang jedes Notebooks lädt fehlende Dateien von hier nach. Alle Daten sind erfunden.
 
 ## So arbeitest du mit den Notebooks in Colab
 

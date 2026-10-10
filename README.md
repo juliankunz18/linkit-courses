@@ -5,7 +5,7 @@ Kursmaterial der Lernplattform **linkit courses** von linkit e.V., der Hochschul
 | Kurs | Inhalt |
 |---|---|
 | [AI Engineering: von LLMs zu Agenten](ai-engineering/) | 15 Module von Python und NumPy über Transformer, RAG und Tool Use bis zu Agenten, Evaluation und Sicherheit. Notebooks für Google Colab mit der KI-Toolbox des KIT. |
-| [Data Science 1](data-science-1/) | Einstieg in Data Science an Werksdaten der Nordwerk GmbH: pandas, SQL, Statistik, Regression und Klassifikation bis zu Zeitreihen, A/B-Tests und kausaler Inferenz. 15 Module, im Pilot fertig sind Modul 0 bis 2. Notebooks laufen im Browser oder in Colab. |
+| [Data Science 1](data-science-1/) | Einstieg in Data Science an Werksdaten der Nordwerk GmbH: pandas, SQL, Statistik, Regression und Klassifikation bis zu Zeitreihen, A/B-Tests und kausaler Inferenz. 15 Module, die nach und nach dazukommen; welche schon fertig sind, steht im [Kurs-README](data-science-1/). Notebooks laufen im Browser oder in Colab. |
 
 ## Testversion der Plattform
 
