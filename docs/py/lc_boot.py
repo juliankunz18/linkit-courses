@@ -1937,7 +1937,7 @@ HOSTED = {
     "dateutil": "python-dateutil", "pytz": "pytz", "six": "six", "cycler": "cycler", "kiwisolver": "kiwisolver",
     "contourpy": "contourpy", "fontTools": "fonttools", "pyparsing": "pyparsing", "packaging": "packaging",
     "typing_extensions": "typing-extensions", "typing_inspection": "typing-inspection",
-    "annotated_types": "annotated-types", "rank_bm25": "rank-bm25",
+    "annotated_types": "annotated-types", "rank_bm25": "rank-bm25", "seaborn": "seaborn",
 }
 
 

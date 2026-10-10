@@ -1,4 +1,4 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><title>linkit courses · Testversion</title><meta name="robots" content="noindex, nofollow"><meta name="description" content="Testversion der Lernplattform von linkit e. V."><link rel="icon" href="data:,"><script>window.LC_PAGES = true;window.LC_COURSE = {"catalog": [{"pill": "ok", "status": "Pilot · Modul 0 bis 3", "title": "Data Science 1", "text": "Der Einstieg in Data Science: Tabellen mit pandas, SQL, Statistik und Modelle bis zu Experimenten und kausalen Fragen, alles an den Werksdaten der Nordwerk GmbH.", "meta": "15 Module geplant, 4 davon fertig · Notebooks laufen im Browser", "btn": "Zum Kurs", "href": "ds1.html"}, "vorkurs", "advanced"]};</script><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>linkit courses</title>
+<!doctype html><html lang="de"><head><meta charset="utf-8"><title>linkit courses · Testversion</title><meta name="robots" content="noindex, nofollow"><meta name="description" content="Testversion der Lernplattform von linkit e. V."><link rel="icon" href="data:,"><script>window.LC_PAGES = true;window.LC_COURSE = {"catalog": [{"pill": "ok", "status": "Pilot · Modul 0 bis 4", "title": "Data Science 1", "text": "Der Einstieg in Data Science: Tabellen mit pandas, SQL, Statistik und Modelle bis zu Experimenten und kausalen Fragen, alles an den Werksdaten der Nordwerk GmbH.", "meta": "15 Module geplant, 5 davon fertig · Notebooks laufen im Browser", "btn": "Zum Kurs", "href": "ds1.html"}, "vorkurs", "advanced"]};</script><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>linkit courses</title>
 <meta name="description" content="Prototyp der ganzjährigen Lernplattform von linkit e.V. mit dem kompletten Kurs AI Engineering">
 
 
@@ -711,6 +711,16 @@ legend code,.opt code{overflow-wrap:anywhere}
 footer.site a{color:inherit}
 .week-row.locked{cursor:default}
 .week-row.locked:hover{background:none}
+/* Abbildung als Szene (figure) und im Skript: weiße Karte, auch im dunklen Modus, weil die Grafiken weißen Grund haben */
+.sc-figure{display:flex;flex-direction:column;justify-content:flex-start}
+.sc-figure .figcard{position:relative;flex:1 1 0;min-height:0;background:#fff;border-radius:2px}
+.sc-figure .figcard img{position:absolute;inset:1cqw;width:calc(100% - 2cqw);height:calc(100% - 2cqw);object-fit:contain;display:block}
+@container (max-width:560px){.scene.sc-figure{padding-top:34px}}   /* Platz für den Hinweis „Stimme KI-generiert“ */
+.sc-figure .figalt{position:absolute;inset:0;display:grid;place-items:center;padding:2cqw;color:#3A4650;font-size:clamp(11px,2cqw,20px);text-align:center}
+.skript figure.skfig{margin:0;display:grid;gap:.45rem}
+.skript .skfig img{display:block;max-width:100%;height:auto;background:#fff;padding:.6rem;border:1px solid var(--line);border-radius:2px}
+.skript .skfig .skfig-alt{background:#fff;color:#3A4650;border:1px dashed var(--line);padding:1.2rem;font-size:var(--s--1)}
+.skript .skfig figcaption{font-size:var(--s--1);color:var(--muted)}
 </style>
 
 <svg style="position:absolute;width:0;height:0;color:var(--accent)" aria-hidden="true" focusable="false"><defs><pattern id="plusPat" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M6.5 11H15.5M11 6.5V15.5" stroke="currentColor" stroke-width="1.4" fill="none"/></pattern></defs></svg>
@@ -1923,6 +1933,7 @@ function renderScene(eff) {
     case "code": sc.className = "scene sc-code"; sc.innerHTML = (sh.title ? `<div class="sc-h">${rich(sh.title)}</div>` : "") + `<pre><code>${esc(sh.code || "")}</code></pre>`; break;
     case "table": sc.className = "scene sc-table"; sc.innerHTML = (sh.title ? `<div class="sc-h">${rich(sh.title)}</div>` : "") + `<table><thead><tr>${(sh.head || []).map(h => `<th>${rich(h)}</th>`).join("")}</tr></thead><tbody>${(sh.rows || []).map(r => `<tr>${r.map(c => `<td>${rich(c)}</td>`).join("")}</tr>`).join("")}</tbody></table>`; break;
     case "plot": sc.className = "scene sc-plot"; sc.innerHTML = plotHTML(sh); break;
+    case "figure": sc.className = "scene sc-figure"; sc.innerHTML = (sh.title ? `<div class="sc-h">${rich(sh.title)}</div>` : "") + `<div class="figcard">${sh.src && m.figBase ? `<img src="${esc(m.figBase + sh.src)}" alt="${esc(sh.alt || "")}" decoding="async">` : `<span class="figalt">${esc(sh.alt || "")}</span>`}</div>` + (sh.note ? `<div class="sc-note">${rich(sh.note)}</div>` : ""); break;
     case "think": sc.className = "scene sc-think"; sc.innerHTML = `<span class="tag">Denkpause</span><p>${rich(sh.prompt || "")}</p>`; break;
     default: sc.innerHTML = titleHTML(seg().title, seg().goal);
   }

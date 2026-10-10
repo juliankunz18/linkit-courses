@@ -2,7 +2,7 @@
 
 Notebooks und Daten zum Selbstlernkurs **Data Science 1** von linkit e.V. auf **linkit courses**, dem Einstieg in Data Science: Tabellen, Datenbanken, Statistik und Modelle an den Werksdaten der erfundenen Nordwerk GmbH. Lerneinheiten, Tutoriumsblätter und Selbsttests liegen auf der Lernplattform, hier liegen die Notebooks zum Mitrechnen und die Daten.
 
-**Testseite (Pilot mit Modul 0 bis 3):** https://juliankunz18.github.io/linkit-courses/ds1.html. Dort laufen die Notebooks direkt im Browser, Colab ist die Alternative.
+**Testseite (Pilot mit Modul 0 bis 4):** https://juliankunz18.github.io/linkit-courses/ds1.html. Dort laufen die Notebooks direkt im Browser, Colab ist die Alternative.
 
 | Modul | Thema | Stand | Notebook in Colab öffnen |
 |---|---|---|---|
@@ -10,7 +10,7 @@ Notebooks und Daten zum Selbstlernkurs **Data Science 1** von linkit e.V. auf **
 | 1 | Python-Crashkurs: Werksdaten verarbeiten | verfügbar, gleich wie im Kurs AI Engineering | [W01_Python-Crashkurs_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/ai-engineering/W01/W01_Python-Crashkurs_Teilnehmende.ipynb) |
 | 2 | Tabellen mit pandas | verfügbar | [W02_pandas_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W02/W02_pandas_Teilnehmende.ipynb) |
 | 3 | SQL und Datenqualität | verfügbar | [W03_SQL-Datenqualitaet_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W03/W03_SQL-Datenqualitaet_Teilnehmende.ipynb) |
-| 4 | Explorative Analyse und Visualisierung | in Arbeit | |
+| 4 | Explorative Analyse und Visualisierung | verfügbar | [W04_Explorative-Analyse_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W04/W04_Explorative-Analyse_Teilnehmende.ipynb) |
 | 5 | Zufall simulieren: Wahrscheinlichkeit, Bootstrap, Permutation | in Arbeit | |
 | 6 | Schätzen und Testen | in Arbeit | |
 | 7 | Lineare Regression | in Arbeit | |
