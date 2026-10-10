@@ -1,6 +1,6 @@
 # Datenblatt: Nordwerk-Werksdaten
 
-**Herkunft:** synthetisch, erzeugt mit `nordwerk_ds/generate.py` (Seed 2026) für den Kurs Data Science 1 von linkit courses. Die Nordwerk GmbH ist erfunden. Ähnlichkeiten mit echten Werken sind gewollt, echte Messwerte stecken nicht darin.
+**Herkunft:** synthetisch, erzeugt mit `nordwerk_ds/generate.py` und `nordwerk_ds/lieferungen.py` (Seed 2026) für den Kurs Data Science 1 von linkit courses. Die Nordwerk GmbH ist erfunden. Ähnlichkeiten mit echten Werken sind gewollt, echte Messwerte stecken nicht darin.
 
 **Zeitraum:** 1. Oktober 2024 bis 30. September 2026.
 
@@ -61,8 +61,40 @@ Erfasst sind Störungen ab 5 Minuten Stillstand. Eine Maschine kann in einer Sch
 
 Der Wochenbericht, wie ihn die Werksleitung aus der Tabellenkalkulation bekommt: Spalte `kw` (zum Beispiel `2025-KW07`, Kalenderwoche nach ISO 8601) und je eine Spalte pro Linie und Schicht (`L1_Früh` bis `L4_Nacht`) mit der Summe der gefertigten Stück. Er ist aus `produktion.csv` abgeleitet und enthält keine neuen Informationen, nur ein anderes Format.
 
+## lieferungen.csv (eine Zeile je Wareneingang, 4.624 Zeilen)
+
+Aus dem Wareneingang: jede Anlieferung eines Lieferanten mit zugesagtem Zeitfenster, tatsächlicher Ankunft und dem Ergebnis der Eingangsprüfung. Geliefert wird nur an Arbeitstagen (Montag bis Freitag, ohne Feiertage und Werksruhe).
+
+| Spalte | Typ | Bedeutung |
+|---|---|---|
+| `lieferung_id` | Text | Kennung `LF-00001` ff., eindeutig |
+| `lieferant` | Text | Kennung des Lieferanten, `L-01` bis `L-06` |
+| `material` | Text | Stahl-Rohteile (L-01), Bleche (L-02), Elektronik (L-03), Normteile (L-04), Gussgehäuse (L-05), Verpackung (L-06) |
+| `bestellt_am` | Datum (Text `JJJJ-MM-TT`) | Tag der Bestellung |
+| `soll_termin` | Zeitpunkt (Text `JJJJ-MM-TT HH:MM`) | Beginn des zugesagten Anlieferfensters, volle Stunde zwischen 6 und 20 Uhr |
+| `ist_ankunft` | Zeitpunkt (Text `JJJJ-MM-TT HH:MM`) | tatsächliche Ankunft an der Warenannahme |
+| `verzug_h` | Kommazahl | Ankunft minus Soll-Termin in Stunden, auf 0,1 gerundet; negativ heißt zu früh |
+| `menge` | Ganzzahl | gelieferte Stückzahl |
+| `geprueft_stueck` | Ganzzahl | Stichprobe der Eingangsprüfung: 50 Stück, ab 1.000 gelieferten Stück 80 |
+| `mangel_stueck` | Ganzzahl | davon mangelhaft |
+
+Als **verspätet** gilt im Werk eine Lieferung, die mehr als 2 Stunden nach dem Soll-Termin ankommt (`verzug_h > 2`). L-05 liefert Gussgehäuse für eine Kleinserie und hat deshalb nur wenige Lieferungen.
+
+## messwerte.csv (Wellendurchmesser aus der Endkontrolle, 5.652 Zeilen)
+
+Endkontrolle der Wellenfertigung (Linie 1): An jedem Werktag von Montag bis Freitag (ohne Feiertage und Werksruhe) werden in jeder Schicht je Drehmaschine zwei zufällig gewählte Wellen gemessen. Samstagsschichten sind nicht erfasst. Sollmaß 25,000 mm, Toleranz ±0,025 mm (24,975 bis 25,025 mm).
+
+| Spalte | Typ | Bedeutung |
+|---|---|---|
+| `datum` | Datum (Text `JJJJ-MM-TT`) | Tag der Messung |
+| `schicht` | Text | `Früh`, `Spät` oder `Nacht` |
+| `maschine` | Text | `M-03` (CNC-Drehmaschine, Baujahr 2009) oder `M-09` (CNC-Drehmaschine 2, Baujahr 2020) |
+| `durchmesser_mm` | Kommazahl | gemessener Durchmesser in Millimetern, auf 0,001 mm gerundet |
+
 ## Bekannte Eigenheiten
 
 - Die Ausschussquote ist ein Anteil an den gefertigten Stück (`ausschuss_stueck / ist_stueck`), nicht an den geplanten.
 - Nachtschichten sind kleiner geplant als Früh- und Spätschichten. Wer Quoten über Schichten mittelt, muss das berücksichtigen.
 - `datum` liegt als Text vor. Damit pandas damit rechnen kann, muss die Spalte in einen Zeitstempel umgewandelt werden.
+- `soll_termin` und `ist_ankunft` liegen als Text vor. `verzug_h` ist schon daraus berechnet; wer selbst rechnet, wandelt beide Spalten mit `pd.to_datetime` um.
+- Die Messwerte sind Stichproben: Aus ihnen lässt sich schätzen, wie viele Wellen außerhalb der Toleranz liegen, gezählt wurden aber nicht alle Wellen.
