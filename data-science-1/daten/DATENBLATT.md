@@ -1,6 +1,6 @@
 # Datenblatt: Nordwerk-Werksdaten
 
-**Herkunft:** synthetisch, erzeugt mit `nordwerk_ds/generate.py`, `nordwerk_ds/lieferungen.py`, `nordwerk_ds/sensoren.py` und `nordwerk_ds/haerterei.py` (Seed 2026) für den Kurs Data Science 1 von linkit courses. Die Nordwerk GmbH ist erfunden. Ähnlichkeiten mit echten Werken sind gewollt, echte Messwerte stecken nicht darin.
+**Herkunft:** synthetisch, erzeugt mit `nordwerk_ds/generate.py`, `nordwerk_ds/lieferungen.py`, `nordwerk_ds/sensoren.py`, `nordwerk_ds/haerterei.py` und `nordwerk_ds/zyklen.py` (Seed 2026) für den Kurs Data Science 1 von linkit courses. Die Nordwerk GmbH ist erfunden. Ähnlichkeiten mit echten Werken sind gewollt, echte Messwerte stecken nicht darin.
 
 **Zeitraum:** 1. Oktober 2024 bis 30. September 2026.
 
@@ -126,6 +126,27 @@ Im Härteofen M-10 der Wellenfertigung (Linie 1) werden Wellen chargenweise erw�
 | `in_toleranz` | 0 oder 1 | 1, wenn die Härte zwischen 52 und 58 HRC liegt (Zeichnungsvorgabe), sonst 0 |
 
 Die Einstellungen wählen die Bedienenden innerhalb der Arbeitsanweisung (Sollwerte 870 °C und 75 Minuten). Bei schweren Chargen verlängern sie die Haltezeit oft etwas.
+
+## zyklen.csv (Bearbeitungszyklen der Fräszentren M-01 und M-02, eine Zeile je Zyklus, 8.426 Zeilen)
+
+Pilotprojekt der Linie 2: Seit dem 1. Juli 2026 hängt an den beiden Fräszentren M-01 und M-02 je eine nachgerüstete Messbox. Sie erkennt jeden Bearbeitungszyklus (Programmstart bis Programmende der Spindel) und speichert dafür Kennwerte. Erfasst sind alle Zyklen vom 1. Juli bis 30. September 2026. Die Box hat keinen Zugang zur CNC-Steuerung und kennt das gefahrene Programm nicht. Seit dem **14. September 2026** ordnet der Leitstand jedem Zyklus das CNC-Programm zu; davor ist die Spalte `programm` leer.
+
+| Spalte | Typ | Bedeutung |
+|---|---|---|
+| `zyklus_id` | Text | Kennung `Z-00001` ff., eindeutig, nach Beginn sortiert |
+| `maschine` | Text | `M-01` (CNC-Fräszentrum 1, Baujahr 2014) oder `M-02` (CNC-Fräszentrum 2, Baujahr 2017) |
+| `datum` | Datum (Text `JJJJ-MM-TT`) | Produktionstag; bei der Nachtschicht der Tag, an dem die Schicht begann |
+| `schicht` | Text | `Früh`, `Spät` oder `Nacht` |
+| `beginn` | Zeitpunkt (Text `JJJJ-MM-TT HH:MM:SS`) | Start des Zyklus (Kalenderzeit; nach Mitternacht steht hier schon der nächste Kalendertag) |
+| `dauer_s` | Ganzzahl | Dauer des Zyklus in Sekunden |
+| `energie_kwh` | Kommazahl | elektrische Energie der Maschine während des Zyklus in kWh |
+| `leistung_max_kw` | Kommazahl | höchste elektrische Leistung während des Zyklus in kW |
+| `vibration_mm_s` | Kommazahl | Schwingstärke am Spindelgehäuse (Effektivwert der Schwinggeschwindigkeit über den Zyklus) in mm/s |
+| `kuehlmittel_bar` | Kommazahl | mittlerer Druck des Kühlmittels während des Zyklus in bar |
+| `spindeltemp_c` | Kommazahl | Temperatur am Spindelgehäuse am Ende des Zyklus in Grad Celsius; leer, wenn der Sensor keinen Wert lieferte |
+| `programm` | Text | CNC-Programm laut Leitstand, erst ab 14. September 2026, davor leer |
+
+Zwischen zwei Zyklen liegen Nebenzeiten: Werkstück wechseln, Rüsten, Prüfen, Pausen und Stillstände. Störungen der beiden Maschinen stehen wie immer in `stoerungen.csv` (Schlüssel `datum`, `schicht`, `maschine`).
 
 ## Bekannte Eigenheiten
 
