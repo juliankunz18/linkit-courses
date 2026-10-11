@@ -1,6 +1,6 @@
 # Datenblatt: Nordwerk-Werksdaten
 
-**Herkunft:** synthetisch, erzeugt mit `nordwerk_ds/generate.py` und `nordwerk_ds/lieferungen.py` (Seed 2026) für den Kurs Data Science 1 von linkit courses. Die Nordwerk GmbH ist erfunden. Ähnlichkeiten mit echten Werken sind gewollt, echte Messwerte stecken nicht darin.
+**Herkunft:** synthetisch, erzeugt mit `nordwerk_ds/generate.py`, `nordwerk_ds/lieferungen.py` und `nordwerk_ds/sensoren.py` (Seed 2026) für den Kurs Data Science 1 von linkit courses. Die Nordwerk GmbH ist erfunden. Ähnlichkeiten mit echten Werken sind gewollt, echte Messwerte stecken nicht darin.
 
 **Zeitraum:** 1. Oktober 2024 bis 30. September 2026.
 
@@ -90,6 +90,22 @@ Endkontrolle der Wellenfertigung (Linie 1): An jedem Werktag von Montag bis Frei
 | `schicht` | Text | `Früh`, `Spät` oder `Nacht` |
 | `maschine` | Text | `M-03` (CNC-Drehmaschine, Baujahr 2009) oder `M-09` (CNC-Drehmaschine 2, Baujahr 2020) |
 | `durchmesser_mm` | Kommazahl | gemessener Durchmesser in Millimetern, auf 0,001 mm gerundet |
+
+## sensordaten.csv (Zustandsüberwachung, eine Zeile je Maschine und Produktionsschicht, 28.920 Zeilen)
+
+Alle 20 Maschinen tragen Sensoren zur Zustandsüberwachung. Je Schicht wird der Mittelwert gespeichert. Die letzte Schicht des Zeitraums fehlt, weil es für sie keine nächste Schicht gibt.
+
+| Spalte | Typ | Bedeutung |
+|---|---|---|
+| `datum` | Datum (Text `JJJJ-MM-TT`) | Produktionstag |
+| `schicht` | Text | `Früh`, `Spät` oder `Nacht` |
+| `maschine` | Text | `M-01` bis `M-20`, passt zu `maschinen.csv` |
+| `vibration_mm_s` | Kommazahl | Schwingstärke (Effektivwert der Schwinggeschwindigkeit) in mm/s |
+| `lagertemp_c` | Kommazahl | Temperatur am Hauptlager in Grad Celsius |
+| `strom_pct` | Kommazahl | Stromaufnahme in Prozent der Nennleistung |
+| `ausfall_naechste` | 0 oder 1 | 1, wenn die Maschine in der **nächsten** Produktionsschicht mechanische Störungen mit zusammen mindestens 60 Minuten Stillstand hat (aus `stoerungen.csv`); sonst 0 |
+
+Die nächste Produktionsschicht ist die nächste Schicht im Arbeitskalender, nach einer Freitagsnachtschicht also die Frühschicht am Samstag, wenn dort gearbeitet wird, sonst am Montag. Fehlt ein Messwert, war der Sensor in dieser Schicht ausgefallen (leeres Feld). Am 2. März 2026 wurden die Schwingungssensoren an allen Maschinen der Linie 2 gegen ein neues Modell getauscht.
 
 ## Bekannte Eigenheiten
 
