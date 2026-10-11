@@ -1,6 +1,6 @@
 # Datenblatt: Nordwerk-Werksdaten
 
-**Herkunft:** synthetisch, erzeugt mit `nordwerk_ds/generate.py`, `nordwerk_ds/lieferungen.py` und `nordwerk_ds/sensoren.py` (Seed 2026) für den Kurs Data Science 1 von linkit courses. Die Nordwerk GmbH ist erfunden. Ähnlichkeiten mit echten Werken sind gewollt, echte Messwerte stecken nicht darin.
+**Herkunft:** synthetisch, erzeugt mit `nordwerk_ds/generate.py`, `nordwerk_ds/lieferungen.py`, `nordwerk_ds/sensoren.py` und `nordwerk_ds/haerterei.py` (Seed 2026) für den Kurs Data Science 1 von linkit courses. Die Nordwerk GmbH ist erfunden. Ähnlichkeiten mit echten Werken sind gewollt, echte Messwerte stecken nicht darin.
 
 **Zeitraum:** 1. Oktober 2024 bis 30. September 2026.
 
@@ -106,6 +106,26 @@ Alle 20 Maschinen tragen Sensoren zur Zustandsüberwachung. Je Schicht wird der 
 | `ausfall_naechste` | 0 oder 1 | 1, wenn die Maschine in der **nächsten** Produktionsschicht mechanische Störungen mit zusammen mindestens 60 Minuten Stillstand hat (aus `stoerungen.csv`); sonst 0 |
 
 Die nächste Produktionsschicht ist die nächste Schicht im Arbeitskalender, nach einer Freitagsnachtschicht also die Frühschicht am Samstag, wenn dort gearbeitet wird, sonst am Montag. Fehlt ein Messwert, war der Sensor in dieser Schicht ausgefallen (leeres Feld). Am 2. März 2026 wurden die Schwingungssensoren an allen Maschinen der Linie 2 gegen ein neues Modell getauscht.
+
+## haerterei.csv (Härterei, eine Zeile je Ofencharge, 2.816 Zeilen)
+
+Im Härteofen M-10 der Wellenfertigung (Linie 1) werden Wellen chargenweise erwärmt, gehalten und im Ölbad abgeschreckt. Danach misst die Qualitätssicherung die Oberflächenhärte an einer Probewelle der Charge. Gehärtet wird an Werktagen von Montag bis Freitag.
+
+| Spalte | Typ | Bedeutung |
+|---|---|---|
+| `charge_id` | Text | Kennung `C-00001` ff., eindeutig |
+| `datum` | Datum (Text `JJJJ-MM-TT`) | Tag der Charge |
+| `schicht` | Text | `Früh`, `Spät` oder `Nacht` |
+| `ofentemp_c` | Ganzzahl | eingestellte Ofentemperatur in Grad Celsius |
+| `haltezeit_min` | Ganzzahl | Haltezeit im Ofen in Minuten |
+| `chargengewicht_kg` | Ganzzahl | Gewicht der Charge in Kilogramm |
+| `kohlenstoff_pct` | Kommazahl | Kohlenstoffgehalt des Stahls in Prozent laut Prüfzeugnis des Materialloses |
+| `oeltemp_c` | Kommazahl | Temperatur des Abschrecköls in Grad Celsius |
+| `transfer_s` | Kommazahl | Zeit vom Öffnen des Ofens bis zum Eintauchen ins Öl in Sekunden |
+| `haerte_hrc` | Kommazahl | gemessene Oberflächenhärte in HRC (Rockwell C) |
+| `in_toleranz` | 0 oder 1 | 1, wenn die Härte zwischen 52 und 58 HRC liegt (Zeichnungsvorgabe), sonst 0 |
+
+Die Einstellungen wählen die Bedienenden innerhalb der Arbeitsanweisung (Sollwerte 870 °C und 75 Minuten). Bei schweren Chargen verlängern sie die Haltezeit oft etwas.
 
 ## Bekannte Eigenheiten
 

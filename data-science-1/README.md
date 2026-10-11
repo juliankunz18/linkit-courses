@@ -2,7 +2,7 @@
 
 Notebooks und Daten zum Selbstlernkurs **Data Science 1** von linkit e.V. auf **linkit courses**, dem Einstieg in Data Science: Tabellen, Datenbanken, Statistik und Modelle an den Werksdaten der erfundenen Nordwerk GmbH. Lerneinheiten, Tutoriumsblätter und Selbsttests liegen auf der Lernplattform, hier liegen die Notebooks zum Mitrechnen und die Daten.
 
-**Testseite (Pilot mit Modul 0 bis 8):** https://juliankunz18.github.io/linkit-courses/ds1.html. Dort laufen die Notebooks direkt im Browser, Colab ist die Alternative.
+**Testseite (Pilot mit Modul 0 bis 9):** https://juliankunz18.github.io/linkit-courses/ds1.html. Dort laufen die Notebooks direkt im Browser, Colab ist die Alternative.
 
 | Modul | Thema | Stand | Notebook in Colab öffnen |
 |---|---|---|---|
@@ -15,7 +15,7 @@ Notebooks und Daten zum Selbstlernkurs **Data Science 1** von linkit e.V. auf **
 | 6 | Schätzen und Testen | verfügbar | [W06_Schaetzen-Testen_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W06/W06_Schaetzen-Testen_Teilnehmende.ipynb) |
 | 7 | Lineare Regression | verfügbar | [W07_Lineare-Regression_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W07/W07_Lineare-Regression_Teilnehmende.ipynb) |
 | 8 | Klassifikation und Modellbewertung | verfügbar | [W08_Klassifikation_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W08/W08_Klassifikation_Teilnehmende.ipynb) |
-| 9 | Bäume, Ensembles und Feature Engineering | in Arbeit | |
+| 9 | Bäume, Ensembles und Feature Engineering | verfügbar | [W09_Baeume-Ensembles_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W09/W09_Baeume-Ensembles_Teilnehmende.ipynb) |
 | 10 | Unüberwachtes Lernen | in Arbeit | |
 | 11 | Zeitreihen und Forecasting | in Arbeit | |
 | 12 | Experimente und A/B-Tests | in Arbeit | |
@@ -24,7 +24,7 @@ Notebooks und Daten zum Selbstlernkurs **Data Science 1** von linkit e.V. auf **
 
 ## Daten
 
-Im Ordner [`daten/`](daten/) liegen die Dateien, die die Notebooks laden: `produktion.csv`, `stoerungen.csv`, `maschinen.csv`, `linien.csv`, `wochenbericht_breit.csv`, `nordwerk_roh.db`, `lieferungen.csv`, `messwerte.csv`, `sensordaten.csv`. Jede Tabelle ist in [`DATENBLATT.md`](daten/DATENBLATT.md) und [`DATENBLATT_ROH.md`](daten/DATENBLATT_ROH.md) beschrieben. Die Datenzelle am Anfang jedes Notebooks lädt fehlende Dateien von hier nach. Alle Daten sind erfunden.
+Im Ordner [`daten/`](daten/) liegen die Dateien, die die Notebooks laden: `produktion.csv`, `stoerungen.csv`, `maschinen.csv`, `linien.csv`, `wochenbericht_breit.csv`, `nordwerk_roh.db`, `lieferungen.csv`, `messwerte.csv`, `sensordaten.csv`, `haerterei.csv`. Jede Tabelle ist in [`DATENBLATT.md`](daten/DATENBLATT.md) und [`DATENBLATT_ROH.md`](daten/DATENBLATT_ROH.md) beschrieben. Die Datenzelle am Anfang jedes Notebooks lädt fehlende Dateien von hier nach. Alle Daten sind erfunden.
 
 ## So arbeitest du mit den Notebooks in Colab
 
