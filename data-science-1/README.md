@@ -2,7 +2,7 @@
 
 Notebooks und Daten zum Selbstlernkurs **Data Science 1** von linkit e.V. auf **linkit courses**, dem Einstieg in Data Science: Tabellen, Datenbanken, Statistik und Modelle an den Werksdaten der erfundenen Nordwerk GmbH. Lerneinheiten, Tutoriumsblätter und Selbsttests liegen auf der Lernplattform, hier liegen die Notebooks zum Mitrechnen und die Daten.
 
-**Testseite (Pilot mit Modul 0 bis 12):** https://juliankunz18.github.io/linkit-courses/ds1.html. Dort laufen die Notebooks direkt im Browser, Colab ist die Alternative.
+**Testseite (Pilot mit Modul 0 bis 13):** https://juliankunz18.github.io/linkit-courses/ds1.html. Dort laufen die Notebooks direkt im Browser, Colab ist die Alternative.
 
 | Modul | Thema | Stand | Notebook in Colab öffnen |
 |---|---|---|---|
@@ -19,12 +19,12 @@ Notebooks und Daten zum Selbstlernkurs **Data Science 1** von linkit e.V. auf **
 | 10 | Unüberwachtes Lernen | verfügbar | [W10_Unueberwachtes-Lernen_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W10/W10_Unueberwachtes-Lernen_Teilnehmende.ipynb) |
 | 11 | Zeitreihen und Forecasting | verfügbar | [W11_Zeitreihen-Forecasting_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W11/W11_Zeitreihen-Forecasting_Teilnehmende.ipynb) |
 | 12 | Experimente und A/B-Tests | verfügbar | [W12_Experimente-AB-Tests_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W12/W12_Experimente-AB-Tests_Teilnehmende.ipynb) |
-| 13 | Kausale Inferenz mit Beobachtungsdaten | in Arbeit | |
+| 13 | Kausale Inferenz mit Beobachtungsdaten | verfügbar | [W13_Kausale-Inferenz_Teilnehmende](https://colab.research.google.com/github/juliankunz18/linkit-courses/blob/main/data-science-1/W13/W13_Kausale-Inferenz_Teilnehmende.ipynb) |
 | 14 | Projektwerkstatt zu zweit | in Arbeit | |
 
 ## Daten
 
-Im Ordner [`daten/`](daten/) liegen die Dateien, die die Notebooks laden: `produktion.csv`, `stoerungen.csv`, `maschinen.csv`, `linien.csv`, `wochenbericht_breit.csv`, `nordwerk_roh.db`, `lieferungen.csv`, `messwerte.csv`, `sensordaten.csv`, `haerterei.csv`, `zyklen.csv`, `energie.csv`, `schleifversuch.csv`, `portal_konten.csv`, `portal_sitzungen.csv`. Jede Tabelle ist in [`DATENBLATT.md`](daten/DATENBLATT.md) und [`DATENBLATT_ROH.md`](daten/DATENBLATT_ROH.md) beschrieben. Die Datenzelle am Anfang jedes Notebooks lädt fehlende Dateien von hier nach. Alle Daten sind erfunden.
+Im Ordner [`daten/`](daten/) liegen die Dateien, die die Notebooks laden: `produktion.csv`, `stoerungen.csv`, `maschinen.csv`, `linien.csv`, `wochenbericht_breit.csv`, `nordwerk_roh.db`, `lieferungen.csv`, `messwerte.csv`, `sensordaten.csv`, `haerterei.csv`, `zyklen.csv`, `energie.csv`, `schleifversuch.csv`, `portal_konten.csv`, `portal_sitzungen.csv`, `schulung.csv`, `ruestvorgaenge.csv`. Jede Tabelle ist in [`DATENBLATT.md`](daten/DATENBLATT.md) und [`DATENBLATT_ROH.md`](daten/DATENBLATT_ROH.md) beschrieben. Die Datenzelle am Anfang jedes Notebooks lädt fehlende Dateien von hier nach. Alle Daten sind erfunden.
 
 ## So arbeitest du mit den Notebooks in Colab
 

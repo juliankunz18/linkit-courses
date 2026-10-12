@@ -1,6 +1,6 @@
 # Datenblatt: Nordwerk-Werksdaten
 
-**Herkunft:** synthetisch, erzeugt mit `nordwerk_ds/generate.py`, `nordwerk_ds/lieferungen.py`, `nordwerk_ds/sensoren.py`, `nordwerk_ds/haerterei.py`, `nordwerk_ds/zyklen.py`, `nordwerk_ds/energie.py` und `nordwerk_ds/versuche.py` (Seed 2026) für den Kurs Data Science 1 von linkit courses. Die Nordwerk GmbH ist erfunden. Ähnlichkeiten mit echten Werken sind gewollt, echte Messwerte stecken nicht darin.
+**Herkunft:** synthetisch, erzeugt mit `nordwerk_ds/generate.py`, `nordwerk_ds/lieferungen.py`, `nordwerk_ds/sensoren.py`, `nordwerk_ds/haerterei.py`, `nordwerk_ds/zyklen.py`, `nordwerk_ds/energie.py`, `nordwerk_ds/versuche.py` und `nordwerk_ds/beobachtung.py` (Seed 2026) für den Kurs Data Science 1 von linkit courses. Die Nordwerk GmbH ist erfunden. Ähnlichkeiten mit echten Werken sind gewollt, echte Messwerte stecken nicht darin.
 
 **Zeitraum:** 1. Oktober 2024 bis 30. September 2026.
 
@@ -203,6 +203,37 @@ Im Ersatzteilportal der Nordwerk GmbH bestellen Geschäftskunden Ersatz- und Ver
 | `umsatz_eur` | Kommazahl | Bestellwert der Sitzung in Euro, 0 ohne Bestellung |
 
 Ein Konto kann im Versuchszeitraum viele Sitzungen haben; zugeteilt wurde je Konto, nicht je Sitzung.
+
+## schulung.csv (Qualitätsschulung für Bedienende, eine Zeile je Person, 124 Zeilen)
+
+Von Juli bis September 2025 bot die Qualitätssicherung eine zweitägige Schulung zu Prüfabläufen und Fehlerbildern an. Welche Bedienenden teilnahmen, entschieden die Schichtleitungen; es gab keine Zufallsauswahl. Die Tabelle enthält alle Bedienenden, die im ganzen Jahr 2025 und im ersten Halbjahr 2026 im Werk waren, pseudonymisiert. Die Auswertung ist mit dem Betriebsrat abgestimmt: Sie dient der Bewertung der Schulung, nicht der Bewertung einzelner Personen.
+
+| Spalte | Typ | Bedeutung |
+|---|---|---|
+| `person` | Text | Pseudonym `P-001` ff., eindeutig |
+| `linie` | Text | Stammlinie `1` bis `4` oder `Springer` (wechselnde Linien) |
+| `schicht` | Text | Stammschicht `Früh`, `Spät` oder `Nacht` |
+| `erfahrung_jahre` | Kommazahl | Berufserfahrung an Werkzeugmaschinen in Jahren, Stand 1. Januar 2025 |
+| `teile_2025` | Ganzzahl | an der eigenen Prüfstation im ersten Halbjahr 2025 geprüfte Teile |
+| `fehler_2025` | Ganzzahl | davon mit Fehler, den die Person selbst verursacht hat (laut Fehlerursache in der Prüfung) |
+| `schulung` | 0 oder 1 | 1, wenn die Person zwischen Juli und September 2025 an der Schulung teilgenommen hat |
+| `audit_abweichungen` | Ganzzahl | Abweichungen vom Prüfablauf im Prüfaudit im Januar 2026 |
+| `teile_2026` | Ganzzahl | geprüfte Teile im ersten Halbjahr 2026 |
+| `fehler_2026` | Ganzzahl | davon mit selbst verursachtem Fehler |
+| `einrichter_2026` | 0 oder 1 | 1, wenn die Person 2026 zur Einrichterin oder zum Einrichter aufgestiegen ist |
+
+## ruestvorgaenge.csv (Rüstvorgänge an den vier Linien, eine Zeile je Rüstvorgang, 5.763 Zeilen)
+
+Jeder Wechsel auf ein anderes Produkt erfordert Rüsten: Werkzeuge, Vorrichtungen und Programme umstellen, erstes Teil prüfen. Das Schichtbuch erfasst jeden Rüstvorgang mit seiner Dauer. In der Woche ab dem 3. November 2025 lief an Linie 2 ein Workshop zur Rüstzeitverkürzung (nach der Methode SMED, Single Minute Exchange of Die); die anderen Linien hatten keinen. Vom 12. Januar 2026 an lief im ganzen Werk ein neues System für Fertigungsaufträge.
+
+| Spalte | Typ | Bedeutung |
+|---|---|---|
+| `ruest_id` | Text | Kennung `R-00001` ff., eindeutig, nach Datum, Schicht und Linie sortiert |
+| `datum` | Datum (Text `JJJJ-MM-TT`) | Tag des Rüstvorgangs |
+| `schicht` | Text | `Früh`, `Spät` oder `Nacht` |
+| `linie` | Ganzzahl | Linie 1 bis 4 |
+| `wechsel` | Text | `klein` (Variante desselben Produkts) oder `groß` (anderes Produkt) |
+| `dauer_min` | Ganzzahl | Dauer vom letzten Gutteil bis zum ersten Gutteil in Minuten |
 
 ## Bekannte Eigenheiten
 
