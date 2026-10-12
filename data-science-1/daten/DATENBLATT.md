@@ -1,6 +1,6 @@
 # Datenblatt: Nordwerk-Werksdaten
 
-**Herkunft:** synthetisch, erzeugt mit `nordwerk_ds/generate.py`, `nordwerk_ds/lieferungen.py`, `nordwerk_ds/sensoren.py`, `nordwerk_ds/haerterei.py` und `nordwerk_ds/zyklen.py` (Seed 2026) für den Kurs Data Science 1 von linkit courses. Die Nordwerk GmbH ist erfunden. Ähnlichkeiten mit echten Werken sind gewollt, echte Messwerte stecken nicht darin.
+**Herkunft:** synthetisch, erzeugt mit `nordwerk_ds/generate.py`, `nordwerk_ds/lieferungen.py`, `nordwerk_ds/sensoren.py`, `nordwerk_ds/haerterei.py`, `nordwerk_ds/zyklen.py` und `nordwerk_ds/energie.py` (Seed 2026) für den Kurs Data Science 1 von linkit courses. Die Nordwerk GmbH ist erfunden. Ähnlichkeiten mit echten Werken sind gewollt, echte Messwerte stecken nicht darin.
 
 **Zeitraum:** 1. Oktober 2024 bis 30. September 2026.
 
@@ -147,6 +147,20 @@ Pilotprojekt der Linie 2: Seit dem 1. Juli 2026 hängt an den beiden Fräszentre
 | `programm` | Text | CNC-Programm laut Leitstand, erst ab 14. September 2026, davor leer |
 
 Zwischen zwei Zyklen liegen Nebenzeiten: Werkstück wechseln, Rüsten, Prüfen, Pausen und Stillstände. Störungen der beiden Maschinen stehen wie immer in `stoerungen.csv` (Schlüssel `datum`, `schicht`, `maschine`).
+
+## energie.csv (Energieverbrauch des Werks, eine Zeile je Kalendertag, 730 Zeilen)
+
+Das Energiemanagement liest jeden Morgen die Zähler am Netzanschluss (Strom) und an der Gasübergabe ab, die Werte gelten für den ganzen Standort und den Kalendertag von 0 bis 24 Uhr. Dazu kommen die werkseigene Wetterstation und die Wettervorhersage, die am Vortag um 9 Uhr abgerufen wird. Jede Zeile ist ein Kalendertag, auch Sonntage, Feiertage und die Werksruhe.
+
+| Spalte | Typ | Bedeutung |
+|---|---|---|
+| `datum` | Datum (Text `JJJJ-MM-TT`) | Kalendertag |
+| `strom_kwh` | Ganzzahl | Stromverbrauch des Werks in kWh; leer, wenn die Datenübertragung ausgefallen ist |
+| `gas_kwh` | Ganzzahl | Erdgasverbrauch des Werks in kWh (Hallenheizung, Härteofen, Warmwasser); leer wie `strom_kwh` |
+| `aussentemp_c` | Kommazahl | gemessene Tagesmitteltemperatur der Wetterstation in Grad Celsius |
+| `temp_vorhersage_c` | Kommazahl | vorhergesagte Tagesmitteltemperatur für diesen Tag, abgerufen am Vortag um 9 Uhr |
+
+Fällt die Datenübertragung aus, bleiben `strom_kwh` und `gas_kwh` an diesem Tag leer. Die Zähler zählen weiter, deshalb steht am folgenden Tag der Verbrauch beider Tage zusammen. Gesteuert wird der Strombezug über eine Prognose, die am Vormittag für den nächsten Tag abgegeben wird. Zu diesem Zeitpunkt ist der laufende Tag noch nicht abgelesen. Was im Werk am nächsten Tag geplant ist (Schichten und geplante Stückzahl, siehe `produktion.csv`), steht dann schon fest.
 
 ## Bekannte Eigenheiten
 
