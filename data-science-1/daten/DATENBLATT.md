@@ -1,6 +1,6 @@
 # Datenblatt: Nordwerk-Werksdaten
 
-**Herkunft:** synthetisch, erzeugt mit `nordwerk_ds/generate.py`, `nordwerk_ds/lieferungen.py`, `nordwerk_ds/sensoren.py`, `nordwerk_ds/haerterei.py`, `nordwerk_ds/zyklen.py` und `nordwerk_ds/energie.py` (Seed 2026) für den Kurs Data Science 1 von linkit courses. Die Nordwerk GmbH ist erfunden. Ähnlichkeiten mit echten Werken sind gewollt, echte Messwerte stecken nicht darin.
+**Herkunft:** synthetisch, erzeugt mit `nordwerk_ds/generate.py`, `nordwerk_ds/lieferungen.py`, `nordwerk_ds/sensoren.py`, `nordwerk_ds/haerterei.py`, `nordwerk_ds/zyklen.py`, `nordwerk_ds/energie.py` und `nordwerk_ds/versuche.py` (Seed 2026) für den Kurs Data Science 1 von linkit courses. Die Nordwerk GmbH ist erfunden. Ähnlichkeiten mit echten Werken sind gewollt, echte Messwerte stecken nicht darin.
 
 **Zeitraum:** 1. Oktober 2024 bis 30. September 2026.
 
@@ -161,6 +161,48 @@ Das Energiemanagement liest jeden Morgen die Zähler am Netzanschluss (Strom) un
 | `temp_vorhersage_c` | Kommazahl | vorhergesagte Tagesmitteltemperatur für diesen Tag, abgerufen am Vortag um 9 Uhr |
 
 Fällt die Datenübertragung aus, bleiben `strom_kwh` und `gas_kwh` an diesem Tag leer. Die Zähler zählen weiter, deshalb steht am folgenden Tag der Verbrauch beider Tage zusammen. Gesteuert wird der Strombezug über eine Prognose, die am Vormittag für den nächsten Tag abgegeben wird. Zu diesem Zeitpunkt ist der laufende Tag noch nicht abgelesen. Was im Werk am nächsten Tag geplant ist (Schichten und geplante Stückzahl, siehe `produktion.csv`), steht dann schon fest.
+
+## schleifversuch.csv (Versuch mit einer neuen Schleifscheibe an M-04, eine Zeile je Los, 120 Zeilen)
+
+Die Wellenfertigung hat an der Rundschleifmaschine M-04 eine neue Schleifscheibe (B) gegen die bisherige (A) geprüft, vom 8. Juni bis 17. Juli 2026, montags bis freitags. In jeder Früh- und Spätschicht wurden zwei Lose geschliffen, eines mit jeder Scheibe. Welche Scheibe zuerst lief, hat vor Schichtbeginn ein Münzwurf am Rechner entschieden. Die Wellen eines Loses stammen aus einer Härtecharge des vorigen Härtetags, die in Toleranz war (`charge_id`, siehe `haerterei.csv`). Nach dem Schleifen misst die Qualitätssicherung an fünf Wellen des Loses die Rauheit und mittelt sie; die Schleifzeit stammt aus der Maschinensteuerung.
+
+| Spalte | Typ | Bedeutung |
+|---|---|---|
+| `los_id` | Text | Kennung `L-001` ff., eindeutig |
+| `datum` | Datum (Text `JJJJ-MM-TT`) | Tag des Schleifens |
+| `schicht` | Text | `Früh` oder `Spät` |
+| `reihenfolge` | Ganzzahl | 1 für das erste, 2 für das zweite Los der Schicht |
+| `scheibe` | Text | `A` (bisherige Scheibe) oder `B` (neue Scheibe) |
+| `charge_id` | Text | Härtecharge, aus der die Wellen stammen, passt zu `haerterei.csv` |
+| `wellen` | Ganzzahl | Zahl der Wellen im Los |
+| `ra_um` | Kommazahl | mittlere Rauheit Ra der fünf gemessenen Wellen in Mikrometer; kleiner ist besser |
+| `schleifzeit_s` | Kommazahl | mittlere Schleifzeit je Welle in Sekunden |
+
+## portal_konten.csv (A/B-Test im Ersatzteilportal, eine Zeile je Kundenkonto, 2.548 Zeilen)
+
+Im Ersatzteilportal der Nordwerk GmbH bestellen Geschäftskunden Ersatz- und Verschleißteile. Vom 31. August bis 27. September 2026 lief ein A/B-Test: Variante B zeigt auf der Startseite einen Knopf „Schnell nachbestellen“ mit den zuletzt bestellten Teilen, Variante A die bisherige Seite. Beim ersten Besuch im Versuchszeitraum teilt das Portal jedes Kundenkonto per Zufall mit Wahrscheinlichkeit 1/2 einer Variante zu; das Konto sieht danach immer dieselbe Variante. Die Tabelle enthält alle Konten, die im Versuchszeitraum mindestens einmal das Portal besucht haben.
+
+| Spalte | Typ | Bedeutung |
+|---|---|---|
+| `konto` | Text | Kennung `K-0001` ff., eindeutig |
+| `gruppe` | Text | zugeteilte Variante, `A` oder `B` |
+| `branche` | Text | Branche des Kunden: Maschinenbau, Fahrzeugbau, Landtechnik, Lebensmittel, Energie, Handel |
+| `umsatz_vorjahr_eur` | Ganzzahl | Umsatz des Kunden mit der Nordwerk GmbH im Vorjahr in Euro, auf 10 gerundet; 0 bei Neukunden |
+| `umsatz_vorperiode_eur` | Kommazahl | Umsatz des Kontos im Portal in den vier Wochen vor dem Versuch in Euro |
+| `erster_besuch` | Datum (Text `JJJJ-MM-TT`) | Tag des ersten Besuchs im Versuchszeitraum, an dem die Zuteilung erfolgte |
+
+## portal_sitzungen.csv (A/B-Test im Ersatzteilportal, eine Zeile je Sitzung, 17.658 Zeilen)
+
+| Spalte | Typ | Bedeutung |
+|---|---|---|
+| `sitzung_id` | Text | Kennung `S-000001` ff., eindeutig, nach Datum sortiert |
+| `konto` | Text | Kundenkonto, passt zu `portal_konten.csv` |
+| `datum` | Datum (Text `JJJJ-MM-TT`) | Tag der Sitzung |
+| `gruppe` | Text | Variante, die das Konto in dieser Sitzung gesehen hat |
+| `bestellt` | 0 oder 1 | 1, wenn in der Sitzung eine Bestellung abgeschickt wurde |
+| `umsatz_eur` | Kommazahl | Bestellwert der Sitzung in Euro, 0 ohne Bestellung |
+
+Ein Konto kann im Versuchszeitraum viele Sitzungen haben; zugeteilt wurde je Konto, nicht je Sitzung.
 
 ## Bekannte Eigenheiten
 
