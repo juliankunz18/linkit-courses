@@ -1,4 +1,4 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><title>linkit courses · Testversion</title><meta name="robots" content="noindex, nofollow"><meta name="description" content="Testversion der Lernplattform von linkit e. V."><link rel="icon" href="data:,"><script>window.LC_PAGES = true;window.LC_COURSE = {"catalog": [{"pill": "ok", "status": "Pilot · Modul 0 bis 13", "title": "Data Science 1", "text": "Der Einstieg in Data Science: Tabellen mit pandas, SQL, Statistik und Modelle bis zu Experimenten und kausalen Fragen, alles an den Werksdaten der Nordwerk GmbH.", "meta": "15 Module geplant, 14 davon fertig · Notebooks laufen im Browser", "btn": "Zum Kurs", "href": "ds1.html"}, "vorkurs", "advanced"]};</script><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>linkit courses</title>
+<!doctype html><html lang="de"><head><meta charset="utf-8"><title>linkit courses · Testversion</title><meta name="robots" content="noindex, nofollow"><meta name="description" content="Testversion der Lernplattform von linkit e. V."><link rel="icon" href="data:,"><script>window.LC_PAGES = true;window.LC_COURSE = {"catalog": [{"pill": "ok", "status": "Pilot · Modul 0 bis 14", "title": "Data Science 1", "text": "Der Einstieg in Data Science: Tabellen mit pandas, SQL, Statistik und Modelle bis zu Experimenten und kausalen Fragen, alles an den Werksdaten der Nordwerk GmbH.", "meta": "14 Module · Abschlussprojekt zu zweit · Notebooks laufen im Browser", "btn": "Zum Kurs", "href": "ds1.html"}, "vorkurs", "advanced"]};</script><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>linkit courses</title>
 <meta name="description" content="Prototyp der ganzjährigen Lernplattform von linkit e.V. mit dem kompletten Kurs AI Engineering">
 
 
@@ -790,7 +790,7 @@ footer.site a{color:inherit}
         <li><span class="n">2</span><h3>Hilfe, wenn du hängst</h3><p class="muted">Hilfeseite zu jedem Modul, ein Kurs-Tutor, der das Skript kennt, und der Kurs-Chat.</p></li>
         <li><span class="n">3</span><h3>Partner finden</h3><p class="muted">Nach dem letzten Modul suchst du dir über die Partnerbörse jemanden, der gerade auch so weit ist.</p></li>
         <li><span class="n">4</span><h3>Projekt zu zweit</h3><p class="muted" data-ct="schritt4">Ihr führt eure Projekt-Bausteine zusammen und baut einen Assistenten mit Demo.</p></li>
-        <li><span class="n">5</span><h3>Abnahme</h3><p class="muted">Ein linkit Expert prüft Demo, Zahlen und Code im Online-Gespräch und bewertet nach einem festen Bogen.</p></li>
+        <li><span class="n">5</span><h3>Abnahme</h3><p class="muted" data-ct="schritt5">Ein linkit Expert prüft Demo, Zahlen und Code im Online-Gespräch und bewertet nach einem festen Bogen.</p></li>
         <li><span class="n">6</span><h3>Zertifikat</h3><p class="muted">Mit Note, Projekt und dem Namen des Experts, unterschrieben vom Vorstand.</p></li>
       </ol>
     </div>
@@ -810,7 +810,7 @@ footer.site a{color:inherit}
       </div>
       <div style="display:grid;gap:1rem;align-content:start">
         <h2 style="font-size:var(--s-3)">Wer bewertet?</h2>
-        <p class="lede">linkit Experts sind Absolvent:innen eines Kurses, die eine Bewertungsschulung gemacht haben. Sie nehmen nur Projekte aus dem Kurs ab, den sie selbst abgeschlossen haben.</p>
+        <p class="lede" data-ct="werBewertet">linkit Experts sind Absolvent:innen eines Kurses, die eine Bewertungsschulung gemacht haben. Sie nehmen nur Projekte aus dem Kurs ab, den sie selbst abgeschlossen haben.</p>
         <div class="tier" data-ct="bewertet"><h3><span class="pill live">Bewertet wird</span></h3><ul><li>Problem und Nutzen</li><li>Technische Umsetzung</li><li>Evaluation und Ehrlichkeit</li><li>Sicherheit und Ressourcen</li><li>Präsentation und Demo</li></ul></div>
       </div>
     </div>
@@ -1074,7 +1074,7 @@ footer.site a{color:inherit}
     <div class="wrap">
       <div class="eyebrow"><span data-c="title">AI Engineering</span> · Abschlussprojekt</div>
       <h1>Zu zweit zum Zertifikat</h1>
-      <p class="lede">Nach Modul 13 baut ihr zu zweit einen Assistenten aus euren Projekt-Bausteinen. Ein linkit Expert nimmt ihn im Online-Gespräch ab und bewertet ihn.</p>
+      <p class="lede" data-ct="projektLede">Nach Modul 13 baut ihr zu zweit einen Assistenten aus euren Projekt-Bausteinen. Ein linkit Expert nimmt ihn im Online-Gespräch ab und bewertet ihn.</p>
       <div id="projLock"></div>
     </div>
   </section>
@@ -1105,7 +1105,7 @@ footer.site a{color:inherit}
             <div class="field2"><label for="pbModus">Arbeitsweise</label><select id="pbModus"><option value="beides">online oder vor Ort</option><option value="online">nur online</option><option value="vorort">vor Ort in Karlsruhe</option></select></div>
             <div class="field2"><label for="pbSprache">Sprache</label><select id="pbSprache"><option value="beides">Deutsch oder Englisch</option><option value="de">Deutsch</option><option value="en">Englisch</option></select></div>
           </div>
-          <div class="field2"><label for="pbIdee">Was willst du bauen?</label><textarea id="pbIdee" maxlength="280" rows="3" placeholder="Zum Beispiel: Assistent, der Störungen aus dem Schichtbuch zusammenfasst und Tickets anlegt"></textarea></div>
+          <div class="field2"><label for="pbIdee" data-ct="pbIdeeLabel">Was willst du bauen?</label><textarea id="pbIdee" maxlength="280" rows="3" placeholder="Zum Beispiel: Assistent, der Störungen aus dem Schichtbuch zusammenfasst und Tickets anlegt"></textarea></div>
           <div class="field2"><label for="pbKontakt">Kontakt</label><input id="pbKontakt" maxlength="120" placeholder="Chat-Name oder E-Mail"></div>
           <p class="muted" style="font-size:var(--s--1)">Alle, die diesen Prototyp öffnen können, sehen deinen Eintrag. Trag nur ein, was alle sehen dürfen.</p>
           <div class="cta-row"><button class="btn" type="submit" id="pbSave">Eintrag speichern</button><button class="btn ghost" type="button" id="pbFound" hidden>Partner gefunden</button><button class="btn ghost" type="button" id="pbDelete" hidden>Eintrag löschen</button></div>
@@ -1126,14 +1126,14 @@ footer.site a{color:inherit}
       <div class="section-head"><div><span class="eyebrow">Schritt 2</span><h2>Gemeinsam starten</h2></div></div>
       <div class="two-col">
         <ul class="checklist" id="startList"></ul>
-        <div class="box tint"><h3>Eure Bausteine</h3><p class="muted" style="font-size:var(--s--1)">Diese Projekt-Notebooks habt ihr beide allein gebaut. Entscheidet je Baustein, wessen Stand ihr übernehmt.</p><ul class="milestones" id="blockList"></ul></div>
+        <div class="box tint" data-ct="startBox"><h3>Eure Bausteine</h3><p class="muted" style="font-size:var(--s--1)">Diese Projekt-Notebooks habt ihr beide allein gebaut. Entscheidet je Baustein, wessen Stand ihr übernehmt.</p><ul class="milestones" id="blockList"></ul></div>
       </div>
     </section>
 
     <section class="block psec" id="p-werkstatt">
       <div class="section-head"><div><span class="eyebrow">Schritt 3</span><h2>Projektwerkstatt</h2></div></div>
       <div class="two-col">
-        <p class="lede">Modul 14 begleitet euch beim Fertigbauen: Bausteine zusammenführen, Feature-Freeze, Demo mit Passwort, finaler Eval-Lauf und Vorbereitung auf das Abnahmegespräch.</p>
+        <p class="lede" data-ct="werkstattLede">Modul 14 begleitet euch beim Fertigbauen: Bausteine zusammenführen, Feature-Freeze, Demo mit Passwort, finaler Eval-Lauf und Vorbereitung auf das Abnahmegespräch.</p>
         <div class="cta-row" style="align-content:start"><button class="btn" type="button" data-module="14">Modul 14 öffnen</button></div>
       </div>
     </section>
@@ -1141,24 +1141,24 @@ footer.site a{color:inherit}
     <section class="block psec" id="p-einreichen">
       <div class="section-head"><div><span class="eyebrow">Schritt 4</span><h2>Zur Abnahme anmelden</h2></div><span class="muted tnum" id="subCount"></span></div>
       <ul class="checklist" id="submitList"></ul>
-      <div class="cta-row" style="margin-top:1rem"><button class="btn" type="button" id="submitBtn" disabled>Zur Abnahme anmelden</button><span class="muted" style="font-size:var(--s--1);align-self:center">Ein linkit Expert meldet sich innerhalb einer Woche mit Terminvorschlägen.</span></div>
+      <div class="cta-row" style="margin-top:1rem"><button class="btn" type="button" id="submitBtn" disabled>Zur Abnahme anmelden</button><span class="muted" style="font-size:var(--s--1);align-self:center" data-ct="einreichenNote">Ein linkit Expert meldet sich innerhalb einer Woche mit Terminvorschlägen.</span></div>
     </section>
 
     <section class="block psec" id="p-abnahme">
       <div class="section-head"><div><span class="eyebrow">Schritt 5</span><h2>Das Abnahmegespräch</h2></div><span class="muted">45 Minuten, online</span></div>
-      <ol class="timeline">
+      <ol class="timeline" data-ct="abnahmeAblauf">
         <li><b class="tnum">0–10</b><div><h3>Demo</h3><p>Drei vorbereitete Fragen: ein Normalfall, eine mehrschrittige Aufgabe mit aufgeklapptem Trace, eine schreibende Aktion mit Bestätigung.</p></div></li>
         <li><b class="tnum">10–15</b><div><h3>Zahlen</h3><p>Erfolgsrate mit 95-%-Intervall und Anzahl der Fälle, Tokens pro Aufgabe, wichtigster Fund aus dem Red-Teaming.</p></div></li>
         <li><b class="tnum">15–35</b><div><h3>Fragen an beide</h3><p>Jede Person erklärt einen Baustein, den die andere gebaut hat. Der Expert stellt Fragen zum Code im Repository.</p></div></li>
         <li><b class="tnum">35–40</b><div><h3>Schwächen und Entscheidungen</h3><p>Was hat nicht funktioniert? Warum MCP, Framework oder Multi-Agent, oder warum nicht?</p></div></li>
         <li><b class="tnum">40–45</b><div><h3>Feedback</h3><p>Erste Rückmeldung im Gespräch. Die schriftliche Bewertung kommt innerhalb einer Woche.</p></div></li>
       </ol>
-      <div class="callout" style="margin-top:1rem"><h4>Beide müssen es erklären können</h4><p>Die Note gilt für beide. Kann eine Person ihren Teil oder den Baustein des Partners nicht erklären, folgt für sie ein kurzes Nachgespräch.</p></div>
+      <div class="callout" style="margin-top:1rem"><h4>Beide müssen es erklären können</h4><p data-ct="abnahmeCallout">Die Note gilt für beide. Kann eine Person ihren Teil oder den Baustein des Partners nicht erklären, folgt für sie ein kurzes Nachgespräch.</p></div>
     </section>
 
     <section class="block psec" id="p-bewertung">
       <div class="section-head"><div><span class="eyebrow">Schritt 6</span><h2>Bewertungsbogen</h2></div><span class="pill warn">Vorschlag</span></div>
-      <p class="lede">Bewertet wird, was ihr gebaut, gemessen und verstanden habt, nicht wie beeindruckend das Modell antwortet. Probier aus, wie sich die Note ergibt.</p>
+      <p class="lede" data-ct="bewertungLede">Bewertet wird, was ihr gebaut, gemessen und verstanden habt, nicht wie beeindruckend das Modell antwortet. Probier aus, wie sich die Note ergibt.</p>
       <div class="rubric-layout">
         <div class="rubric" id="rubric"></div>
         <div class="box tint grade-box" id="gradeBox"></div>
@@ -1174,7 +1174,7 @@ footer.site a{color:inherit}
           <h3>Zertifikat</h3>
           <p class="cert-name">[Vorname Nachname]</p>
           <p>hat den Selbstlernkurs <b data-c="fullTitle">AI Engineering: von LLMs zu Agenten</b> mit 14 Modulen abgeschlossen und das Abschlussprojekt zu zweit erfolgreich verteidigt.</p>
-          <dl class="kv cert-kv"><dt>Projekt</dt><dd data-ct="certProjekt">[Projekttitel], Track B Instandhaltungs-Assistent</dd><dt>Note</dt><dd id="certGrade">2,0</dd><dt>Abgenommen von</dt><dd>linkit Expert [Name] am [Datum]</dd><dt>Inhalte</dt><dd data-ct="certInhalte">Python, Embeddings, Transformer, RAG, Tool Use, Evaluation, Agenten, MCP, Sicherheit</dd></dl>
+          <dl class="kv cert-kv"><dt>Projekt</dt><dd data-ct="certProjekt">[Projekttitel], Track B Instandhaltungs-Assistent</dd><dt>Note</dt><dd id="certGrade">2,0</dd><dt>Abgenommen von</dt><dd data-ct="certExpert">linkit Expert [Name] am [Datum]</dd><dt>Inhalte</dt><dd data-ct="certInhalte">Python, Embeddings, Transformer, RAG, Tool Use, Evaluation, Agenten, MCP, Sicherheit</dd></dl>
           <div class="cert-sign"><span>Vorstand linkit e.V.</span><span>Hochschulgruppe für Data Science und Industrie 4.0 am KIT</span></div>
         </div>
       </div>
@@ -1476,7 +1476,19 @@ const COURSE = Object.assign({
   tutor: null,                                      // Sätze zum Kurs für den Live-Tutor
   nbHeading: "Selbst rechnen in Colab",             // Überschrift im Schritt Notebook
   nbIntro: null,                                    // Texte zum Notebook im Browser je Unterstützung (full, partial)
-  projectNote: ""                                   // Hinweis auf der Kursseite, wenn project false ist
+  projectNote: "",                                  // Hinweis auf der Kursseite, wenn project false ist
+  /* Abschlussprojekt (nur mit project true). Ohne Angabe gilt der Kurs „AI Engineering“; Texte auf der Projektseite
+     selbst kommen über data-ct (startBox, werkstattLede, einreichenNote, abnahmeAblauf, abnahmeCallout, bewertungLede, certExpert …). */
+  tracks: { A: "Hochschulgruppen-Assistent", B: "Instandhaltungs-Assistent", C: "eigene Idee" },   // Kürzel → Name, ergibt die Optionen von #pbTrack
+  startItems: START_ITEMS,                          // Checkliste „Gemeinsam starten“
+  submitItems: SUBMIT_ITEMS,                        // Checkliste „Zur Abnahme anmelden“
+  criteria: CRITERIA,                               // Bewertungsbogen [{k, t, w, q}], Stufen und Notenschlüssel bleiben (LEVELS, GRADES)
+  pbExample: { id: "beispiel", nick: "Mara", track: "B", modul: 13, zeit: "4-6", modus: "beides", sprache: "beides", idee: "Assistent, der Störungen aus dem Schichtbuch zusammenfasst und mit Bestätigung Tickets anlegt.", kontakt: "@mara im Kurs-Chat", status: "sucht" },
+  pbIdeePlaceholder: "Zum Beispiel: Assistent, der Störungen aus dem Schichtbuch zusammenfasst und Tickets anlegt",
+  pbCollection: "partner",                          // Sammlung der Partnerbörse in der Datenbank; je Kurs eine eigene, damit sich nichts mischt
+  submitToast: "Angemeldet (Prototyp). Ein linkit Expert meldet sich innerhalb einer Woche mit Terminvorschlägen.",
+  abnahmeRow: { t: "Abnahme durch linkit Expert", q: "45 Minuten online: Demo, Zahlen, Fragen an beide, Bewertung nach festem Bogen" },   // Zeile P2 der Kursübersicht
+  bewertungDurch: "durch einen linkit Expert"       // Seitenkasten „Zertifikat“ der Kursübersicht
 }, DATA.course || {}, window.LC_COURSE || {});
 function avail(n) { return !!MODS[n] && !MODS[n].wip; }                 // Platzhalter („in Arbeit“) zählen nirgends mit
 const AVAIL = MODS.filter(m => m.n <= LAST && !m.wip).map(m => m.n);   // Lernmodule, die es schon gibt
@@ -1630,8 +1642,8 @@ function renderKurs() {
     const lock = open ? "" : `<span class="pill">ab Modul ${LAST}</span>`;
     h += `<div class="phase"><div class="phase-title"><h2 style="font-size:var(--s-1)">Abschlussprojekt zu zweit</h2></div>`;
     h += pRow("P1", "Partner finden", "Über die Partnerbörse jemanden finden, der den Kurs gerade auch abschließt", lock || '<span class="pill live"><span class="dot"></span>Offen</span>', 'data-goto="p-partner"');
-    h += pRow("14", esc(MODS[14].title), esc(MODS[14].summary || ""), open ? statusPill(14) : lock, 'data-module="14"');
-    h += pRow("P2", "Abnahme durch linkit Expert", "45 Minuten online: Demo, Zahlen, Fragen an beide, Bewertung nach festem Bogen", S.project.submitted ? '<span class="pill live"><span class="dot"></span>Angemeldet</span>' : (lock || '<span class="pill">Offen</span>'), 'data-goto="p-abnahme"');
+    h += pRow("14", esc(MODS[14].title), esc(MODS[14].summary || MODS[14].leit || ""), open ? statusPill(14) : lock, 'data-module="14"');
+    h += pRow("P2", esc(COURSE.abnahmeRow.t), esc(COURSE.abnahmeRow.q), S.project.submitted ? '<span class="pill live"><span class="dot"></span>Angemeldet</span>' : (lock || '<span class="pill">Offen</span>'), 'data-goto="p-abnahme"');
     h += pRow("P3", "Zertifikat", "Mit Note, Projekt und Expert, unterschrieben vom Vorstand", lock || '<span class="pill">Offen</span>', 'data-goto="p-zertifikat"');
     h += "</div>";
   }
@@ -1656,7 +1668,7 @@ function renderKursSide() {
   <div class="box tint"><h3>Abschlussprojekt</h3>${projectOpen() ? '<p>Du hast alle Module abgeschlossen. Such dir jetzt einen Partner.</p>' : `<p>Noch ${rest} ${rest === 1 ? "Modul" : "Module"} bis zur Projektphase. Die Partnerbörse kannst du dir schon ansehen.</p>`}<p class="muted" style="font-size:var(--s--1)">${live ? `<b class="tnum">${searching}</b> ${searching === 1 ? "Person sucht" : "Personen suchen"} gerade einen Partner.` : "Partnerbörse: in der Testversion nicht verbunden."}</p><button class="btn small" type="button" data-goto="p-partner">Zur Partnerbörse</button></div>
   <div class="box"><h3>Dein Tempo</h3><p>Empfohlen ist ein Modul pro Woche, etwa vier Stunden.</p><p class="muted" style="font-size:var(--s--1)">${rest ? `Bei diesem Tempo bist du in etwa ${rest} ${rest === 1 ? "Woche" : "Wochen"} in der Projektphase. Pausen in der Klausurenzeit sind eingeplant.` : "Alle Module geschafft."}</p></div>
   ${chat}
-  <div class="box"><h3>Zertifikat</h3><dl class="kv"><dt>Module</dt><dd class="tnum">${d} von ${AVAIL.length}</dd><dt>Projekt</dt><dd>${S.project.submitted ? "zur Abnahme angemeldet" : "offen"}</dd><dt>Bewertung</dt><dd>durch einen linkit Expert</dd></dl></div>`;
+  <div class="box"><h3>Zertifikat</h3><dl class="kv"><dt>Module</dt><dd class="tnum">${d} von ${AVAIL.length}</dd><dt>Projekt</dt><dd>${S.project.submitted ? "zur Abnahme angemeldet" : "offen"}</dd><dt>Bewertung</dt><dd>${esc(COURSE.bewertungDurch)}</dd></dl></div>`;
 }
 
 /* ================= Kursabhängige Texte ================= */
@@ -2802,34 +2814,39 @@ async function ask(text) {
 /* ================= Abschlussprojekt ================= */
 let db = null, uid = null, canWrite = null, isOwner = false, pbDocs = [], pbMode = "checking", pbFilter = "alle", formDirty = false, armedDelete = null;
 const revealed = new Set();
-const TRACK = { A: "Hochschulgruppen-Assistent", B: "Instandhaltungs-Assistent", C: "eigene Idee" };
 const ZEIT = { "2-4": "2 bis 4 Std./Woche", "4-6": "4 bis 6 Std./Woche", "6+": "mehr als 6 Std./Woche" };
 const MODUS = { beides: "online oder vor Ort", online: "nur online", vorort: "vor Ort in Karlsruhe" };
 const SPRACHE = { beides: "Deutsch oder Englisch", de: "Deutsch", en: "Englisch" };
+/* kursabhängige Teile der Projektseite: Tracks im Formular und Platzhalter der Idee (COURSE.tracks, COURSE.pbIdeePlaceholder) */
+(function projectForm() {
+  const tr = $("#pbTrack"); if (tr) tr.innerHTML = Object.keys(COURSE.tracks).map(k => `<option value="${esc(k)}">${esc(k)} · ${esc(COURSE.tracks[k])}</option>`).join("");
+  const id = $("#pbIdee"); if (id && COURSE.pbIdeePlaceholder != null) id.placeholder = COURSE.pbIdeePlaceholder;
+})();
 function renderProjekt() {
   const open = projectOpen(), rest = LAST + 1 - modulesDone();
   $("#projLock").innerHTML = open ? `<div class="lockbar ok"><b>Projektphase offen.</b><span>Du hast alle ${LAST + 1} Module abgeschlossen.</span></div>` : `<div class="lockbar"><b>Noch ${rest} ${rest === 1 ? "Modul" : "Module"} bis zur Projektphase.</b><span>Im Prototyp kannst du trotzdem alles ansehen und die Partnerbörse ausprobieren.</span></div>`;
-  $("#startList").innerHTML = START_ITEMS.map((t, i) => `<li><input type="checkbox" id="ps-${i}" data-pstart="${i}"${S.project.start[i] ? " checked" : ""} style="width:20px;height:20px;accent-color:var(--ok)"><label for="ps-${i}">${esc(t)}</label><span></span></li>`).join("");
-  $("#blockList").innerHTML = MODS.filter(m => m.projectBlock && m.n <= LAST).map(m => `<li><b>M${pad(m.n)}</b><span>${rich(m.projectBlock.title || "Projekt-Baustein")}${m.projectBlock.file ? ` · <code>${esc(m.projectBlock.file)}</code>` : ""}</span></li>`).join("");
+  $("#startList").innerHTML = COURSE.startItems.map((t, i) => `<li><input type="checkbox" id="ps-${i}" data-pstart="${i}"${S.project.start[i] ? " checked" : ""} style="width:20px;height:20px;accent-color:var(--ok)"><label for="ps-${i}">${esc(t)}</label><span></span></li>`).join("");
+  const bl = $("#blockList");   // fehlt, wenn der Kurs den Kasten über data-ct="startBox" ersetzt
+  if (bl) bl.innerHTML = MODS.filter(m => m.projectBlock && m.n <= LAST).map(m => `<li><b>M${pad(m.n)}</b><span>${rich(m.projectBlock.title || "Projekt-Baustein")}${m.projectBlock.file ? ` · <code>${esc(m.projectBlock.file)}</code>` : ""}</span></li>`).join("");
   renderSubmit(); renderRubric(); renderPB();
   const sel = $("#pbModul");
   if (!sel.options.length) { sel.innerHTML = MODS.map(m => `<option value="${m.n}">Modul ${m.n}</option>`).join("") + '<option value="15">alle Module fertig</option>'; }
   if (!formDirty && !myEntry()) sel.value = String(Math.min(15, projectOpen() ? 15 : currentModule()));
 }
 function renderSubmit() {
-  const c = SUBMIT_ITEMS.filter((_, i) => S.project.submit[i]).length;
-  $("#submitList").innerHTML = SUBMIT_ITEMS.map((t, i) => `<li><input type="checkbox" id="pu-${i}" data-psub="${i}"${S.project.submit[i] ? " checked" : ""} style="width:20px;height:20px;accent-color:var(--ok)"><label for="pu-${i}">${esc(t)}</label><span></span></li>`).join("");
-  $("#subCount").textContent = c + " von " + SUBMIT_ITEMS.length + " erledigt";
-  const b = $("#submitBtn"); b.disabled = c < SUBMIT_ITEMS.length || S.project.submitted; b.textContent = S.project.submitted ? "Zur Abnahme angemeldet" : "Zur Abnahme anmelden";
+  const c = COURSE.submitItems.filter((_, i) => S.project.submit[i]).length;
+  $("#submitList").innerHTML = COURSE.submitItems.map((t, i) => `<li><input type="checkbox" id="pu-${i}" data-psub="${i}"${S.project.submit[i] ? " checked" : ""} style="width:20px;height:20px;accent-color:var(--ok)"><label for="pu-${i}">${esc(t)}</label><span></span></li>`).join("");
+  $("#subCount").textContent = c + " von " + COURSE.submitItems.length + " erledigt";
+  const b = $("#submitBtn"); b.disabled = c < COURSE.submitItems.length || S.project.submitted; b.textContent = S.project.submitted ? "Zur Abnahme angemeldet" : "Zur Abnahme anmelden";
 }
 function grade(levels) {
   if (levels.some(l => l < 1)) return { L: null, g: "5,0", ok: false };
-  const L = CRITERIA.reduce((a, c, i) => a + c.w / 100 * levels[i], 0);
+  const L = COURSE.criteria.reduce((a, c, i) => a + c.w / 100 * levels[i], 0);
   const hit = GRADES.find(([min]) => L >= min - 1e-9);
   return { L, g: hit ? hit[1] : "5,0", ok: !!hit };
 }
 function renderRubric() {
-  $("#rubric").innerHTML = CRITERIA.map((c, i) => `<div class="rrow"><div class="rh"><b>${c.t}</b><span class="muted tnum">${c.w} %</span></div><p class="rq">${c.q}</p><div class="seg5" role="radiogroup" aria-label="${c.t}">${LEVELS.map((l, v) => `<label><input type="radio" name="rub${i}" value="${v}" data-rub="${i}"${S.rubric[i] === v ? " checked" : ""}>${v} · ${l}</label>`).join("")}</div></div>`).join("");
+  $("#rubric").innerHTML = COURSE.criteria.map((c, i) => `<div class="rrow"><div class="rh"><b>${c.t}</b><span class="muted tnum">${c.w} %</span></div><p class="rq">${c.q}</p><div class="seg5" role="radiogroup" aria-label="${c.t}">${LEVELS.map((l, v) => `<label><input type="radio" name="rub${i}" value="${v}" data-rub="${i}"${S.rubric[i] === v ? " checked" : ""}>${v} · ${l}</label>`).join("")}</div></div>`).join("");
   renderGrade();
 }
 function renderGrade() {
@@ -2855,9 +2872,8 @@ function modulText(v) { return Number(v) >= 15 ? "alle Module fertig" : "gerade 
 function card(e, me, opts = {}) {
   const sc = me && !opts.mine ? score(me, e) : null;
   const shown = revealed.has(e.id) || opts.mine || opts.example;
-  return `<article class="pb-card${opts.mine ? " me" : ""}${opts.example ? " example" : ""}"><div class="top">${opts.example ? '<span class="example-tag">Beispiel</span>' : ""}<span class="nick">${esc(e.nick || "Ohne Namen")}</span>${opts.mine ? '<span class="pill live">Du</span>' : ""}<span class="pill">Track ${esc(e.track)} · ${esc(TRACK[e.track] || "")}</span>${e.status === "gefunden" ? '<span class="pill ok"><span class="dot"></span>Partner gefunden</span>' : ""}</div><div class="meta"><span>${esc(modulText(e.modul))}</span><span>${esc(ZEIT[e.zeit] || "")}</span><span>${esc(MODUS[e.modus] || "")}</span><span>${esc(SPRACHE[e.sprache] || "")}</span></div>${e.idee ? `<p class="idee">${esc(e.idee)}</p>` : ""}${sc != null ? `<div class="match"><span class="meter${sc >= 70 ? " ok" : ""}"><span style="width:${sc}%"></span></span><b>${matchLabel(sc)}</b><span class="muted tnum">${sc} von 100</span></div>` : ""}<div class="actions">${shown ? (e.kontakt ? `<span class="contact">${esc(e.kontakt)}</span>${opts.example ? "" : `<button class="btn ghost small" type="button" data-copy="${esc(e.id)}">Kopieren</button>`}` : '<span class="muted" style="font-size:var(--s--1)">kein Kontakt angegeben</span>') : `<button class="btn small" type="button" data-reveal="${esc(e.id)}">Kontakt anzeigen</button>`}${isOwner && !opts.mine && !opts.example ? `<button class="btn ghost small" type="button" data-remove="${esc(e.id)}">${armedDelete === e.id ? "Wirklich entfernen?" : "Entfernen"}</button>` : ""}</div></article>`;
+  return `<article class="pb-card${opts.mine ? " me" : ""}${opts.example ? " example" : ""}"><div class="top">${opts.example ? '<span class="example-tag">Beispiel</span>' : ""}<span class="nick">${esc(e.nick || "Ohne Namen")}</span>${opts.mine ? '<span class="pill live">Du</span>' : ""}<span class="pill">Track ${esc(e.track)} · ${esc(COURSE.tracks[e.track] || "")}</span>${e.status === "gefunden" ? '<span class="pill ok"><span class="dot"></span>Partner gefunden</span>' : ""}</div><div class="meta"><span>${esc(modulText(e.modul))}</span><span>${esc(ZEIT[e.zeit] || "")}</span><span>${esc(MODUS[e.modus] || "")}</span><span>${esc(SPRACHE[e.sprache] || "")}</span></div>${e.idee ? `<p class="idee">${esc(e.idee)}</p>` : ""}${sc != null ? `<div class="match"><span class="meter${sc >= 70 ? " ok" : ""}"><span style="width:${sc}%"></span></span><b>${matchLabel(sc)}</b><span class="muted tnum">${sc} von 100</span></div>` : ""}<div class="actions">${shown ? (e.kontakt ? `<span class="contact">${esc(e.kontakt)}</span>${opts.example ? "" : `<button class="btn ghost small" type="button" data-copy="${esc(e.id)}">Kopieren</button>`}` : '<span class="muted" style="font-size:var(--s--1)">kein Kontakt angegeben</span>') : `<button class="btn small" type="button" data-reveal="${esc(e.id)}">Kontakt anzeigen</button>`}${isOwner && !opts.mine && !opts.example ? `<button class="btn ghost small" type="button" data-remove="${esc(e.id)}">${armedDelete === e.id ? "Wirklich entfernen?" : "Entfernen"}</button>` : ""}</div></article>`;
 }
-const EXAMPLE = { id: "beispiel", nick: "Mara", track: "B", modul: 13, zeit: "4-6", modus: "beides", sprache: "beides", idee: "Assistent, der Störungen aus dem Schichtbuch zusammenfasst und mit Bestätigung Tickets anlegt.", kontakt: "@mara im Kurs-Chat", status: "sucht" };
 function renderPB() {
   const stEl = $("#pbStatus"); if (!stEl) return;
   const form = $("#pbForm"), list = $("#pbList");
@@ -2884,7 +2900,7 @@ function renderPB() {
   if (others.length) h += others.map(([d]) => card(d, meBase)).join("");
   else {
     const msg = pbMode === "offline" ? "In der Testversion ist die Partnerbörse nicht verbunden. So sieht ein Eintrag aus:" : pbMode === "checking" ? "Einträge werden geladen …" : (pbDocs.filter(d => d.id !== uid).length ? "Für diesen Filter gibt es gerade keinen Eintrag." : "Gerade sucht niemand sonst. Trag dich ein, dann findet dich die nächste Person, die so weit ist.");
-    h += `<div class="pb-empty"><p>${msg}</p></div>` + (pbMode === "checking" ? "" : card(EXAMPLE, meBase, { example: true }));
+    h += `<div class="pb-empty"><p>${msg}</p></div>` + (pbMode === "checking" ? "" : card(COURSE.pbExample, meBase, { example: true }));
   }
   list.innerHTML = h;
 }
@@ -2904,7 +2920,7 @@ async function initDb() {
     if (u) { uid = await u.id(); canWrite = await u.can("data.write"); isOwner = await u.isOwner(); }
     pbMode = uid && canWrite !== false ? "live" : "readonly";
     renderPB();
-    db.collection("partner").onSnapshot(snap => {
+    db.collection(COURSE.pbCollection).onSnapshot(snap => {
       pbDocs = snap.docs.filter(x => x.exists).map(x => Object.assign({ id: x.id }, x.data()));
       fillForm(); renderPB(); if (curView === "kurs") renderKursSide();
     }, () => { pbMode = "offline"; renderPB(); });
@@ -2917,7 +2933,7 @@ async function savePB() {
   const mine = myEntry();
   const body = Object.assign(v, { status: mine && mine.status ? mine.status : "sucht", updated: new Date().toISOString().slice(0, 10) });
   $("#pbSave").disabled = true;
-  try { await db.doc("partner/" + uid).set(body); formDirty = false; pbNote(mine ? "Aktualisiert." : "Gespeichert. Dein Eintrag ist jetzt für alle sichtbar."); }
+  try { await db.doc(COURSE.pbCollection + "/" + uid).set(body); formDirty = false; pbNote(mine ? "Aktualisiert." : "Gespeichert. Dein Eintrag ist jetzt für alle sichtbar."); }
   catch (e) {
     if (e && e.code === "invalid_argument") { pbMode = "readonly"; pbNote("Speichern ist für dich hier nicht erlaubt."); }
     else if (e && e.code === "quota_exceeded") pbNote("Die Partnerbörse ist voll. Bitte sag dem Kursteam Bescheid.");
@@ -2926,9 +2942,9 @@ async function savePB() {
 }
 async function pbAction(kind, id) {
   try {
-    if (kind === "found") { await db.doc("partner/" + uid).update({ status: "gefunden", updated: new Date().toISOString().slice(0, 10) }); pbNote("Glückwunsch. Dein Eintrag ist jetzt als vergeben markiert."); }
-    if (kind === "delete") { await db.doc("partner/" + uid).delete(); formDirty = false; pbNote("Dein Eintrag ist gelöscht."); }
-    if (kind === "remove") { await db.doc("partner/" + id).delete(); armedDelete = null; toast("Eintrag entfernt."); }
+    if (kind === "found") { await db.doc(COURSE.pbCollection + "/" + uid).update({ status: "gefunden", updated: new Date().toISOString().slice(0, 10) }); pbNote("Glückwunsch. Dein Eintrag ist jetzt als vergeben markiert."); }
+    if (kind === "delete") { await db.doc(COURSE.pbCollection + "/" + uid).delete(); formDirty = false; pbNote("Dein Eintrag ist gelöscht."); }
+    if (kind === "remove") { await db.doc(COURSE.pbCollection + "/" + id).delete(); armedDelete = null; toast("Eintrag entfernt."); }
   } catch (e) { pbNote("Das hat nicht geklappt. Versuch es gleich noch einmal."); }
   renderPB();
 }
@@ -2984,7 +3000,7 @@ document.addEventListener("click", e => {
     case "stopBtn": if (ctl) ctl.abort(); break;
     case "prevMod": if (curMod > 0) go("modul", { m: curMod - 1 }); break;
     case "nextMod": if (curMod < 14) go("modul", { m: curMod + 1 }); break;
-    case "submitBtn": S.project.submitted = true; save(); renderSubmit(); toast("Angemeldet (Prototyp). Ein linkit Expert meldet sich innerhalb einer Woche mit Terminvorschlägen."); break;
+    case "submitBtn": S.project.submitted = true; save(); renderSubmit(); toast(COURSE.submitToast); break;
     case "pbFound": pbAction("found"); break;
     case "pbDelete": pbAction("delete"); break;
   }
