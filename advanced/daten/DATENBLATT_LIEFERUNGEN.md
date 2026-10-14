@@ -59,3 +59,12 @@ Zeilenende `\n`. Fachlicher Schlüssel: `werk`, `datum`, `linie`, `schicht`.
 | `quelle` | Name der Lieferdatei, aus der die Zeile stammt |
 
 Wie genau die Datei aussehen muss (Reihenfolge, Format, Prüfsumme), steht im Notebook von Modul 0.
+
+## Für Modul 1: `schichten.csv` und `nachlieferung.zip`
+
+- **`schichten.csv`** ist das Ergebnis von `nordwerk import` aus Modul 0 für die Lieferungen oben: 892 Zeilen, Format wie im
+  Abschnitt „Ziel der Aufbereitung“, Prüfsumme `0bc618f824be`. Das Notebook von Modul 1 rechnet daraus Kennzahlen für den
+  Wochenbericht, damit es nicht von deinem eigenen Importer abhängt.
+- **`nachlieferung.zip`** enthält den Ordner `nachlieferung/` mit den Schichtmeldungen vom 28. bis 30. September 2026
+  (Montag bis Mittwoch der KW 40): drei Dateien aus dem Stammwerk, eine Wochendatei aus Illinois und `liesmich.txt`. Die
+  Dateinamen folgen denselben Mustern wie oben. Ob sich sonst etwas geändert hat, findest du in Modul 1 heraus.

@@ -8,12 +8,12 @@ Die Module 0, 1 und 13 sind gemeinsam: Sie stehen einmal in diesem Ordner und z�
 
 Nach Data Science 1: große Daten, Pipelines, die halten, erklärbare Modelle und Wirkungen schätzen bis Double ML, im eigenen Repo mit Tests und CI. Voraussetzung: Data Science 1. Dein Repository heißt `nordwerk-analysen`, das Paket darin `nordwerk`.
 
-**Testseite (Pilot mit Modul 0):** https://juliankunz18.github.io/linkit-courses/advanced-ds.html
+**Testseite (Pilot mit Modul 0 und 1):** https://juliankunz18.github.io/linkit-courses/advanced-ds.html
 
 | Modul | Thema | Stand | Orte | Notebook |
 |---|---|---|---|---|
 | 0 | Deine Entwicklungsumgebung (gemeinsam) | verfügbar | Browser, Laptop | [W00_Entwicklungsumgebung_Teilnehmende](W00/W00_Entwicklungsumgebung_Teilnehmende.ipynb) |
-| 1 | Git, Tests und Teamarbeit (gemeinsam) | in Arbeit | | |
+| 1 | Git, Tests und Teamarbeit (gemeinsam) | verfügbar | Browser, Laptop | [W01_Git-und-Tests_Teilnehmende](W01/W01_Git-und-Tests_Teilnehmende.ipynb) |
 | 2 | Große Daten und Datenverträge | in Arbeit | | |
 | 3 | ML-Pipelines, die halten | in Arbeit | | |
 | 4 | Modelle erklären, Fehler finden, Drift erkennen | in Arbeit | | |
@@ -32,12 +32,12 @@ Nach Data Science 1: große Daten, Pipelines, die halten, erklärbare Modelle un
 
 Nach AI Engineering: Training und Fine-Tuning, drei Anbieter, Inferenz messen, Dokumente im Großen und ein Dienst in der Cloud, im eigenen Repo mit Tests und CI. Voraussetzung: AI Engineering. Dein Repository heißt `nordwerk-assistent`, das Paket darin `nordwerk`.
 
-**Testseite (Pilot mit Modul 0):** https://juliankunz18.github.io/linkit-courses/advanced-ai.html
+**Testseite (Pilot mit Modul 0 und 1):** https://juliankunz18.github.io/linkit-courses/advanced-ai.html
 
 | Modul | Thema | Stand | Orte | Notebook |
 |---|---|---|---|---|
 | 0 | Deine Entwicklungsumgebung (gemeinsam) | verfügbar | Browser, Laptop | [W00_Entwicklungsumgebung_Teilnehmende](W00/W00_Entwicklungsumgebung_Teilnehmende.ipynb) |
-| 1 | Git, Tests und Teamarbeit (gemeinsam) | in Arbeit | | |
+| 1 | Git, Tests und Teamarbeit (gemeinsam) | verfügbar | Browser, Laptop | [W01_Git-und-Tests_Teilnehmende](W01/W01_Git-und-Tests_Teilnehmende.ipynb) |
 | 2 | Training in PyTorch | in Arbeit | | |
 | 3 | Hugging Face und Fine-Tuning | in Arbeit | | |
 | 4 | LoRA, Quantisierung und Lizenzen | in Arbeit | | |
@@ -54,7 +54,7 @@ Nach AI Engineering: Training und Fine-Tuning, drei Anbieter, Inferenz messen, D
 
 ## Daten
 
-Im Ordner [`daten/`](daten/) liegen die Dateien, die die Notebooks laden: `lieferungen.zip`. Jede Tabelle ist in [`DATENBLATT_LIEFERUNGEN.md`](daten/DATENBLATT_LIEFERUNGEN.md) beschrieben. Die Datenzelle am Anfang jedes Notebooks lädt fehlende Dateien von hier nach. Alle Daten sind erfunden.
+Im Ordner [`daten/`](daten/) liegen die Dateien, die die Notebooks laden: `lieferungen.zip`, `schichten.csv`, `nachlieferung.zip`. Jede Tabelle ist in [`DATENBLATT_LIEFERUNGEN.md`](daten/DATENBLATT_LIEFERUNGEN.md) beschrieben. Die Datenzelle am Anfang jedes Notebooks lädt fehlende Dateien von hier nach. Alle Daten sind erfunden.
 
 ## So arbeitest du mit den Notebooks
 
