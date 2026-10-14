@@ -1,4 +1,4 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><title>linkit courses · Testversion</title><meta name="robots" content="noindex, nofollow"><meta name="description" content="Testversion der Lernplattform von linkit e. V."><link rel="icon" href="data:,"><script>window.LC_PAGES = true;window.LC_COURSE = {"catalog": [{"pill": "ok", "status": "Pilot · Modul 0 bis 14", "title": "Data Science 1", "text": "Der Einstieg in Data Science: Tabellen mit pandas, SQL, Statistik und Modelle bis zu Experimenten und kausalen Fragen, alles an den Werksdaten der Nordwerk GmbH.", "meta": "14 Module · Abschlussprojekt zu zweit · Notebooks laufen im Browser", "btn": "Zum Kurs", "href": "ds1.html"}, "vorkurs", "advanced"]};</script><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>linkit courses</title>
+<!doctype html><html lang="de"><head><meta charset="utf-8"><title>linkit courses · Testversion</title><meta name="robots" content="noindex, nofollow"><meta name="description" content="Testversion der Lernplattform von linkit e. V."><link rel="icon" href="data:,"><script>window.LC_PAGES = true;window.LC_COURSE = {"catalog": [{"pill": "ok", "status": "Pilot · Modul 0 bis 14", "title": "Data Science 1", "text": "Der Einstieg in Data Science: Tabellen mit pandas, SQL, Statistik und Modelle bis zu Experimenten und kausalen Fragen, alles an den Werksdaten der Nordwerk GmbH.", "meta": "14 Module · Abschlussprojekt zu zweit · Notebooks laufen im Browser", "btn": "Zum Kurs", "href": "ds1.html"}, "vorkurs", {"pill": "ok", "status": "Pilot · Modul 0", "title": "Advanced AI Engineering", "text": "Nach AI Engineering: Training und Fine-Tuning, drei Anbieter, Inferenz messen, Dokumente im Großen und ein Dienst in der Cloud, im eigenen Repo mit Tests und CI.", "meta": "Nach AI Engineering · 15 Module · eigener Laptop mit VS Code, uv und Git", "btn": "Zum Kurs", "href": "advanced-ai.html"}, {"pill": "ok", "status": "Pilot · Modul 0", "title": "Advanced Data Science", "text": "Nach Data Science 1: große Daten, Pipelines, die halten, erklärbare Modelle und Wirkungen schätzen bis Double ML, im eigenen Repo mit Tests und CI.", "meta": "Nach Data Science 1 · 15 Module · eigener Laptop mit VS Code, uv und Git", "btn": "Zum Kurs", "href": "advanced-ds.html"}]};</script><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>linkit courses</title>
 <meta name="description" content="Prototyp der ganzjährigen Lernplattform von linkit e.V. mit dem kompletten Kurs AI Engineering">
 
 
@@ -41,6 +41,8 @@ p{margin:0}
 a{color:var(--accent)}
 a:hover{color:var(--accent-strong)}
 code,pre,kbd{font-family:var(--f-mono);font-size:.88em}
+/* Keine Ligaturen im Code: ">=" bleibt ">=" und wird nicht als ≥ gezeichnet (Versionsangaben, Vergleiche) */
+code,pre,kbd,samp,.nbsrc,.nbtext,.slide .tb{font-variant-ligatures:none;font-feature-settings:"calt" 0,"liga" 0}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 button{font:inherit;color:inherit}
 .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
@@ -721,6 +723,41 @@ footer.site a{color:inherit}
 .skript .skfig img{display:block;max-width:100%;height:auto;background:#fff;padding:.6rem;border:1px solid var(--line);border-radius:2px}
 .skript .skfig .skfig-alt{background:#fff;color:#3A4650;border:1px dashed var(--line);padding:1.2rem;font-size:var(--s--1)}
 .skript .skfig figcaption{font-size:var(--s--1);color:var(--muted)}
+/* Advanced-Kurse: Orte (Browser, Laptop, Colab), Werkbank, Schritt „Auf deinem Laptop“ */
+.orte{display:flex;flex-wrap:wrap;gap:.35rem}
+.week-row .orte{margin-top:.4rem}
+#mOrte .orte{margin-top:.1rem}
+.pill.ort{background:transparent;border:1px solid var(--line);color:var(--muted);font-weight:600}
+.pill.ort[data-ort="lokal"]{border-color:var(--accent);color:var(--accent-strong)}
+.ovorte .cta-row{gap:.6rem}
+#ovOrte:empty,#lkProof:empty{display:none}
+.werkbank ul.plain{font-size:var(--s--1)}
+/* schmal: die Werkbank steht vor der Modulliste, die übrigen Kästen der Seitenspalte danach (nur Seiten mit Werkbank) */
+@media (max-width:959px){
+  .course-layout:has(.werkbank) > .side{display:contents}
+  .course-layout:has(.werkbank) > .side > .box{order:1}
+  .course-layout:has(.werkbank) > .side > .werkbank{order:-1}
+}
+.lkbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.6rem 1rem}
+.oswitch{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;font-size:var(--s--1)}
+.lstep .lbody{grid-column:2 / -1;display:grid;gap:.6rem;min-width:0}
+.lhtml{display:grid;grid-template-columns:minmax(0,1fr);gap:.6rem;min-width:0;max-width:72ch}
+.lhtml>*{min-width:0}
+.lhtml p,.lhtml ul,.lhtml ol{margin:0}
+.lhtml ul,.lhtml ol{padding-left:1.2rem;display:grid;gap:.25rem}
+.lhtml code{font-family:var(--f-mono);font-size:.88em;background:var(--panel);padding:0 .25em;overflow-wrap:anywhere}
+.lhtml pre{margin:0;background:var(--code-bg);color:var(--code-fg);padding:.6rem .8rem;overflow-x:auto;font-size:var(--s--1);line-height:1.5}
+.lhtml pre code{background:none;padding:0;overflow-wrap:normal}
+.cmdbox{border:1px solid var(--line);min-width:0;max-width:100%}
+.cmdbar{display:flex;justify-content:space-between;align-items:center;gap:.6rem;padding:.35rem .4rem .35rem .8rem;border-bottom:1px solid var(--line);font-size:var(--s--1);color:var(--muted);font-weight:600}
+.cmdbar > span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cmdbar .btn{flex:none}
+pre.cmd{margin:0;background:var(--code-bg);color:var(--code-fg);padding:.75rem .9rem;overflow-x:auto;white-space:pre;font-size:.85rem;line-height:1.55;max-width:100%}
+pre.cmd code{font-family:var(--f-mono)}
+.lstep details.expect{font-size:var(--s--1)}
+.lstep details.expect summary{cursor:pointer;color:var(--muted);font-weight:600}
+.lstep details.expect .lhtml{margin-top:.4rem}
+.lstep details.expect p{font-family:inherit;margin-top:0}
 </style>
 
 <svg style="position:absolute;width:0;height:0;color:var(--accent)" aria-hidden="true" focusable="false"><defs><pattern id="plusPat" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M6.5 11H15.5M11 6.5V15.5" stroke="currentColor" stroke-width="1.4" fill="none"/></pattern></defs></svg>
@@ -843,6 +880,7 @@ footer.site a{color:inherit}
         <div style="display:grid;gap:.6rem;min-width:0">
           <h1 id="mTitle"></h1>
           <p class="leit" id="mLeit"></p>
+          <div id="mOrte" hidden></div>
         </div>
         <div class="mnav"><button class="btn ghost small" type="button" id="prevMod">← Vorheriges</button><button class="btn ghost small" type="button" id="nextMod">Nächstes →</button></div>
       </div>
@@ -859,6 +897,7 @@ footer.site a{color:inherit}
           <div class="prose"><h3>Nach diesem Modul kannst du</h3><ul id="ovGoals"></ul></div>
           <div style="display:grid;gap:.6rem;align-content:start"><table class="plan" id="ovPlan"></table><p class="muted" style="font-size:var(--s--1)">Kein Termin, keine Frist. Teil dir die Lerneinheiten auf mehrere Tage auf, das hilft beim Behalten.</p></div>
         </div>
+        <div id="ovOrte"></div>
         <div id="ovPrior"></div>
         <div id="ovUnits"></div>
         <div id="ovSpecial"></div>
@@ -957,11 +996,19 @@ footer.site a{color:inherit}
         <div class="stepnext"><button class="btn ghost" type="button" data-step-go="video" id="nbBack">Zurück</button><button class="btn" type="button" id="nbNext">Weiter</button></div>
       </section>
 
+      <section class="stepview" data-step="lokal" hidden>
+        <header><span class="eyebrow">Auf deinem Laptop</span><h2 id="lkH">Auf deinem Laptop</h2><div class="prose lhtml" id="lkIntro"></div></header>
+        <div class="lkbar"><div class="oswitch" id="lkOs" role="group" aria-label="Dein Betriebssystem"><span class="muted">Dein System:</span><button type="button" class="chip" data-os="win" aria-pressed="false">Windows</button><button type="button" class="chip" data-os="mac" aria-pressed="false">macOS</button><button type="button" class="chip" data-os="linux" aria-pressed="false">Linux</button></div><span class="muted tnum" id="lkSummary" style="font-size:var(--s--1)"></span></div>
+        <ul class="todo-list" id="lkList"></ul>
+        <div id="lkProof"></div>
+        <div class="stepnext"><button class="btn ghost" type="button" data-step-go="notebook" id="lkBack">Zurück</button><button class="btn" type="button" id="lkNext">Weiter</button></div>
+      </section>
+
       <section class="stepview" data-step="selbsttest" hidden>
         <header><span class="eyebrow">Selbsttest</span><h2 id="qzH">Selbsttest</h2><p class="muted" id="qzSub"></p></header>
         <div class="quiz" id="quiz"></div>
         <div id="reviewBox"></div>
-        <div class="stepnext"><button class="btn ghost" type="button" data-step-go="notebook">Zurück</button><button class="btn" type="button" data-step-go="abschluss">Weiter zum Abschluss</button></div>
+        <div class="stepnext"><button class="btn ghost" type="button" data-step-go="notebook" id="qzBack">Zurück</button><button class="btn" type="button" data-step-go="abschluss">Weiter zum Abschluss</button></div>
       </section>
 
       <section class="stepview" data-step="abschluss" hidden>
@@ -1477,6 +1524,9 @@ const COURSE = Object.assign({
   nbHeading: "Selbst rechnen in Colab",             // Überschrift im Schritt Notebook
   nbIntro: null,                                    // Texte zum Notebook im Browser je Unterstützung (full, partial)
   projectNote: "",                                  // Hinweis auf der Kursseite, wenn project false ist
+  vorkurs: true,                                    // Modul 0 ist der Vorkurs (Einrichtung, Anleitung, Selbstlern-Notebook, Toolbox-Test); false: normales Modul
+  werkbank: null,                                   // Einrichtungskasten oben in der Seitenspalte der Kursübersicht: {title, items, text (HTML), module, step, btn}
+  repoName: null,                                   // eigenes Repository der Teilnehmenden (Advanced-Kurse)
   /* Abschlussprojekt (nur mit project true). Ohne Angabe gilt der Kurs „AI Engineering“; Texte auf der Projektseite
      selbst kommen über data-ct (startBox, werkstattLede, einreichenNote, abnahmeAblauf, abnahmeCallout, bewertungLede, certExpert …). */
   tracks: { A: "Hochschulgruppen-Assistent", B: "Instandhaltungs-Assistent", C: "eigene Idee" },   // Kürzel → Name, ergibt die Optionen von #pbTrack
@@ -1491,6 +1541,7 @@ const COURSE = Object.assign({
   bewertungDurch: "durch einen linkit Expert"       // Seitenkasten „Zertifikat“ der Kursübersicht
 }, DATA.course || {}, window.LC_COURSE || {});
 function avail(n) { return !!MODS[n] && !MODS[n].wip; }                 // Platzhalter („in Arbeit“) zählen nirgends mit
+function isVorkurs(n) { return n === 0 && COURSE.vorkurs !== false; }   // Sonderfälle für Modul 0 nur, wenn es der Vorkurs ist
 const AVAIL = MODS.filter(m => m.n <= LAST && !m.wip).map(m => m.n);   // Lernmodule, die es schon gibt
 
 /* ================= Modul-Logik ================= */
@@ -1502,6 +1553,9 @@ function tasks(m) {
 }
 function mustKeys(m) { const t = tasks(m); const mk = t.filter(x => x.must).map(x => x.key); return mk.length ? mk : t.map(x => x.key); }
 function hasQuiz(m) { return !!(m.quiz && m.quiz.length); }
+/* Schritte „Auf deinem Laptop“ (m.lokal.steps, Schlüssel L1, L2, …); ihr Zustand steht wie die Aufgaben in s.todos */
+function lokalSteps(m) { return (m && m.lokal && m.lokal.steps) || []; }
+function lokalMust(m) { const L = lokalSteps(m), mk = L.filter(x => x.must !== false).map(x => x.key); return mk.length ? mk : L.map(x => x.key); }
 function passAt(m) { return Math.max(1, (m.quiz || []).length - 1); }
 
 const KEY = COURSE.key;
@@ -1511,6 +1565,7 @@ function completeMod(n) {
   const m = MODS[n], s = blankMod();
   units(m).forEach((u, i) => { s.units[i] = { seen: true, check: u.check ? u.check.correct : null }; });
   mustKeys(m).forEach(k => s.todos[k] = true);
+  lokalSteps(m).forEach(x => s.todos[x.key] = true);
   if (hasQuiz(m)) { m.quiz.forEach((q, i) => s.quiz.a[i] = q.correct); s.quiz.passed = true; }
   if (m.tut) s.tut = { done: true, pts: {} };
   return s;
@@ -1519,6 +1574,7 @@ function preset(kind) {
   const s = blank();
   if (kind === "mitte") {
     const mid = COURSE.mid;
+    if (!avail(mid)) return s;   // noch kein Modul fertig
     AVAIL.filter(n => n < mid).forEach(n => { s.mods[n] = completeMod(n); });
     const m7 = blankMod(); m7.units = { 0: { seen: true, check: units(MODS[mid])[0] && units(MODS[mid])[0].check ? units(MODS[mid])[0].check.correct : null } }; m7.todos = { "TODO 1": true }; s.mods[mid] = m7;
   }
@@ -1539,7 +1595,12 @@ function parts(n) {
   if (u.length) { const c = unitsSeen(n); out.push(["Lerneinheiten", c / u.length, c + "/" + u.length + " Einheiten"]); }
   if (m.tut) out.push(["Tutorium", s.tut && s.tut.done ? 1 : 0, s.tut && s.tut.done ? "bearbeitet" : "offen"]);
   const mk = mustKeys(m);
-  if (mk.length) out.push([n === 0 ? "Einrichtung" : "Notebook", mk.filter(k => s.todos[k]).length / mk.length, mk.filter(k => s.todos[k]).length + "/" + mk.length + (n === 0 ? " Schritte" : " Pflicht")]);
+  if (mk.length) out.push([isVorkurs(n) ? "Einrichtung" : "Notebook", mk.filter(k => s.todos[k]).length / mk.length, mk.filter(k => s.todos[k]).length + "/" + mk.length + (isVorkurs(n) ? " Schritte" : " Pflicht")]);
+  const L = lokalSteps(m);
+  if (L.length) {
+    const lm = lokalMust(m), all = L.filter(x => s.todos[x.key]).length, must = lm.filter(k => s.todos[k]).length;
+    out.push(["Laptop", must / lm.length, all + "/" + L.length + " Schritte" + (lm.length < L.length ? " · Pflicht " + must + "/" + lm.length : "")]);
+  }
   if (hasQuiz(m)) out.push(["Selbsttest", s.quiz.passed ? 1 : 0, s.quiz.passed ? "bestanden" : "offen"]);
   return out;
 }
@@ -1547,8 +1608,8 @@ function progress(n) { const p = parts(n); return p.length ? p.reduce((a, x) => 
 function done(n) { return avail(n) && parts(n).every(x => x[1] >= 1); }
 function modulesDone() { return AVAIL.filter(n => done(n)).length; }
 function projectOpen() { return COURSE.project && modulesDone() === AVAIL.length; }
-function currentModule() { for (const n of AVAIL) if (!done(n)) return n; return COURSE.project ? 14 : AVAIL[AVAIL.length - 1]; }
-function progressLabel() { return modulesDone() + "/" + AVAIL.length + " Module"; }
+function currentModule() { for (const n of AVAIL) if (!done(n)) return n; return COURSE.project ? 14 : AVAIL.length ? AVAIL[AVAIL.length - 1] : null; }   // null: noch kein Modul fertig
+function progressLabel() { return AVAIL.length ? modulesDone() + "/" + AVAIL.length + " Module" : "Module folgen"; }
 function fmt(x) { x = Math.max(0, Math.round(x || 0)); return Math.floor(x / 60) + ":" + pad(x % 60); }
 function unitDur(m, si) { const t = timing(m, si); if (t) return t.dur; const u = units(m)[si]; return u ? u.beats.reduce((a, b) => a + (b.say || "").split(/\s+/).length, 0) / 2.6 : 0; }
 function moduleMinutes(m) { let s = 0; units(m).forEach((_, i) => s += unitDur(m, i)); return Math.round(s / 60); }
@@ -1577,11 +1638,12 @@ function go(v, opts = {}) {
 }
 function resume() {
   const n = currentModule();
+  if (n == null) { go("kurs"); return; }   // noch kein Modul fertig
   if (n === 14 && projectOpen()) { go("projekt"); return; }
   const m = MODS[n], s = st(n), u = units(m), seen = unitsSeen(n);
   let step = "ueberblick";
   if (u.length && seen > 0 && seen < u.length) step = "video";
-  else if (u.length && seen === u.length) step = (m.tut && !(s.tut && s.tut.done)) ? "tutorium" : mustKeys(m).every(k => s.todos[k]) ? (hasQuiz(m) ? "selbsttest" : "abschluss") : "notebook";
+  else if ((u.length && seen === u.length) || (!u.length && lokalSteps(m).length && progress(n) > 0)) step = (m.tut && !(s.tut && s.tut.done)) ? "tutorium" : mustKeys(m).every(k => s.todos[k]) ? (lokalSteps(m).length && !lokalMust(m).every(k => s.todos[k]) ? "lokal" : hasQuiz(m) ? "selbsttest" : "abschluss") : "notebook";
   go("modul", { m: n, step });
 }
 /* Platzhalter für Module, die noch in Arbeit sind */
@@ -1611,7 +1673,7 @@ function cardHTML(c) {
 function renderCatalog() {
   const d = modulesDone(), N = AVAIL.length, f = Object.assign({}, FEATURED, COURSE.card || {});
   $("#catalog").innerHTML = `
-  <article class="course featured"><div><span class="pill ok"><span class="dot"></span>${esc(f.status)}</span></div><h3>${esc(COURSE.fullTitle)}</h3><p>${esc(f.text)}</p><p class="meta">${esc(f.meta)}</p><div class="spacer"></div><div class="progress-line"><div class="meter" style="flex:1"><span style="width:${d / N * 100}%"></span></div><span class="tnum">${d}/${N} Module</span></div><button class="btn" type="button" data-resume>Weiterlernen</button></article>`
+  <article class="course featured"><div><span class="pill ${esc(f.pill || "ok")}"><span class="dot"></span>${esc(f.status)}</span></div><h3>${esc(COURSE.fullTitle)}</h3><p>${esc(f.text)}</p><p class="meta">${esc(f.meta)}</p><div class="spacer"></div><div class="progress-line"><div class="meter" style="flex:1"><span style="width:${N ? d / N * 100 : 0}%"></span></div><span class="tnum">${N ? d + "/" + N + " Module" : "noch kein Modul fertig"}</span></div><button class="btn" type="button" data-resume>${N ? "Weiterlernen" : "Zur Kursübersicht"}</button></article>`
     + (COURSE.catalog || ["vorkurs", "advanced", "baukasten"]).map(c => "\n  " + cardHTML(typeof c === "string" ? CARDS[c] : c)).join("");
 }
 
@@ -1625,12 +1687,13 @@ function statusPill(n) {
 function weekRow(n, cur) {
   const m = MODS[n];
   if (!avail(n)) return `<div class="week-row locked" aria-disabled="true"><span class="wn">${pad(n)}</span><span><span class="wt">${esc(m.title)}</span><span class="wq">${esc(m.leit || "")}</span></span><span class="status">${statusPill(n)}</span></div>`;
-  return `<button type="button" class="week-row${n === cur ? " current" : ""}" data-module="${n}"><span class="wn">${pad(n)}</span><span><span class="wt">${esc(m.title)}</span><span class="wq">${esc(m.summary || m.leit || "")}</span>${m.projectBlock ? `<span class="ms">${esc(m.projectBlock.title || "Projekt-Baustein")}</span>` : ""}</span><span class="status">${statusPill(n)}</span></button>`;
+  return `<button type="button" class="week-row${n === cur ? " current" : ""}" data-module="${n}"><span class="wn">${pad(n)}</span><span><span class="wt">${esc(m.title)}</span><span class="wq">${esc(m.summary || m.leit || "")}</span>${orteHTML(m)}${m.projectBlock ? `<span class="ms">${esc(m.projectBlock.title || "Projekt-Baustein")}</span>` : ""}</span><span class="status">${statusPill(n)}</span></button>`;
 }
 function renderKurs() {
   const d = modulesDone(), cur = currentModule(), open = projectOpen(), N = AVAIL.length, wip = MODS.filter(m => m.wip).length;
-  $("#kursHead").innerHTML = `<span class="seg"><b>${d} von ${N} Modulen</b><span class="meter${d === N ? " ok" : ""}" style="width:140px"><span style="width:${d / N * 100}%"></span></span></span><span>${open ? '<span class="pill ok"><span class="dot"></span>Projektphase offen</span>' : COURSE.project ? `Projektphase nach Modul ${LAST}` : wip ? `${wip} weitere Module in Arbeit` : ""}</span>`;
-  $("#resumeBtn").textContent = cur <= LAST ? `${done(cur) ? "Zu Modul" : "Weiter mit Modul"} ${cur}: ${MODS[cur].title.split(":")[0]}` : "Weiter zum Abschlussprojekt";
+  $("#kursHead").innerHTML = `<span class="seg"><b>${N ? d + " von " + N + " Modulen" : "Noch kein Modul fertig"}</b><span class="meter${N && d === N ? " ok" : ""}" style="width:140px"><span style="width:${N ? d / N * 100 : 0}%"></span></span></span><span>${open ? '<span class="pill ok"><span class="dot"></span>Projektphase offen</span>' : COURSE.project ? `Projektphase nach Modul ${LAST}` : wip ? (N ? `${wip} weitere Module in Arbeit` : `Alle ${wip} Module in Arbeit`) : ""}</span>`;
+  $("#resumeBtn").textContent = cur == null ? "Die ersten Module folgen bald" : cur <= LAST ? `${done(cur) ? "Zu Modul" : "Weiter mit Modul"} ${cur}: ${MODS[cur].title.split(":")[0]}` : "Weiter zum Abschlussprojekt";
+  $("#resumeBtn").disabled = cur == null;
   let h = "";
   (COURSE.phases || PHASES).forEach(ph => {
     h += `<div class="phase"><div class="phase-title"><h2 style="font-size:var(--s-1)">${ph.t}</h2></div>`;
@@ -1654,21 +1717,31 @@ function renderKursSide() {
   const host = $("#kursSide"); if (!host) return;
   const d = modulesDone(), rest = AVAIL.length - d;
   const chat = `<div class="box"><h3>Kurs-Chat</h3><p>Ein Chat für alle, die den Kurs gerade machen, das ganze Jahr. Das Kursteam liest dienstags und freitags mit.</p><button class="btn ghost small" type="button" data-toast="Auf der echten Plattform führt der Knopf in den Kurs-Chat.">Zum Kurs-Chat</button></div>`;
+  const wb = werkbankHTML();
   if (!COURSE.project) {
     const wip = MODS.filter(m => m.wip).length;
-    host.innerHTML = `
+    host.innerHTML = `${wb}
   <div class="box tint"><h3>Abschlussprojekt</h3><p>${esc(COURSE.projectNote)}</p></div>
-  <div class="box"><h3>Dein Tempo</h3><p>Empfohlen ist ein Modul pro Woche, etwa vier Stunden.</p><p class="muted" style="font-size:var(--s--1)">${wip ? `Fertig sind ${AVAIL.length} von ${MODS.length} Modulen. Die übrigen kommen nach und nach dazu.` : rest ? `Noch ${rest} ${rest === 1 ? "Modul" : "Module"} offen.` : "Alle Module geschafft."}</p></div>
+  <div class="box"><h3>Dein Tempo</h3><p>Empfohlen ist ein Modul pro Woche, etwa vier Stunden.</p><p class="muted" style="font-size:var(--s--1)">${wip && !AVAIL.length ? "Noch ist kein Modul fertig. Die Module kommen nach und nach dazu." : wip ? `Fertig sind ${AVAIL.length} von ${MODS.length} Modulen. Die übrigen kommen nach und nach dazu.` : rest ? `Noch ${rest} ${rest === 1 ? "Modul" : "Module"} offen.` : "Alle Module geschafft."}</p></div>
   ${chat}`;
     return;
   }
   const searching = pbDocs.filter(x => x.status !== "gefunden" && x.id !== uid).length;
   const live = pbMode === "live" || pbMode === "readonly";
-  host.innerHTML = `
+  host.innerHTML = `${wb}
   <div class="box tint"><h3>Abschlussprojekt</h3>${projectOpen() ? '<p>Du hast alle Module abgeschlossen. Such dir jetzt einen Partner.</p>' : `<p>Noch ${rest} ${rest === 1 ? "Modul" : "Module"} bis zur Projektphase. Die Partnerbörse kannst du dir schon ansehen.</p>`}<p class="muted" style="font-size:var(--s--1)">${live ? `<b class="tnum">${searching}</b> ${searching === 1 ? "Person sucht" : "Personen suchen"} gerade einen Partner.` : "Partnerbörse: in der Testversion nicht verbunden."}</p><button class="btn small" type="button" data-goto="p-partner">Zur Partnerbörse</button></div>
   <div class="box"><h3>Dein Tempo</h3><p>Empfohlen ist ein Modul pro Woche, etwa vier Stunden.</p><p class="muted" style="font-size:var(--s--1)">${rest ? `Bei diesem Tempo bist du in etwa ${rest} ${rest === 1 ? "Woche" : "Wochen"} in der Projektphase. Pausen in der Klausurenzeit sind eingeplant.` : "Alle Module geschafft."}</p></div>
   ${chat}
   <div class="box"><h3>Zertifikat</h3><dl class="kv"><dt>Module</dt><dd class="tnum">${d} von ${AVAIL.length}</dd><dt>Projekt</dt><dd>${S.project.submitted ? "zur Abnahme angemeldet" : "offen"}</dd><dt>Bewertung</dt><dd>${esc(COURSE.bewertungDurch)}</dd></dl></div>`;
+}
+
+/* Werkbank: was die Teilnehmenden für den Kurs auf dem eigenen Laptop brauchen (COURSE.werkbank), mit Knopf zur Einrichtung */
+function werkbankHTML() {
+  const W = COURSE.werkbank; if (!W) return "";
+  const n = W.module != null ? W.module : 0, ok = avail(n);
+  const btn = ok ? `<button class="btn small" type="button" data-module="${n}"${W.step ? ` data-modstep="${esc(W.step)}"` : ""}>${esc(W.btn || "Zur Einrichtung")}</button>`
+    : `<button class="btn small" type="button" disabled>${esc(W.btn || "Zur Einrichtung")}</button><p class="muted" style="font-size:var(--s--1)">Modul ${n} entsteht gerade. Sobald es fertig ist, führt dich dieser Knopf zur Einrichtung.</p>`;
+  return `<div class="box tint werkbank"><span class="eyebrow">Vor dem Start</span><h3>${esc(W.title || "Deine Werkbank")}</h3>${(W.items || []).length ? `<ul class="plain">${W.items.map(x => `<li>${rich(x)}</li>`).join("")}</ul>` : ""}${W.text ? `<p>${W.text}</p>` : ""}<div>${btn}</div></div>`;
 }
 
 /* ================= Kursabhängige Texte ================= */
@@ -1685,18 +1758,25 @@ function stepsFor(m) {
   const s = [{ id: "ueberblick", label: "Überblick", g: "path" }];
   if (units(m).length) s.push({ id: "video", label: "Lerneinheiten", g: "path" });
   if (m.tut) s.push({ id: "tutorium", label: "Tutorium", g: "path" });
-  if (tasks(m).length || (m.notebooks || []).length) s.push({ id: "notebook", label: m.n === 0 ? "Einrichtung" : "Notebook", g: "path" });
+  if (tasks(m).length || (m.notebooks || []).length) s.push({ id: "notebook", label: isVorkurs(m.n) ? "Einrichtung" : "Notebook", g: "path" });
+  if (lokalSteps(m).length) s.push({ id: "lokal", label: m.lokal.title || "Auf deinem Laptop", g: "path" });
   if (hasQuiz(m)) s.push({ id: "selbsttest", label: "Selbsttest", g: "path" });
   s.push({ id: "abschluss", label: "Abschluss", g: "path" });
   if (m.lern && m.lern.summary) s.push({ id: "zusammenfassung", label: "Zusammenfassung", g: "ref" });
-  if (m.skriptHtml) s.push({ id: "skript", label: m.n === 0 ? "Anleitung" : "Skript", g: "ref" });
+  if (m.skriptHtml) s.push({ id: "skript", label: isVorkurs(m.n) ? "Anleitung" : "Skript", g: "ref" });
   s.push({ id: "tutor", label: "Kurs-Tutor", g: "ref" });
   if ((m.faq || []).length || (m.qa || []).length) s.push({ id: "hilfe", label: "Häufige Fehler", g: "ref" });
   return s;
 }
 function nextPathStep(m, id) { const p = stepsFor(m).filter(s => s.g === "path"); const i = p.findIndex(s => s.id === id); return p[i + 1] ? p[i + 1].id : null; }
 function prevPathStep(m, id) { const p = stepsFor(m).filter(s => s.g === "path"); const i = p.findIndex(s => s.id === id); return i > 0 ? p[i - 1].id : null; }
-const STEPLABEL = { ueberblick: "Überblick", video: "Lerneinheiten", tutorium: "Tutorium", notebook: "Notebook", selbsttest: "Selbsttest", abschluss: "Abschluss" };
+const STEPLABEL = { ueberblick: "Überblick", video: "Lerneinheiten", tutorium: "Tutorium", notebook: "Notebook", lokal: "Auf deinem Laptop", selbsttest: "Selbsttest", abschluss: "Abschluss" };
+function stepWeiter(nx) { return nx === "lokal" ? "Weiter auf deinem Laptop" : "Weiter zum " + (STEPLABEL[nx] || "Abschluss"); }
+/* Orte eines Moduls (m.orte: browser, lokal, colab) als Abzeichen; alte Kurse ohne m.orte zeigen keine */
+const ORTE = { browser: "Im Browser", lokal: "Auf deinem Laptop", colab: "In Colab" };
+function orteHTML(m) { const o = (m && m.orte) || []; return o.length ? `<span class="orte">${o.filter(k => ORTE[k]).map(k => `<span class="pill ort" data-ort="${k}">${ORTE[k]}</span>`).join("")}</span>` : ""; }
+function colabOK(m) { return !m.orte || m.orte.includes("colab"); }   // „In Colab öffnen“ nur, wo Colab ein Ort ist (alte Kurse: immer)
+function nbMain(m) { return (m.nbrun && m.nbrun.file) || (m.notebooks || []).find(f => /_Teilnehmende/.test(f)) || null; }
 
 let skriptFor = -1, tutorFor = -1, lastDone = false;
 const HINTS = {};
@@ -1708,11 +1788,12 @@ function openModule(n, step) {
   $("#mCrumb").textContent = "Modul " + n;
   $("#mTitle").textContent = "Modul " + n + " · " + m.title;
   $("#mLeit").textContent = m.leit || "";
+  $("#mOrte").innerHTML = orteHTML(m); $("#mOrte").hidden = !m.orte || !m.orte.length;
   $("#prevMod").disabled = n === 0; $("#nextMod").disabled = n === 14;
   renderSegs();
   lastDone = done(n);
   if (changed) { V.m = null; skriptFor = -1; renderHelpFilters(true); } else renderHelpFilters();
-  renderOverview(); renderTutorium(); renderNotebook(); renderQuiz(); renderReview(); renderFinish(); renderHelp(); renderSummary();
+  renderOverview(); renderTutorium(); renderNotebook(); renderLokal(); renderQuiz(); renderReview(); renderFinish(); renderHelp(); renderSummary();
   window.scrollTo({ top: 0 });
   showStep(stepsFor(m).some(s => s.id === step) ? step : "ueberblick");
 }
@@ -1725,6 +1806,7 @@ function stepDone(id) {
   if (id === "ueberblick") return true;
   if (id === "video") return unitsSeen(curMod) === units(m).length;
   if (id === "notebook") return mustKeys(m).every(k => s.todos[k]);
+  if (id === "lokal") return lokalSteps(m).length > 0 && lokalMust(m).every(k => s.todos[k]);
   if (id === "selbsttest") return s.quiz.passed;
   if (id === "abschluss") return done(curMod);
   return false;
@@ -1776,20 +1858,36 @@ function renderOverview() {
   const rows = [];
   if (units(m).length) rows.push(["Lerneinheiten", units(m).length + (L && L.timing ? " vertonte" : "") + " Einheiten mit Kurzchecks", "etwa " + moduleMinutes(m) + " Min."]);
   if (m.tut) rows.push(["Tutoriumsblatt", m.tut.tasks.length + " Aufgaben zur Theorie von Hand, Lösungen im Anhang", "etwa " + m.tut.minutes + " Min."]);
-  if (n === 0) rows.push(["Selbstlern-Notebook", "Python-Grundlagen und Setup-Check", "etwa 3 Std."]);
+  if (isVorkurs(n)) rows.push(["Selbstlern-Notebook", "Python-Grundlagen und Setup-Check", "etwa 3 Std."]);
   else if (tasks(m).length) rows.push(["Notebook", tasks(m).length + (n === 14 ? " Schritte" : " Aufgaben mit Selbsttests und gestuften Hilfen"), n === 14 ? "2 bis 4 Wochen" : "etwa 2 Std."]);
+  if (lokalSteps(m).length) rows.push(["Auf deinem Laptop", lokalSteps(m).length + (lokalSteps(m).length === 1 ? " Schritt" : " Schritte") + " im eigenen Repository", m.lokal.minutes ? minutesText(m.lokal.minutes) : "etwa 2 Std."]);
   if (hasQuiz(m)) rows.push(["Selbsttest", m.quiz.length + " Fragen, bestanden ab " + passAt(m) + ", dazu Wiederholung", "etwa 15 Min."]);
   if (L && L.summary) rows.push(["Zusammenfassung", "Kernaussagen und Formelblatt", "zum Wiederholen"]);
   $("#ovPlan").innerHTML = `<thead><tr><th>Baustein</th><th>Was</th><th class="r">Zeit</th></tr></thead><tbody>${rows.map(r => `<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td class="r tnum">${r[2]}</td></tr>`).join("")}</tbody>`;
   renderPrior();
   $("#ovUnits").innerHTML = units(m).length ? `<div style="display:grid;gap:.6rem"><h3 style="font-size:var(--s-1)">Die Lerneinheiten</h3><ol class="units-ov">${units(m).map((u, i) => `<li><span class="un">${i + 1}</span><span><b>${rich(u.title)}</b><span class="ug">${rich(u.goal || "")}</span></span><span class="muted tnum">${fmt(unitDur(m, i))}</span></li>`).join("")}</ol></div>` : "";
   $("#ovProject").innerHTML = m.projectBlock ? `<div class="callout"><h3>${rich(m.projectBlock.title || "Projekt-Baustein")}</h3><p>${rich(m.projectBlock.what || "")}</p>${m.projectBlock.file ? `<p class="muted" style="font-size:var(--s--1)"><code>${esc(m.projectBlock.file)}</code></p>` : ""}</div>` : "";
-  $("#ovSpecial").innerHTML = n === 1 ? w01Special() : "";
-  if (n === 1) renderDataTable();
+  $("#ovOrte").innerHTML = ovOrteHTML(m);
+  $("#ovSpecial").innerHTML = n === 1 && COURSE.vorkurs !== false ? w01Special() : "";
+  if (n === 1 && COURSE.vorkurs !== false) renderDataTable();
   const nx = nextPathStep(m, "ueberblick");
-  $("#ovNext").textContent = nx === "video" ? "Erste Einheit starten" : nx === "notebook" ? (n === 0 ? "Zur Einrichtung" : "Zum Notebook") : nx === "tutorium" ? "Zum Tutoriumsblatt" : "Weiter";
+  $("#ovNext").textContent = nx === "video" ? "Erste Einheit starten" : nx === "notebook" ? (isVorkurs(n) ? "Zur Einrichtung" : "Zum Notebook") : nx === "tutorium" ? "Zum Tutoriumsblatt" : nx === "lokal" ? "Auf dem Laptop starten" : "Weiter";
   $("#ovNext").dataset.stepGo = nx || "abschluss";
-  $("#ovNextHint").textContent = "Weiter mit " + (STEPLABEL[nx] || "Abschluss");
+  $("#ovNextHint").textContent = nx === "lokal" ? "Weiter auf deinem Laptop" : "Weiter mit " + (STEPLABEL[nx] || "Abschluss");
+}
+function minutesText(min) { min = Number(min) || 0; if (min < 60) return "etwa " + Math.round(min) + " Min."; const h = Math.round(min / 30) / 2; return "etwa " + String(h).replace(".", ",") + " Std."; }
+/* Startknöpfe im Überblick: je Ort ein Knopf (Browser: Schritt Notebook, Laptop: Schritt lokal, Colab: Teilnehmenden-Notebook) */
+function ovOrteHTML(m) {
+  const o = (m.orte || []).filter(k => ORTE[k]); if (!o.length) return "";
+  const steps = stepsFor(m).map(x => x.id), f = nbMain(m), main = o.includes("lokal") && m.lokal ? "lokal" : null;
+  const b = [], why = [];
+  o.forEach(k => {
+    if (k === "browser" && steps.includes("notebook") && m.nbrun && m.nbrun.support !== "colab") { b.push(`<button class="btn${main ? " ghost" : ""}" type="button" data-step-go="notebook" data-ortstart="browser">Im Browser üben</button>`); why.push("<b>Im Browser</b> probierst du das Notebook sofort aus, ohne Installation."); }
+    if (k === "lokal" && steps.includes("lokal")) { b.push(`<button class="btn" type="button" data-step-go="lokal" data-ortstart="lokal">Auf dem Laptop starten</button>`); why.push(`<b>Auf deinem Laptop</b> arbeitest du in VS Code im eigenen Repository${COURSE.repoName ? " <code>" + esc(COURSE.repoName) + "</code>" : ""}. Das ist der Hauptweg.`); }
+    if (k === "colab" && f) { b.push(`<a class="btn ghost" href="${colabURL(f, m)}" target="_blank" rel="noopener" data-ortstart="colab">In Colab öffnen</a>`); why.push("<b>In Colab</b> rechnest du mit einer GPU von Google, ein Google-Konto ist nötig."); }
+  });
+  if (!b.length) return "";
+  return `<div class="box tint ovorte"><span class="eyebrow">Wo du arbeitest</span><div class="cta-row">${b.join("")}</div><ul class="plain muted" style="font-size:var(--s--1)">${why.map(x => `<li>${x}</li>`).join("")}</ul></div>`;
 }
 function renderPrior() {
   const L = MODS[curMod].lern, P = (L && L.intro && L.intro.prior) || [];
@@ -2105,7 +2203,9 @@ function colabPattern(m) { return m.colab || COURSE.colab; }   // etwa "ai-engin
 function colabURL(f, m) { const mm = String(f).match(/^W(\d\d)_/); return mm ? "https://colab.research.google.com/github/" + REPO + "/blob/main/" + colabPattern(m).replace("{nn}", mm[1]).replace("{file}", encodeURIComponent(f)) : "https://colab.research.google.com/"; }
 function renderNotebook() {
   const m = MODS[curMod], n = curMod, s = st(n), isDone = done(n), repoDir = colabPattern(m).split("/")[0];
-  const files = (m.notebooks || []).map(f => [f, nbKind(f)]).filter(x => x[1]);
+  // Ohne Colab als Ort übernehmen „Im Browser“ (unten) und „Für VS Code“ die Karte des Aufgaben-Notebooks
+  const viaOther = f => !colabOK(m) && f === nbMain(m) && (m.nbDownload || (m.nbrun && m.nbrun.support !== "colab"));
+  const files = (m.notebooks || []).filter(f => !viaOther(f)).map(f => [f, nbKind(f)]).filter(x => x[1]);
   files.sort((a, b) => (/_Loesung/.test(a[0]) ? 1 : 0) - (/_Loesung/.test(b[0]) ? 1 : 0));
   const small = t => `<p class="muted" style="font-size:var(--s--1)">${t}</p>`;
   let h = files.map(([f, [kind, txt]]) => {
@@ -2114,24 +2214,30 @@ function renderNotebook() {
     if (sol) body = isDone
       ? `<button class="btn ghost" type="button" disabled>Freigeschaltet</button>${small("Im Pilot bekommst du die Lösung vom Kursteam. Auf der Plattform öffnet dieser Knopf sie direkt.")}`
       : `<button class="btn ghost" type="button" disabled>Nach dem Abschluss</button>${small("Die Lösung erscheint, sobald du das Modul abgeschlossen hast. Bis dahin helfen dir die gestuften Hilfen.")}`;
-    else body = `<a class="btn" href="${colabURL(f, m)}" target="_blank" rel="noopener">In Colab öffnen</a>${txt ? small(txt) : ""}${proj ? small(`Die Daten stehen in den <a href="${REPO_TREE}W07" target="_blank" rel="noopener">Startpaketen A und B</a>. Beim ersten Start fragt das Notebook danach.`) : ""}`;
+    else body = (colabOK(m) ? `<a class="btn" href="${colabURL(f, m)}" target="_blank" rel="noopener">In Colab öffnen</a>` : "") + `${txt ? small(txt) : ""}${proj ? small(`Die Daten stehen in den <a href="${REPO_TREE}W07" target="_blank" rel="noopener">Startpaketen A und B</a>. Beim ersten Start fragt das Notebook danach.`) : ""}`;
     return `<div class="filecard"><span class="eyebrow">${kind}</span><span class="fname">${esc(f)}</span>${body}</div>`;
   }).join("");
-  if (n === 0) h += `<div class="filecard"><span class="eyebrow">Toolbox-Test</span><span class="fname">KIT-Toolbox_Test_v3.ipynb</span><a class="btn ghost" href="${COLAB_BASE}KIT-Toolbox/KIT-Toolbox_Test_v3.ipynb" target="_blank" rel="noopener">In Colab öffnen</a>${small("Prüft nach der Einrichtung, ob Schlüssel, Modelle und Tool Calling funktionieren. Jede Zelle meldet ✅ oder ❌.")}</div>`;
-  h += `<div class="callout"><h3>So arbeitest du gut</h3><ul style="margin:0;padding-left:1.1rem;display:grid;gap:.3rem;font-size:var(--s--1)"><li>Zuerst <b>Datei → Kopie in Drive speichern</b>, sonst ist deine Arbeit nach einer Pause weg.</li><li><b>Erst probieren, dann Hilfe:</b> Nach etwa zehn Minuten ohne Fortschritt öffnest du die erste gestufte Hilfe. Die nächste erst, wenn die vorige nicht reicht.</li><li>„In Colab öffnen“ lädt das Notebook aus dem <a href="https://github.com/${REPO}/tree/main/${repoDir}" target="_blank" rel="noopener">Kurs-Repository auf GitHub</a>.</li></ul></div>`;
+  if (m.nbDownload) { const fn = m.nbDownload.split("/").pop(); h += `<div class="filecard vscode"><span class="eyebrow">Für VS Code</span><span class="fname">${esc(fn)}</span><a class="btn ghost" href="${esc(m.nbDownload)}" download="${esc(fn)}">Herunterladen</a>${small("Leg die Datei in dein Repository" + (COURSE.repoName ? " <code>" + esc(COURSE.repoName) + "</code>" : "") + ", öffne sie in VS Code und wähl oben rechts als Kernel die Umgebung <code>.venv</code> deines Projekts.")}</div>`; }
+  if (isVorkurs(n)) h += `<div class="filecard"><span class="eyebrow">Toolbox-Test</span><span class="fname">KIT-Toolbox_Test_v3.ipynb</span><a class="btn ghost" href="${COLAB_BASE}KIT-Toolbox/KIT-Toolbox_Test_v3.ipynb" target="_blank" rel="noopener">In Colab öffnen</a>${small("Prüft nach der Einrichtung, ob Schlüssel, Modelle und Tool Calling funktionieren. Jede Zelle meldet ✅ oder ❌.")}</div>`;
+  const tips = colabOK(m)
+    ? ["Zuerst <b>Datei → Kopie in Drive speichern</b>, sonst ist deine Arbeit nach einer Pause weg.", "<b>Erst probieren, dann Hilfe:</b> Nach etwa zehn Minuten ohne Fortschritt öffnest du die erste gestufte Hilfe. Die nächste erst, wenn die vorige nicht reicht.", `„In Colab öffnen“ lädt das Notebook aus dem <a href="https://github.com/${REPO}/tree/main/${repoDir}" target="_blank" rel="noopener">Kurs-Repository auf GitHub</a>.`]
+    : ["<b>Erst probieren, dann Hilfe:</b> Nach etwa zehn Minuten ohne Fortschritt öffnest du die erste gestufte Hilfe. Die nächste erst, wenn die vorige nicht reicht.", "Im Browser bleiben deine Änderungen nur in diesem Browser gespeichert. Was bleiben soll, gehört in dein Repository."];
+  if (m.nbDownload && colabOK(m)) tips.push("Für VS Code lädst du die Datei herunter und arbeitest mit deiner eigenen Umgebung.");
+  else if (m.nbDownload) tips.push("Für VS Code lädst du die Datei oben herunter und arbeitest in deinem Repository mit deiner eigenen Umgebung.");
+  h += `<div class="callout"><h3>So arbeitest du gut</h3><ul style="margin:0;padding-left:1.1rem;display:grid;gap:.3rem;font-size:var(--s--1)">${tips.map(t => `<li>${t}</li>`).join("")}</ul></div>`;
   $("#nbFiles").innerHTML = h;
   $("#nbIntro").innerHTML = nbIntroHTML(m);
   if (NB.n !== n) { $("#nbRun").hidden = true; }
   else if (!$("#nbRun").hidden && $("#nbOpen")) $("#nbOpen").hidden = true;
   renderKeyBadge();
-  $("#nbH").textContent = n === 0 ? "Einrichtung in sieben Schritten" : n === 14 ? "Eure Werkstatt-Schritte" : COURSE.nbHeading;
-  $("#todoH").textContent = n === 0 ? "Schritte abhaken" : "Aufgaben abhaken";
+  $("#nbH").textContent = isVorkurs(n) ? "Einrichtung in sieben Schritten" : n === 14 ? "Eure Werkstatt-Schritte" : COURSE.nbHeading;
+  $("#todoH").textContent = isVorkurs(n) ? "Schritte abhaken" : "Aufgaben abhaken";
   const faqTags = new Set((m.faq || []).map(f => f.tag));
   $("#todoList").innerHTML = tasks(m).map(t => { const id = "td-" + esc(t.key).replace(/\s/g, "_"); return `<li class="todo"><input type="checkbox" id="${id}" data-todo="${esc(t.key)}"${s.todos[t.key] ? " checked" : ""}><label for="${id}"><span class="tn">${esc(t.label)}${t.must && mustKeys(m).length < tasks(m).length ? ' <span class="must">· Pflicht</span>' : ""}</span><span class="tt">${rich(t.title)}</span></label>${faqTags.has(t.label) ? `<button type="button" class="linkbtn help" data-help="${esc(t.label)}">Häufige Fehler</button>` : "<span></span>"}<div class="hintbox-wrap" data-hintwrap="${esc(t.label)}" style="grid-column:2 / -1">${hintHTML(t.label)}</div>${t.result ? `<details><summary>Ergebnis zum Abgleich</summary><p>${rich(t.result)}</p></details>` : ""}</li>`; }).join("");
   todoSummary();
   typeset($("#todoList"));
   const nx = nextPathStep(m, "notebook"), pv = prevPathStep(m, "notebook");
-  $("#nbNext").dataset.stepGo = nx || "abschluss"; $("#nbNext").textContent = "Weiter zum " + (STEPLABEL[nx] || "Abschluss");
+  $("#nbNext").dataset.stepGo = nx || "abschluss"; $("#nbNext").textContent = stepWeiter(nx);
   $("#nbBack").dataset.stepGo = pv || "ueberblick";
 }
 function todoSummary() {
@@ -2139,10 +2245,59 @@ function todoSummary() {
   $("#todoSummary").textContent = t.filter(x => s.todos[x.key]).length + " von " + t.length + " erledigt" + (mk.length < t.length ? " · Pflicht " + mk.filter(k => s.todos[k]).length + "/" + mk.length : "");
 }
 
+/* ---- Auf deinem Laptop (m.lokal) ---- */
+const OSNAME = { win: "Windows", mac: "macOS", linux: "Linux" };
+const LK = { os: null };
+function osKey() { return COURSE.prefix + "lc-os"; }   // je Kurs gespeichert
+function osGuess() { const u = (navigator.userAgent || "") + " " + (navigator.platform || ""); return /Windows|Win32|Win64/i.test(u) ? "win" : /Mac|iPhone|iPad/i.test(u) ? "mac" : "linux"; }
+function osGet() {
+  if (!LK.os) { let v = null; try { v = localStorage.getItem(osKey()); } catch (e) { /* ohne Speicher */ } LK.os = OSNAME[v] ? v : osGuess(); }
+  return LK.os;
+}
+function setOS(v) { if (!OSNAME[v]) return; LK.os = v; try { localStorage.setItem(osKey(), v); } catch (e) { /* egal */ } renderLokal(); }
+function cmdsFor(c, os) { if (!c) return null; const own = c[os], l = own || c.all; return l && l.length ? { lines: l, own: !!own } : null; }
+function renderLokal() {
+  const m = MODS[curMod], L = lokalSteps(m);
+  if (!L.length) { $("#lkList").innerHTML = ""; $("#lkIntro").innerHTML = ""; $("#lkProof").innerHTML = ""; return; }
+  const s = st(curMod), os = osGet(), mixed = lokalMust(m).length < L.length;
+  $("#lkH").textContent = m.lokal.title || "Auf deinem Laptop";
+  $("#lkIntro").innerHTML = m.lokal.intro || "";
+  $("#lkIntro").hidden = !m.lokal.intro;
+  $$("#lkOs [data-os]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.os === os)));
+  $("#lkList").innerHTML = L.map((x, i) => {
+    const id = "lk-" + esc(x.key), c = cmdsFor(x.cmds, os);
+    const shell = c ? (c.own ? (os === "win" ? "PowerShell" : "Terminal") + " · " + OSNAME[os] : "Terminal · alle Systeme") : "";
+    const cmd = c ? `<div class="cmdbox"><div class="cmdbar"><span>${shell}</span><button class="btn ghost small" type="button" data-cmdcopy="${esc(x.key)}">Kopieren</button></div><pre class="cmd" id="cmd-${esc(x.key)}"><code>${esc(c.lines.join("\n"))}</code></pre></div>`
+      : x.cmds ? `<p class="muted" style="font-size:var(--s--1)">Für ${OSNAME[os]} braucht dieser Schritt keinen eigenen Befehl.</p>` : "";
+    return `<li class="todo lstep" data-lkey="${esc(x.key)}"><input type="checkbox" id="${id}" data-todo="${esc(x.key)}"${s.todos[x.key] ? " checked" : ""}><label for="${id}"><span class="tn">Schritt ${i + 1}${mixed && x.must !== false ? ' <span class="must">· Pflicht</span>' : ""}</span><span class="tt">${rich(x.title)}</span></label><span></span><div class="lbody">${x.html ? `<div class="lhtml">${x.html}</div>` : ""}${cmd}${x.expect ? `<details class="expect"><summary>So sieht es richtig aus</summary><div class="lhtml">${x.expect}</div></details>` : ""}</div></li>`;
+  }).join("");
+  $("#lkProof").innerHTML = m.lokal.proof ? `<div class="callout"><h3>Nachweis</h3><div class="lhtml">${m.lokal.proof}</div></div>` : "";
+  lokalSummary();
+  if (curStep === "lokal") typeset($('#stepHost > [data-step="lokal"]'));
+  const nx = nextPathStep(m, "lokal"), pv = prevPathStep(m, "lokal");
+  $("#lkNext").dataset.stepGo = nx || "abschluss"; $("#lkNext").textContent = stepWeiter(nx);
+  $("#lkBack").dataset.stepGo = pv || "ueberblick";
+}
+function lokalSummary() {
+  const el = $("#lkSummary"), m = MODS[curMod], L = lokalSteps(m); if (!el) return;
+  if (!L.length) { el.textContent = ""; return; }
+  const s = st(curMod), mk = lokalMust(m);
+  el.textContent = L.filter(x => s.todos[x.key]).length + " von " + L.length + " erledigt" + (mk.length < L.length ? " · Pflicht " + mk.filter(k => s.todos[k]).length + "/" + mk.length : "");
+}
+async function copyCmd(key, btn) {
+  const pre = $("#cmd-" + key); if (!pre) return;
+  const t = pre.textContent;
+  const ok = () => { toast("Befehl kopiert. Füg ihn im Terminal ein."); if (btn) { btn.textContent = "Kopiert"; setTimeout(() => { btn.textContent = "Kopieren"; }, 2000); } };
+  try { if (navigator.clipboard && navigator.clipboard.writeText) { await navigator.clipboard.writeText(t); ok(); return; } } catch (e) { /* Rückfall: markieren */ }
+  try { const r = document.createRange(); r.selectNodeContents(pre); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); } catch (e) { /* egal */ }
+  toast("Befehl ist markiert. Kopieren mit Strg+C oder ⌘+C.");
+}
+
 /* ---- Selbsttest und Wiederholung ---- */
 function renderQuiz() {
   const m = MODS[curMod]; if (!hasQuiz(m)) { $("#quiz").innerHTML = ""; return; }
   const s = st(curMod), Q = m.quiz, need = passAt(m);
+  $("#qzBack").dataset.stepGo = prevPathStep(m, "selbsttest") || "ueberblick";
   const sc = Q.reduce((a, q, i) => a + (s.quiz.a[i] === q.correct ? 1 : 0), 0), an = Object.keys(s.quiz.a).length;
   $("#qzH").textContent = Q.length + " Fragen zu Modul " + curMod;
   $("#qzSub").textContent = "Nach jeder Antwort siehst du sofort die Erklärung. Ab " + need + " richtigen Antworten ist der Selbsttest bestanden.";
@@ -2173,7 +2328,7 @@ function renderReview() {
 /* ---- Abschluss ---- */
 function renderFinish() {
   const m = MODS[curMod], n = curMod, s = st(n);
-  const LBL = { Lerneinheiten: ["Alle Lerneinheiten gesehen", "video"], Tutorium: ["Tutoriumsblatt bearbeitet und verglichen", "tutorium"], Selbsttest: ["Selbsttest bestanden", "selbsttest"], Einrichtung: ["Alle Einrichtungsschritte erledigt", "notebook"], Notebook: ["Pflichtaufgaben im Notebook erledigt", "notebook"] };
+  const LBL = { Lerneinheiten: ["Alle Lerneinheiten gesehen", "video"], Tutorium: ["Tutoriumsblatt bearbeitet und verglichen", "tutorium"], Selbsttest: ["Selbsttest bestanden", "selbsttest"], Einrichtung: ["Alle Einrichtungsschritte erledigt", "notebook"], Notebook: ["Pflichtaufgaben im Notebook erledigt", "notebook"], Laptop: ["Alle Schritte auf dem Laptop erledigt", "lokal"] };
   const items = parts(n).map(([l, v, t]) => [v >= 1, (LBL[l] || LBL.Notebook)[0], t, (LBL[l] || LBL.Notebook)[1]]);
   $("#fnH").textContent = "Modul " + n + " abschließen";
   $("#finishList").innerHTML = items.map(([ok, t, v, step]) => `<li><span class="tick${ok ? " on" : ""}" aria-hidden="true">${ok ? CHECK : ""}</span><span><b>${t}</b> <span class="muted tnum">· ${v}</span><span class="sr-only">${ok ? " erledigt" : " offen"}</span></span>${ok ? "<span></span>" : `<button type="button" class="linkbtn" data-step-go="${step}">Öffnen</button>`}</li>`).join("");
@@ -2185,7 +2340,7 @@ function renderFinish() {
   const u = units(m), checked = u.filter((x, i) => x.check && s.units[i] && s.units[i].check != null), right = checked.filter(x => s.units[u.indexOf(x)].check === x.check.correct).length;
   $("#finishSummary").innerHTML = (m.lern && m.lern.summary) ? `<div class="box tint"><span class="eyebrow">Zum Festigen</span><h3>In zwei, drei Tagen noch einmal ansehen</h3><p>Verteiltes Wiederholen hilft mehr als einmal lange Lernen. Die Zusammenfassung hat alle Kernaussagen und das Formelblatt dieses Moduls.${checked.length ? ` Deine Kurzchecks: ${right} von ${checked.length} richtig.` : ""}</p><div><button class="btn small" type="button" data-step-go="zusammenfassung">Zusammenfassung öffnen</button></div></div>` : "";
   let tb = "";
-  if (n === 1) tb += `<div class="field"><h3 style="font-size:var(--s-1)">Zurück zur Frage des Moduls</h3><label for="demoAnswer" class="muted">Was hat das Sprachmodell geantwortet? Füg die Antwort hier ein oder fass sie zusammen.</label><textarea id="demoAnswer" placeholder="Zum Beispiel: Die CNC-Drehmaschine M-03 stand am längsten still …">${esc(S.demo || "")}</textarea><div><button class="btn small" type="button" id="checkDemo">Mit deinen Daten abgleichen</button></div><div id="demoResult"></div></div>`;
+  if (n === 1 && COURSE.vorkurs !== false) tb += `<div class="field"><h3 style="font-size:var(--s-1)">Zurück zur Frage des Moduls</h3><label for="demoAnswer" class="muted">Was hat das Sprachmodell geantwortet? Füg die Antwort hier ein oder fass sie zusammen.</label><textarea id="demoAnswer" placeholder="Zum Beispiel: Die CNC-Drehmaschine M-03 stand am längsten still …">${esc(S.demo || "")}</textarea><div><button class="btn small" type="button" id="checkDemo">Mit deinen Daten abgleichen</button></div><div id="demoResult"></div></div>`;
   if (m.teaser && m.teaser.q) tb += `<div class="box tint"><span class="eyebrow">Zum Einstieg in Modul ${n + 1}</span><h3>Denk schon mal darüber nach</h3><p>${rich(m.teaser.q)}</p></div>`;
   $("#teaserBox").innerHTML = tb || `<div class="box tint"><span class="eyebrow">Tipp</span><h3>Erklär es jemandem</h3><p>Wer einen Stoff in zwei Sätzen erklären kann, hat ihn verstanden. Probier es im Kurs-Chat mit einer Frage aus diesem Modul.</p></div>`;
   typeset($("#teaserBox"));
@@ -2352,9 +2507,9 @@ const COLAB_TXT = {
 function nbIntroHTML(m) {
   const r = m.nbrun;
   if (!r) return "";
-  if (r.support === "colab") return (m.notebooks || []).length && m.n !== 14 && m.n !== 0 ? `<p class="nbwhy muted">${COLAB_TXT[r.why] || COLAB_TXT.toolbox}</p>` : "";
+  if (r.support === "colab") return (m.notebooks || []).length && m.n !== 14 && !isVorkurs(m.n) ? `<p class="nbwhy muted">${COLAB_TXT[r.why] || COLAB_TXT.toolbox}</p>` : "";
   const [h, t] = SUPPORT_TXT[r.support] || SUPPORT_TXT.partial;
-  return `<div class="nbrun-intro"><div><span class="eyebrow">Ohne Colab · Beta</span><h3>${h}</h3><p class="muted">${t}${r.colabCells ? ` Nur in Colab: ${r.colabCells} von ${r.codeCells} Code-Zellen.` : ""}</p></div><div class="cta-row"><button class="btn ghost" type="button" id="nbOpen">Notebook hier öffnen</button>${TOOLBOX_IN_BROWSER ? '<button class="btn ghost small key-state" type="button" data-keydlg="1">Schlüssel fehlt</button>' : ""}</div></div>`;
+  return `<div class="nbrun-intro"><div><span class="eyebrow">${colabOK(m) ? "Ohne Colab" : "Im Browser"} · Beta</span><h3>${h}</h3><p class="muted">${t}${r.colabCells ? ` Nur in Colab: ${r.colabCells} von ${r.codeCells} Code-Zellen.` : ""}</p></div><div class="cta-row"><button class="btn ghost" type="button" id="nbOpen">Notebook hier öffnen</button>${TOOLBOX_IN_BROWSER ? '<button class="btn ghost small key-state" type="button" data-keydlg="1">Schlüssel fehlt</button>' : ""}</div></div>`;
 }
 function loadScriptOnce(src) {
   return new Promise((res, rej) => {
@@ -2574,7 +2729,7 @@ function renderTutorium() {
   $("#tutDone").checked = !!ts.done;
   typeset($("#tutTable")); typeset($("#tutGoals"));
   const nx = nextPathStep(m, "tutorium"), pv = prevPathStep(m, "tutorium");
-  $("#tutNext").dataset.stepGo = nx || "abschluss"; $("#tutNext").textContent = "Weiter zum " + (STEPLABEL[nx] || "Abschluss");
+  $("#tutNext").dataset.stepGo = nx || "abschluss"; $("#tutNext").textContent = stepWeiter(nx);
   $("#tutBack").dataset.stepGo = pv || "ueberblick";
 }
 document.addEventListener("change", e => {
@@ -2691,7 +2846,7 @@ $("#pilotDlg").addEventListener("click", e => { if (e.target.id === "pilotDlg") 
 function renderSkript() {
   const m = MODS[curMod];
   skriptFor = curMod;
-  $("#skH").textContent = curMod === 0 ? "Setup-Anleitung" : "Vorlesungsskript Modul " + curMod;
+  $("#skH").textContent = isVorkurs(curMod) ? "Setup-Anleitung" : "Vorlesungsskript Modul " + curMod;
   $("#skript").innerHTML = m.skriptHtml || "";
   $("#skriptToc").innerHTML = $$("#skript h2").map(h => `<button type="button" class="chip" data-anchor="${h.id}">${esc(h.textContent.replace(/^\d+\s/, ""))}</button>`).join("");
   typeset($("#skript"));
@@ -2963,7 +3118,9 @@ document.addEventListener("click", e => {
   const d = t.dataset;
   if (d.resume !== undefined) { resume(); return; }
   if (d.go) { go(d.go); return; }
-  if (d.module !== undefined) { go("modul", { m: Number(d.module) }); return; }
+  if (d.module !== undefined) { go("modul", { m: Number(d.module), step: d.modstep }); return; }
+  if (d.os) { setOS(d.os); return; }
+  if (d.cmdcopy) { copyCmd(d.cmdcopy, t); return; }
   if (d.goto) { gotoProject(d.goto); return; }
   if (d.stepGo) { showStep(d.stepGo); return; }
   if (d.toast) { toast(d.toast); return; }
@@ -3029,7 +3186,7 @@ document.addEventListener("change", e => {
     else { const s = st(V.m); s.units[V.si] = Object.assign({}, s.units[V.si] || { seen: true }, { check: j }); save(); showCheck(); renderUnitList(); renderFinish(); }
     return;
   }
-  if (d.todo) { st(curMod).todos[d.todo] = t.checked; afterProgress(); todoSummary(); renderFinish(); return; }
+  if (d.todo) { st(curMod).todos[d.todo] = t.checked; afterProgress(); todoSummary(); lokalSummary(); renderFinish(); return; }
   if (d.pstart !== undefined) { S.project.start[d.pstart] = t.checked; save(); return; }
   if (d.psub !== undefined) { S.project.submit[d.psub] = t.checked; save(); renderSubmit(); return; }
   if (d.rub !== undefined) { S.rubric[Number(d.rub)] = Number(t.value); save(); renderGrade(); return; }
